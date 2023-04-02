@@ -49,6 +49,7 @@ export default defineNuxtConfig({
     },
   },
   modules: [
+    'nuxt-security',
     '@nuxtjs/html-validator',
     '@nuxtjs/critters',
     '@nuxtjs/i18n',

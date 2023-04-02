@@ -4,13 +4,16 @@
     "node": true
   },
   "extends": [
+    "plugin:security-node/recommended",
     "@antfu",
     "@nuxtjs/eslint-config-typescript",
     "plugin:nuxt/recommended",
     "plugin:vue/vue3-recommended",
     "plugin:tailwindcss/recommended"
   ],
-  "plugins": [],
+  "plugins": [
+    "security-node"
+  ],
   "rules": {
     "vue/multi-word-component-names": "off",
     "vue/no-multiple-template-root": "off",
