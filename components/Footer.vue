@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 const localePath = useLocalePath()
 const { locale } = useI18n()
-const branch = useRuntimeConfig().public.branchVersion
+const branch = useRuntimeConfig().public.branch
 </script>
 
 <template>

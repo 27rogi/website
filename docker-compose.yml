@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   ryzhenkovspace:
-    build: .
+    image: 27rogi/website:latest
     ports:
       - "3000:3000"
     environment:

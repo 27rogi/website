@@ -11,6 +11,9 @@ RUN pnpm run build
 
 FROM node:18.15.0-alpine as runnable
 
+ARG BRANCH
+ENV NUXT_PUBLIC_BRANCH=${BRANCH}
+
 WORKDIR /home/rspace
 
 COPY --from=build /home/rspace/.output ./

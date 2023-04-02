@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     githubToken: '',
     public: {
-      branchVersion: process.env.BRANCH_VERSION || 'master',
+      branch: 'master',
     },
   },
   app: {
