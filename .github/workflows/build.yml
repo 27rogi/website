@@ -25,10 +25,7 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: .
           push: true
-          tags: user/app:latest
-          cache-from: type=registry,ref=user/app:latest
-          cache-to: type=inline
+          tags: 27rogi/website:latest
           build-args: |
             "BRANCH_VERSION=${{ steps.vars.outputs.github_hast }}"
