@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     githubToken: '',
     public: {
       branch: 'master',
+      siteUrl: 'https://ryzhenkov.space',
     },
   },
   nitro: {
@@ -65,6 +66,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxtjs/robots',
     'nuxt-icon',
+    'nuxt-simple-sitemap',
   ],
   build: {
     transpile: [

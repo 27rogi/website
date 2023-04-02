@@ -90,6 +90,9 @@ devDependencies:
   nuxt-security:
     specifier: ^0.13.0
     version: 0.13.0
+  nuxt-simple-sitemap:
+    specifier: ^2.4.1
+    version: 2.4.1
   postcss-html:
     specifier: ^1.5.0
     version: 1.5.0
@@ -6832,6 +6835,22 @@ packages:
       nuxt-csurf: 1.2.0
       pathe: 1.1.0
       xss: 1.0.14
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
+    dev: true
+
+  /nuxt-simple-sitemap@2.4.1:
+    resolution: {integrity: sha512-o/Djj14GV/9UHOxXshJVoYOTcfpNCzhqVmGze4bnUXAHMHFAmlbuZSad3c0veWd4nUcGxTDBHktYf64BkbTIOg==}
+    dependencies:
+      '@nuxt/kit': 3.3.2(rollup@3.20.2)
+      chalk: 5.2.0
+      defu: 6.1.2
+      escape-string-regexp: 5.0.0
+      knitwork: 1.0.0
+      pathe: 1.1.0
+      radix3: 1.0.1
+      ufo: 1.1.1
     transitivePeerDependencies:
       - rollup
       - supports-color
