@@ -1,0 +1,21 @@
+{
+  "processors": [
+    "@mapbox/stylelint-processor-arbitrary-tags"
+  ],
+  "plugins": [
+    "@namics/stylelint-bem"
+  ],
+  "customSyntax": "postcss-scss",
+  "overrides": [
+    {
+      "files": ["**/*.vue"],
+      "customSyntax": "postcss-html"
+    }
+  ],
+  "rules": {
+    "plugin/stylelint-bem-namics": {
+      "patternPrefixes": [],
+      "helperPrefixes": []
+    }
+  }
+}

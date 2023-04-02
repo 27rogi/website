@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  ryzhenkovspace:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - NUXT_GITHUB_TOKEN=${NUXT_GITHUB_TOKEN}
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 256M
+        reservations:
+          memory: 128M

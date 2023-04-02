@@ -1,0 +1,55 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "start": "node .output/server/index.mjs",
+    "prepare": "husky install"
+  },
+  "packageManager": "pnpm@7.29.3",
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.38.2",
+    "@namics/stylelint-bem": "^8.1.0",
+    "@nuxt/image-edge": "1.0.0-28004510.a0dc8e8",
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "@nuxtjs/i18n": "^8.0.0-beta.10",
+    "eslint": "^8.37.0",
+    "eslint-config-stylelint": "^18.0.0",
+    "eslint-plugin-nuxt": "^4.0.0",
+    "eslint-plugin-tailwindcss": "^3.10.1",
+    "husky": "^8.0.3",
+    "jest": "^29.5.0",
+    "lint-staged": "^13.2.0",
+    "nuxt": "3.3.2",
+    "nuxt-schema-org": "^2.1.2",
+    "postcss-html": "^1.5.0",
+    "postcss-scss": "^4.0.6",
+    "stylelint": "^15.3.0",
+    "stylelint-config-html": "^1.1.0",
+    "vite-plugin-stylelint": "^4.3.0",
+    "vite-plugin-windicss": "^1.8.10",
+    "vite-svg-loader": "^4.0.0"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^4.5.15",
+    "@fontsource/raleway": "^4.5.12",
+    "@mapbox/stylelint-processor-arbitrary-tags": "^0.4.0",
+    "@nuxtjs/critters": "^0.4.0",
+    "@nuxtjs/html-validator": "^1.2.3",
+    "@nuxtjs/robots": "^3.0.0",
+    "@pinia/nuxt": "^0.4.7",
+    "@vueuse/nuxt": "^9.13.0",
+    "date-fns": "^2.29.3",
+    "klona": "^2.0.6",
+    "nuxt-icon": "^0.3.3",
+    "pinia": "^2.0.33",
+    "sass": "^1.60.0"
+  },
+  "lint-staged": {
+    "*.{.js,jsx,ts,tsx,vue}": "eslint --fix",
+    "*.{png,jpeg,jpg,gif,svg}": "pnpm dlx imagemin-lint-staged"
+  }
+}
