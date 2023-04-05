@@ -129,9 +129,6 @@ export default defineNuxtConfig({
     langDir: 'lang/',
     skipSettingLocaleOnNavigate: true,
   },
-  vueuse: {
-    ssrHandlers: true,
-  },
   schemaOrg: {
     host: 'https://ryzhenkov.space',
   },
