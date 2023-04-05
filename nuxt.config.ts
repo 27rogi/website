@@ -63,10 +63,12 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxt/image-edge',
     'nuxt-schema-org',
-    '@vueuse/nuxt',
+    // '@vueuse/nuxt',
     '@nuxtjs/robots',
     'nuxt-icon',
     'nuxt-simple-sitemap',
+    '@nuxtjs/fontaine',
+    'nuxt-delay-hydration',
   ],
   build: {
     transpile: [
@@ -74,6 +76,14 @@ export default defineNuxtConfig({
     ],
   },
   // Module settings
+  delayHydration: {
+    mode: 'mount',
+  },
+  security: {
+    headers: {
+      xXSSProtection: '1',
+    },
+  },
   critters: {
     config: {
       preload: 'swap',
@@ -123,6 +133,6 @@ export default defineNuxtConfig({
     ssrHandlers: true,
   },
   schemaOrg: {
-    canonicalHost: 'https://ryzhenkov.space',
+    host: 'https://ryzhenkov.space',
   },
 })

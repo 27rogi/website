@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import Background from '~/assets/bg.svg?component'
+
 const route = useRoute()
 const router = useRouter()
 const { t } = useI18n()
@@ -22,6 +23,16 @@ useHeadSafe({
     },
   ],
 })
+
+useSchemaOrg([
+  definePerson({
+    name: () => t('page.resume.header.name'),
+    image: '/face.jpg',
+    sameAs: [
+      'https://github.com/rogi27',
+    ],
+  }),
+])
 
 useSeoMeta({
   ogTitle: () => seo.value.ogTitle,
