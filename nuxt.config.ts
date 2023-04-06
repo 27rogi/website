@@ -56,18 +56,26 @@ export default defineNuxtConfig({
     },
   },
   modules: [
+    '@nuxtjs/eslint-module',
     'nuxt-security',
-    '@nuxtjs/html-validator',
     '@nuxtjs/critters',
     '@nuxtjs/i18n',
     '@pinia/nuxt',
     '@nuxt/image-edge',
     'nuxt-schema-org',
     // '@vueuse/nuxt',
-    '@nuxtjs/robots',
+    ['@nuxtjs/robots', {
+      rules: {
+        Sitemap: 'https://ryzhenkov.space/sitemap.xml',
+        Host: 'https://ryzhenkov.space/',
+        UserAgent: '*',
+        Disallow: '',
+      },
+    }],
     'nuxt-icon',
     'nuxt-simple-sitemap',
     '@nuxtjs/fontaine',
+    '@nuxtjs/html-validator',
     'nuxt-delay-hydration',
   ],
   build: {
@@ -76,6 +84,13 @@ export default defineNuxtConfig({
     ],
   },
   // Module settings
+  sitemap: {
+    siteUrl: 'https://ryzhenkov.space',
+    xsl: false,
+    // Currently this module has a bug with prefixing routes,
+    // this is why it should be manually set until the problem is resolved.
+    autoAlternativeLangPrefixes: ['en'],
+  },
   delayHydration: {
     mode: 'mount',
   },
@@ -116,8 +131,7 @@ export default defineNuxtConfig({
     ],
     strategy: 'prefix_except_default',
     detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: 'rspace--i18n',
+      useCookie: false,
       redirectOn: 'root',
     },
     defaultLocale: 'ru',
