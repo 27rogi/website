@@ -5,6 +5,9 @@ import viteStylelint from 'vite-plugin-stylelint'
 import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
+  experimental: {
+    renderJsonPayloads: true,
+  },
   runtimeConfig: {
     githubToken: '',
     public: {
@@ -86,10 +89,6 @@ export default defineNuxtConfig({
   // Module settings
   sitemap: {
     siteUrl: 'https://ryzhenkov.space',
-    xsl: false,
-    // Currently this module has a bug with prefixing routes,
-    // this is why it should be manually set until the problem is resolved.
-    autoAlternativeLangPrefixes: ['en'],
   },
   delayHydration: {
     mode: 'mount',
