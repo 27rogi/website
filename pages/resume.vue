@@ -43,7 +43,7 @@ const expList = [
   {
     type: 'award',
     name: 'ws_viii',
-    date: 2020,
+    date: 2019,
   },
   {
     type: 'certificate',
