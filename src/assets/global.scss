@@ -1,0 +1,80 @@
+html {
+  @apply bg-gray-900 transition text-gray-100 duration-200 scroll-smooth;
+}
+
+::selection {
+  @apply bg-villa-green-600 text-gray-100;
+}
+
+a {
+  @apply text-inherit no-underline;
+}
+
+.slide-fade-move,
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  @apply transition-all duration-100;
+  animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.bg {
+  .bg__blobs {
+    .blobs__blob {
+      @apply duration-800 transition-all ease-out transform-gpu transform-origin-center;
+      &.blobs__blob1 {
+        animation: colorful__blob1 10s infinite cubic-bezier(0.4, 0, 0.6, 1);
+      }
+      &.blobs__blob2 {
+        animation: colorful__blob1 15s infinite cubic-bezier(0.4, 0, 0.6, 1);
+      }
+      &.blobs__blob3 {
+        @apply fill-villa-green-500/5;
+      }
+    }
+  }
+  &--compact {
+    .bg__blobs .blobs__blob {
+      &.blobs__blob1 {
+        animation-play-state: paused;
+        @apply -translate-y-40;
+      }
+      &.blobs__blob2 {
+        animation-play-state: paused;
+        @apply -translate-y-50;
+      }
+      &.blobs__blob3 {
+        @apply -translate-y-60;
+      }
+    }
+  }
+
+  @keyframes colorful__blob1 {
+    0%   { @apply fill-sky-600/10; transform: scale(1) translateY(0%); }
+    25%   { @apply fill-teal-600/20; transform: scale(0.8) translateY(-9%); }
+    50%   { @apply fill-cyan-600/15; transform: scale(1.1) translateY(-6%); }
+    100%   { @apply fill-sky-600/10; transform: scale(1) translateY(0%); }
+  }
+  @keyframes colorful__blob2 {
+    0%   { @apply fill-villa-green-600/20; transform: scale(1) translateY(0%); }
+    25%   { @apply fill-purple-500/10; transform: scale(0.8) translateY(-9%); }
+    50%   { @apply fill-emerald-500/15; transform: scale(1.1) translateY(-6%); }
+    100%   { @apply fill-villa-green-600/20; transform: scale(1) translateY(0%); }
+  }
+}
+
+.slide-fade-enter-from {
+  opacity: 0;
+}
+
+.slide-fade-leave-to {
+  opacity: 0;
+}
+
+.slide-fade-leave-active {
+  @apply absolute;
+}
+
+// workaround for css in nuxt-picture tag not working in scoped mode
+.project--icon>* {
+  @apply rounded-lg m-auto;
+}

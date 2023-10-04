@@ -1,24 +1,24 @@
 {
   "prettier.enable": false,
-  "eslint.validate": [
-    "javascript",
-    "javascriptvue",
-    "typescript",
-    "typescriptvue",
-  ],
-  "stylelint.validate": [
-    "html",
-    "vue",
-  ],
+  // "eslint.validate": [
+  //   "javascript",
+  //   "javascriptvue",
+  //   "typescript",
+  //   "typescriptvue",
+  // ],
+  // "stylelint.validate": [
+  //   "html",
+  //   "vue",
+  // ],
   "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
   },
-  "css.validate": false,
+  //"css.validate": false,
   "editor.quickSuggestions": {
     "strings": true
   },
   "editor.tabSize": 2,
-  "vue3snippets.enable-compile-vue-file-on-did-save-code": false,
-  "typescript.tsdk": "node_modules/typescript/lib"
+  // "vue3snippets.enable-compile-vue-file-on-did-save-code": false,
+  // "typescript.tsdk": "node_modules/typescript/lib"
 }

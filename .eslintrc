@@ -9,17 +9,20 @@
     "@nuxtjs/eslint-config-typescript",
     "plugin:nuxt/recommended",
     "plugin:vue/vue3-recommended",
-    "plugin:tailwindcss/recommended"
+    "plugin:tailwindcss/recommended",
+    "@unocss"
   ],
   "plugins": [
     "security-node"
   ],
   "rules": {
+    "@stylistic/ts/brace-style": "off",
+    "@typescript-eslint/brace-style": "off",
     "vue/multi-word-component-names": "off",
     "vue/no-multiple-template-root": "off",
     "@typescript-eslint/no-unused-vars": "off",
-    "tailwindcss/no-custom-classname": "off",
     "tailwindcss/classnames-order": "off",
+    "tailwindcss/no-custom-classname": "off",
     "antfu/if-newline": "off",
     "vue/comment-directive": ["error", {
       "reportUnusedDisableDirectives": false
@@ -27,7 +30,6 @@
     "vue/component-name-in-template-casing": ["error", "PascalCase"],
     "comma-dangle": "off",
     "import/no-duplicates": "off",
-    "space-before-function-paren": "off",
-    "@typescript-eslint/brace-style": "off"
+    "space-before-function-paren": "off"
   }
 }

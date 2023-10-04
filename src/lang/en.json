@@ -1,0 +1,161 @@
+{
+  "metadata": {
+    "titleTemplate": "{0} rogi#su",
+    "keys": {
+      "index": {
+        "title": "Home",
+        "description": "Minimalism. Efficiency. Interactivity."
+      },
+      "projects": {
+        "title": "Projects",
+        "description": "This page contains a list of projects in which I participated or am their creator. The most famous of them are PreMiD and Ru-Minecraft."
+      },
+      "resume": {
+        "title": "Resume",
+        "description": "Graduate of the Moscow State College of Electromechanics and Information Technology with vocational education diploma with honors in \"Information systems and programming\" and qualification \"Database Administrator\"."
+      },
+      "blog": {
+        "title": "Blog",
+        "description": "Here I publish various information and articles for those who somehow found my website."
+      },
+      "error": {
+        "title": "Error occured :(",
+        "description": "If you see this message then this page might contain errors!"
+      }
+    }
+  },
+  "nav": {
+    "items": {
+      "/projects": "Projects",
+      "/blog": "Blog",
+      "/resume": "Resume"
+    }
+  },
+  "page": {
+    "index": {
+      "intro": {
+        "promo": {
+          "1": "Minimalism",
+          "2": "Efficiency",
+          "3": "Interactivity"
+        },
+        "desc": {
+          "1": "It is these principles that I try to implement in my",
+          "2": "projects",
+          "3": "At the moment I am engaged in development of programs, modifications and websites. I have vocational education diploma with honors in",
+          "4": "\"Information systems and programming\""
+        }
+      },
+      "cards": {
+        "skills": "Applied Skills",
+        "ghstats": {
+          "loading": "Loading data from {0}",
+          "title": "Using {0} for {1}",
+          "text": "Currently I have {0}, and {1} projects, and also {2}.",
+          "closed": "no private | {n} private | {n} private",
+          "open": "no open | {n} open | {n} open",
+          "followers": "no subscribers | {n} subscriber | {n} subscribers"
+        }
+      }
+    },
+    "projects": {
+      "header": {
+        "large": "Large Projects",
+        "personal": "Personal Projects",
+        "experiments": "Experiments"
+      },
+      "items": {
+        "diaryproject": {
+          "title": "Prototype of Web Diary",
+          "description": "Graduation project about development of the diary using web technologies."
+        },
+        "rumcredesign": {
+          "title": "Redesign of Ru-Minecraft",
+          "description": "Redesigned an old template and recoded old JS and CSS code using newer technologies such as TypeScript, PostCSS, Tailwind, and SCSS."
+        },
+        "f2d": {
+          "title": "Fabric2Discord",
+          "description": "Modification for game Minecraft that adds ability to link game chat with Discord."
+        },
+        "premid": {
+          "title": "PreMiD",
+          "description": "I was responsible for the design and development of the website with its future support."
+        },
+        "homabric": {
+          "title": "Homabric",
+          "description": "Modification for game Minecraft that adds advanced home system."
+        },
+        "projectagora": {
+          "title": "Project Agora",
+          "description": "Experimental project at the beginning that was used to test how Preact and JSX work inside userscript."
+        },
+        "renameit": {
+          "title": "RenameIt",
+          "description": "Modification for game Minecraft that adds ability to change name and lore for items."
+        },
+        "vkdiary": {
+          "title": "VKDiary",
+          "description": "Another project that was developed alongside the prototype of Web Diary. Bot for VK social network, sending alerts when classes are about to start."
+        },
+        "irisredesign": {
+          "title": "Iris Shaders",
+          "description": "Experiment to rework old Iris Shaders website using new technologies."
+        },
+        "localized-soundcloud": {
+          "title": "localized-soundcloud",
+          "description": "Project that was used for understanding MutationObserver. Translates SoundCloud elements to selected language and detects DOM changes."
+        },
+        "vdiscorde": {
+          "title": "VDiscorde",
+          "description": "Attempt to develop first bot that gets information about VK social network users and allows them to link profile with Discord."
+        }
+      }
+    },
+    "resume": {
+      "header": {
+        "name": "Igor Ryzhenkov",
+        "about": {
+          "text": "Graduate of the Moscow State College of Electromechanics and Information Technology with vocational education diploma {diploma} in {specialty} and qualification {qualification}.",
+          "diploma": "with honors",
+          "specialty": "\"Information systems and programming\"",
+          "qualification": "\"Database Administrator\""
+        }
+      },
+      "skills": {
+        "primary": "Primary skills",
+        "secondary": "Secondary skills",
+        "assistive": "Assistive skills"
+      },
+      "experiences": {
+        "title": "Experience and awards",
+        "year": "Participated in the {year} year",
+        "issuedBy": "Certificate Issued by {issuer}",
+        "items": {
+          "ctm": {
+            "title": "Creative team",
+            "role": "College Internship"
+          },
+          "premid": {
+            "title": "PreMiD",
+            "role": "Front-end Developer"
+          },
+          "ws_ix": {
+            "title": "Moscow Masters Professional Championship IX"
+          },
+          "ws_viii": {
+            "title": "Moscow Masters Professional Championship VIII"
+          },
+          "htmlacademynode": {
+            "title": "Node.js Professional development of REST API"
+          }
+        }
+      },
+      "additional": {
+        "title": "Additional Information",
+        "files": "Files",
+        "languages": "Communication Languages",
+        "contacts": "Contacts"
+      }
+    }
+  }
+}

@@ -1,22 +1,39 @@
-import viteSVGLoader from 'vite-svg-loader'
-import viteWindiCSS from 'vite-plugin-windicss'
-import viteStylelint from 'vite-plugin-stylelint'
-
+import { resolve } from 'node:path'
 import { defineNuxtConfig } from 'nuxt/config'
+import viteSvgLoader from 'vite-svg-loader'
 
 export default defineNuxtConfig({
+  srcDir: 'src/',
+  devtools: true,
   experimental: {
-    renderJsonPayloads: true,
+    asyncEntry: true,
+    clientFallback: true,
+    viewTransition: true,
+    writeEarlyHints: true,
   },
   runtimeConfig: {
     githubToken: '',
     public: {
       branch: 'master',
-      siteUrl: 'https://ryzhenkov.space',
+      siteUrl: 'https://rogi.su',
     },
   },
   nitro: {
     compressPublicAssets: true,
+    esbuild: {
+      options: {
+        target: 'esnext',
+      },
+    },
+    prerender: {
+      crawlLinks: false,
+      routes: ['/'],
+    },
+  },
+  vite: {
+    plugins: [
+      viteSvgLoader(),
+    ],
   },
   app: {
     head: {
@@ -25,77 +42,99 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        { rel: 'canonical', href: 'https://ryzhenkov.space' },
+        { rel: 'canonical', href: 'https://rogi.su' },
       ],
     },
-  },
-  vite: {
-    logLevel: 'info',
-    plugins: [
-      viteStylelint({
-        fix: true,
-      }),
-      viteSVGLoader(),
-      viteWindiCSS({
-        transformCSS: 'pre',
-        scan: {
-          dirs: ['.'],
-          fileExtensions: ['vue', 'js', 'ts', 'scss'],
-        },
-      }),
-    ],
+    layoutTransition: { name: 'ease', mode: 'out-in' },
   },
   css: [
-    'virtual:windi.css',
-    '@fontsource/inter/variable.css',
-    '@fontsource/raleway/variable.css',
+    '@unocss/reset/tailwind.css',
+    '@fontsource-variable/inter',
+    '@fontsource-variable/raleway',
     '~/assets/global.scss',
   ],
   typescript: {
     tsConfig: {
       compilerOptions: {
         strict: true,
+        moduleResolution: 'bundler',
       },
     },
   },
   modules: [
-    '@nuxtjs/eslint-module',
     'nuxt-security',
     '@nuxtjs/critters',
     '@nuxtjs/i18n',
     '@pinia/nuxt',
     '@nuxt/image-edge',
     'nuxt-schema-org',
-    // '@vueuse/nuxt',
     ['@nuxtjs/robots', {
       rules: {
-        Sitemap: 'https://ryzhenkov.space/sitemap.xml',
-        Host: 'https://ryzhenkov.space/',
+        Sitemap: 'https://rogi.su/sitemap.xml',
+        Host: 'https://rogi.su/',
         UserAgent: '*',
         Disallow: '',
       },
     }],
     'nuxt-icon',
+    '@nuxt/content',
     'nuxt-simple-sitemap',
     '@nuxtjs/fontaine',
-    '@nuxtjs/html-validator',
     'nuxt-delay-hydration',
+    '@unocss/nuxt',
   ],
-  build: {
-    transpile: [
-      'date-fns',
-    ],
+
+  // Module Settings
+
+  content: {
+    api: {
+      baseURL: '/api/_blog',
+    },
+    watch: {
+      ws: {
+        port: 4000,
+      },
+    },
+    sources: {
+      blog: {
+        driver: 'fs',
+        prefix: '/blog',
+        base: resolve(__dirname, 'src/blog'),
+      },
+    },
+    markdown: {
+      anchorLinks: true,
+    },
+    highlight: {
+      theme: 'poimandres',
+    },
+    locales: ['ru', 'en'],
+    defaultLocale: 'ru',
   },
-  // Module settings
   sitemap: {
-    siteUrl: 'https://ryzhenkov.space',
+    siteUrl: 'https://rogi.su',
   },
   delayHydration: {
+    replayClick: true,
     mode: 'mount',
+    // eslint-disable-next-line n/prefer-global/process
+    debug: process.env.NODE_ENV === 'development',
   },
   security: {
     headers: {
-      xXSSProtection: '1',
+      contentSecurityPolicy: {
+        'font-src': ['\'self\'', 'https:', 'data:'],
+        'form-action': ['\'self\''],
+        'frame-src': ['\'self\'', 'https:'],
+        'frame-ancestors': ['\'self\'', 'https:'],
+        'img-src': ['\'self\'', 'https:'],
+        'object-src': ['\'none\''],
+        'script-src': ['\'self\'', 'https:', '\'unsafe-inline\''],
+        'style-src': ['\'self\'', 'https:', '\'unsafe-inline\''],
+        'upgrade-insecure-requests': true,
+      },
+      crossOriginEmbedderPolicy: false,
+      crossOriginResourcePolicy: 'same-origin',
     },
   },
   critters: {
@@ -115,7 +154,7 @@ export default defineNuxtConfig({
     },
   },
   i18n: {
-    baseUrl: 'https://ryzhenkov.space',
+    baseUrl: 'https://rogi.su',
     locales: [
       {
         code: 'en',
@@ -134,15 +173,13 @@ export default defineNuxtConfig({
       redirectOn: 'root',
     },
     defaultLocale: 'ru',
-    vueI18n: {
-      legacy: false,
-      fallbackLocale: 'ru',
-    },
-    lazy: true,
+    // prepare for migration
+    // vueI18n: './i18n.config.ts',
+    lazy: false,
     langDir: 'lang/',
     skipSettingLocaleOnNavigate: true,
   },
-  schemaOrg: {
-    host: 'https://ryzhenkov.space',
-  },
+  // schemaOrg: {
+  //   host: 'https://rogi.su',
+  // },
 })

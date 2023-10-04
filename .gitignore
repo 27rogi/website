@@ -18,3 +18,5 @@ dist
 !.yarn/versions
 
 *.secrets
+
+.unlighthouse
