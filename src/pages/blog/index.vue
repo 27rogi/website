@@ -21,7 +21,7 @@ const posts = await getPosts()
 <template>
   <UiPageBase>
     <template #title>
-      <h2>Личный блог</h2>
+      <h2>Личный блог <span class="ml-2 border-1 border-gray-100/20 rounded-md bg-gray-300/10 px-2 py-1 align-middle text-sm">beta</span></h2>
     </template>
     <div class="flex flex-row flex-wrap items-center gap-4">
       <template v-if="posts.pending.value">
@@ -35,7 +35,7 @@ const posts = await getPosts()
           v-for="(post, index) of posts.data.value"
           :key="post._id"
           class="w-[calc(50%-0.5rem)]"
-          :class="{ 'w-full': (index + 1 === posts.data.value.length) && (2 % index === 0) }"
+          :class="{ 'w-full': (index > 2) && (index + 1 === posts.data.value.length) && (2 % index === 0) }"
           :to="post._path"
         >
           <UiCard horizontal class="flex-row-reverse items-start transition-all ease hover:bg-gray-800/50" :class="{ 'opacity-30': locale !== post.locale }">

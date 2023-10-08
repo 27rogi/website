@@ -7,15 +7,15 @@ const { t } = useI18n()
 const links = [
   {
     path: '/projects',
-    icon: 'icon-park-twotone:folder-code',
+    icon: 'iconamoon:folder-image-duotone',
   },
   {
     path: '/blog',
-    icon: 'icon-park-twotone:newspaper-folding',
+    icon: 'iconamoon:edit-duotone',
   },
   {
     path: '/resume',
-    icon: 'icon-park-twotone:briefcase',
+    icon: 'iconamoon:briefcase-duotone',
   },
 ]
 </script>
@@ -67,7 +67,7 @@ const links = [
     @apply flex flex-row font-bold ml-auto gap-0 sm:gap-2;
 
     .navbar__item {
-      @apply border rounded-md flex flex-row border-opacity-0 border-villa-green-200 text-xs py-2 px-2 transition-all text-gray-100 gap-0.5 duration-100 select-none items-center sm:text-base sm:py-2 sm:px-3 sm:gap-1 hover:bg-gray-800/20 hover:border-opacity-10 hover:text-villa-green-500 active:border-opacity-10;
+      @apply leading-[1px] border rounded-md flex flex-row border-opacity-0 border-villa-green-200 font-size-xs py-2 px-2 transition-all text-gray-100 gap-0.5 duration-100 select-none items-center sm:font-size-base sm:py-2 sm:px-3 sm:gap-1.5 hover:bg-gray-800/20 hover:border-opacity-10 hover:text-villa-green-500 active:border-opacity-10;
       transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
 
       &.router-link-active {

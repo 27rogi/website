@@ -8,11 +8,13 @@ export const useSkillsStore = defineStore('skills', {
       icon: 'logos:javascript',
       color: '!bg-[#F0DB4F]',
       name: 'JavaScript',
+      stack: true,
     },
     ts: {
       icon: 'logos:typescript-icon',
       color: '!bg-[#3178c6]',
       name: 'TypeScript',
+      stack: true,
     },
     java: {
       icon: 'logos:java',
@@ -28,6 +30,7 @@ export const useSkillsStore = defineStore('skills', {
       icon: 'logos:nuxt-icon',
       color: '!bg-[#00DC82]',
       name: 'Nuxt',
+      stack: true,
     },
     nest: {
       icon: 'logos:nestjs',
@@ -53,16 +56,30 @@ export const useSkillsStore = defineStore('skills', {
       icon: 'logos:tailwindcss-icon',
       color: '!bg-cyan-500',
       name: 'Tailwind',
+      stack: true,
     },
     mongodb: {
       icon: 'logos:mongodb-icon',
       color: '!bg-[#589636]',
       name: 'MongoDB',
+      stack: true,
     },
     mysql: {
       icon: 'logos:mysql-icon',
       color: '!bg-[#00758f]',
       name: 'MySQL',
+    },
+    docker: {
+      icon: 'logos:docker-icon',
+      color: '!bg-blue-500',
+      name: 'Docker',
+      hidden: true,
+    },
+    caddy: {
+      icon: 'vscode-icons:file-type-caddy',
+      color: '!bg-green-600',
+      name: 'Caddy',
+      hidden: true,
     },
     figma: {
       icon: 'logos:figma',

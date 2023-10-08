@@ -16,35 +16,37 @@ const branch = useRuntimeConfig().public.branch
       <p>
         Crafted using
         <span><Icon name="simple-icons:nuxtdotjs" /> {{ version }}</span> and
-        <span><Icon name="icon-park-twotone:tea-drink" /></span> by <span>Igor Ryzhenkov</span>
+        <span><Icon name="vaadin:coffee" /></span> by <span>Igor Ryzhenkov</span>
       </p>
     </div>
     <div class="footer__locale">
-      <IconBlock
+      <UiButton
         v-if="locale !== 'en'"
-        title="Switch to English"
         icon="flag:us-1x1"
         active-class="active-locale"
         class="footer__button"
         :to="localePath({ path }, 'en')"
-        is-link
-      />
-      <IconBlock
+        nuxt-link
+      >
+        Switch to English
+      </UiButton>
+      <UiButton
         v-if="locale !== 'ru'"
-        title="Переключить на Русский"
         icon="flag:ru-1x1"
         active-class="active-locale"
         class="footer__button"
         :to="localePath({ path }, 'ru')"
-        is-link
-      />
+        nuxt-link
+      >
+        Переключить на Русский
+      </UiButton>
     </div>
   </footer>
 </template>
 
 <style lang="scss" scoped>
 .footer {
-  @apply flex flex-row text-xs p-4 gap-2 justify-center items-center sm:text-sm;
+  @apply flex flex-row p-4 gap-2 justify-center items-center sm:text-sm text-xs;
   .footer__button {
     @apply border rounded-md font-semibold bg-gray-800/50 border-gray-200/15 p-2 text-gray-50 hover:bg-gray-800/80;
   }

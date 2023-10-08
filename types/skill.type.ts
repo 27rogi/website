@@ -4,5 +4,6 @@ export default interface Skill {
     color: string
     name: string
     hidden?: boolean
+    stack?: boolean
   }
 }

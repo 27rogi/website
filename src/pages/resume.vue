@@ -11,10 +11,10 @@ const skillsList = {
     skills: ['js', 'ts', 'nuxt', 'vue', 'scss', 'tailwind'],
   },
   secondary: {
-    skills: ['java', 'nest', 'mongodb', 'mysql'],
+    skills: ['java', 'kotlin', 'mongodb', 'mysql'],
   },
   assistive: {
-    skills: ['kotlin', 'preact', 'figma', 'vscode'],
+    skills: ['docker', 'caddy', 'figma', 'vscode'],
   },
 }
 
@@ -106,14 +106,17 @@ definePageMeta({
           keypath="page.resume.header.about.text"
           tag="p"
         >
+          <template #js>
+            <span>JavaScript</span>
+          </template>
           <template #diploma>
             <span>{{ t("page.resume.header.about.diploma") }}</span>
           </template>
+          <template #mtuci>
+            <span>{{ t("page.resume.header.about.mtuci") }}</span>
+          </template>
           <template #specialty>
             <span>{{ t("page.resume.header.about.specialty") }}</span>
-          </template>
-          <template #qualification>
-            <span>{{ t("page.resume.header.about.qualification") }}</span>
           </template>
         </i18n-t>
       </div>

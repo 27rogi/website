@@ -75,10 +75,10 @@ useSeoMeta({
 
 <style lang="scss" scoped>
 .bg {
-  @apply h-full transition-all top-0 right-0 left-0 duration-400 absolute overflow-hidden;
+  @apply w-[160vw] lg:w-auto h-full transition-all top-0 right-0 left-0 duration-400 absolute overflow-hidden;
 
   &--compact {
-    @apply blur-3xl h-[40vw] -top-15;
+    @apply blur-3xl sm:h-[50vw] -top-15;
   }
 }
 </style>

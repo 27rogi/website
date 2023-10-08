@@ -22,13 +22,14 @@ a {
     .blobs__blob {
       @apply duration-800 transition-all ease-out transform-gpu transform-origin-center;
       &.blobs__blob1 {
-        animation: colorful__blob1 10s infinite cubic-bezier(0.4, 0, 0.6, 1);
+        animation: colorful__blob 12s infinite cubic-bezier(0.65,-0.67,0.24,1.63);
       }
       &.blobs__blob2 {
-        animation: colorful__blob1 15s infinite cubic-bezier(0.4, 0, 0.6, 1);
+        animation: colorful__blob 16s infinite cubic-bezier(0.65,-0.67,0.24,1.63);
       }
       &.blobs__blob3 {
-        @apply fill-villa-green-500/5;
+        @apply opacity-40;
+        animation: colorful__blob 26s infinite cubic-bezier(0.65,-0.67,0.24,1.63);
       }
     }
   }
@@ -43,22 +44,18 @@ a {
         @apply -translate-y-50;
       }
       &.blobs__blob3 {
-        @apply -translate-y-60;
+        animation-play-state: paused;
+        @apply translate-y-60;
       }
     }
   }
 
-  @keyframes colorful__blob1 {
+  // TODO: transitions don't work if UnoCSS transform classes are used.
+  @keyframes colorful__blob {
     0%   { @apply fill-sky-600/10; transform: scale(1) translateY(0%); }
-    25%   { @apply fill-teal-600/20; transform: scale(0.8) translateY(-9%); }
+    25%   { @apply fill-villa-green-600/20; transform: scale(0.8) translateY(-9%); }
     50%   { @apply fill-cyan-600/15; transform: scale(1.1) translateY(-6%); }
     100%   { @apply fill-sky-600/10; transform: scale(1) translateY(0%); }
-  }
-  @keyframes colorful__blob2 {
-    0%   { @apply fill-villa-green-600/20; transform: scale(1) translateY(0%); }
-    25%   { @apply fill-purple-500/10; transform: scale(0.8) translateY(-9%); }
-    50%   { @apply fill-emerald-500/15; transform: scale(1.1) translateY(-6%); }
-    100%   { @apply fill-villa-green-600/20; transform: scale(1) translateY(0%); }
   }
 }
 

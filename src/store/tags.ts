@@ -4,6 +4,9 @@ import type Tag from '~/types/tag.type'
 // @unocss-include
 export const useTagsStore = defineStore('tags', {
   state: () => ({
+    offtopic: {
+      color: 'bg-white/20',
+    },
     web: {
       color: 'bg-teal-400/20',
     },

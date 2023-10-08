@@ -30,25 +30,33 @@ definePageMeta({
           <span class="text-villa-green-500">{{ t("page.index.intro.promo.2") }}.</span>
           {{ t("page.index.intro.promo.3") }}.
         </h1>
-        <div>
+        <div class="intro__slogan">
           <i18n-t keypath="page.index.intro.desc.main" tag="p">
             <template #projects>
-              <span class="text-villa-green-500">{{ t("page.index.intro.desc.projects") }}</span>
+              <span>{{ t("page.index.intro.desc.projects") }}</span>
             </template>
-            <template #university>
-              <span class="text-villa-green-500">{{ t("page.index.intro.desc.university") }}</span>
+            <template #js>
+              <span>JavaScript</span>
             </template>
-            <template #course>
-              <span class="text-villa-green-500">{{ t("page.index.intro.desc.course") }}</span>
+            <template #java>
+              <span>Java</span>
             </template>
-            <template #specialty>
-              <span class="text-villa-green-500">{{ t("page.index.intro.desc.specialty") }}</span>
+            <template #simplify>
+              <span>{{ t("page.index.intro.desc.simplify") }}</span>
+            </template>
+            <template #happy>
+              <span>{{ t("page.index.intro.desc.happy") }}</span>
+            </template>
+            <template #more>
+              <nuxt-link :to="{ path: '/resume' }">
+                {{ t("page.index.intro.desc.more") }}
+              </nuxt-link>
             </template>
           </i18n-t>
         </div>
       </div>
       <div class="intro__card">
-        <h2>{{ t("page.index.cards.skills") }}</h2>
+        <h2>{{ t("page.index.cards.skillstack") }}</h2>
         <div class="skills">
           <div class="skills__section">
             <template
@@ -56,7 +64,7 @@ definePageMeta({
               :key="i"
             >
               <IconBlock
-                v-if="!skill.hidden"
+                v-if="!skill.hidden && skill.stack"
                 class="!bg-opacity-20"
                 :class="skill.color"
                 :title="skill.name"
@@ -77,9 +85,9 @@ definePageMeta({
           scope="global"
         >
           <Icon
-            name="mdi:github"
-            size="32"
-            class="relative mx-1 !text-villa-green-500"
+            name="simple-icons:github"
+            size="24"
+            class="relative top-[-2px] mx-1.5 !text-villa-green-500"
           />
           <span>{{ usageTime }}</span>
         </i18n-t>
@@ -137,10 +145,19 @@ definePageMeta({
       p {
         @apply font-bold leading-snug tracking-tight max-w-[42.5rem] relative md:text-lg lg:text-xl;
       }
+
+      .intro__slogan {
+        a, span {
+          @apply text-villa-green-500;
+        }
+        a {
+          @apply underline-villa-green-500 underline;
+        }
+      }
     }
 
     .intro__card {
-      @apply border rounded-lg flex flex-col bg-gray-800/20 border-villa-green-200/10 p-4 gap-2 col-span-8 row-span-1 md:col-span-4 lg:col-span-3;
+      @apply border rounded-lg flex flex-col border-gray-400/20 bg-gray-800/30 p-4 gap-2 col-span-8 row-span-1 md:col-span-4 lg:col-span-3;
 
       h2 {
         @apply font-headline font-extrabold text-xl leading-relaxed tracking-tight text-villa-green-500 md:text-2xl;
