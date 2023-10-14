@@ -67,6 +67,8 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@pinia/nuxt',
     '@nuxt/image-edge',
+    'nuxt-simple-sitemap',
+    'nuxt-seo-experiments',
     'nuxt-schema-org',
     ['@nuxtjs/robots', {
       rules: {
@@ -78,7 +80,6 @@ export default defineNuxtConfig({
     }],
     'nuxt-icon',
     '@nuxt/content',
-    'nuxt-simple-sitemap',
     '@nuxtjs/fontaine',
     'nuxt-delay-hydration',
     '@unocss/nuxt',
@@ -86,6 +87,9 @@ export default defineNuxtConfig({
 
   // Module Settings
 
+  anime: {
+    composables: true,
+  },
   content: {
     api: {
       baseURL: '/api/_blog',
