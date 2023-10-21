@@ -66,7 +66,7 @@ export default defineNuxtConfig({
     '@nuxtjs/critters',
     '@nuxtjs/i18n',
     '@pinia/nuxt',
-    '@nuxt/image-edge',
+    '@nuxt/image',
     'nuxt-simple-sitemap',
     'nuxt-seo-experiments',
     'nuxt-schema-org',
