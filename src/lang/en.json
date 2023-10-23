@@ -40,14 +40,15 @@
           "3": "Interactivity"
         },
         "desc": {
-          "1": "It is these principles that I try to implement in my",
-          "2": "projects",
-          "3": "At the moment I am engaged in development of programs, modifications and websites. I have vocational education diploma with honors in",
-          "4": "\"Information systems and programming\""
+          "main": "These are the principles I try to implement in my {projects}. I develop software using {js}, but sometimes I can use {java}. I prefer to develop services that {simplify} people's lives or make it {happy}. You also can {more}.",
+          "projects": "projects",
+          "simplify": "simplify",
+          "happy": "happier",
+          "more": "learn more"
         }
       },
       "cards": {
-        "skills": "Applied Skills",
+        "skillstack": "Preferred Stack",
         "ghstats": {
           "loading": "Loading data from {0}",
           "title": "Using {0} for {1}",
@@ -115,18 +116,35 @@
       "header": {
         "name": "Igor Ryzhenkov",
         "about": {
-          "text": "Graduate of the Moscow State College of Electromechanics and Information Technology with vocational education diploma {diploma} in {specialty} and qualification {qualification}.",
-          "diploma": "with honors",
-          "specialty": "\"Information systems and programming\"",
-          "qualification": "\"Database Administrator\""
+          "text": "Software developer in {js}, most development focus is on websites. I have a diploma with honors in {diploma}, and I'm currently a bachelor student in {specialty} at {mtuci}.",
+          "diploma": "\"Information Systems & Programming\"",
+          "mtuci": "Moscow Technical University of Communications and Informatics",
+          "specialty": "\"Computer Science and Informatics\""
         }
       },
       "skills": {
-        "primary": "Primary skills",
-        "secondary": "Secondary skills",
-        "assistive": "Assistive skills"
+        "primary": "Primary Skills",
+        "secondary": "Secondary Skills",
+        "assistive": "Assistive Skills"
       },
-      "experiences": {
+      "education": {
+        "title": "Education",
+        "items": {
+          "mgkeit": {
+            "title": "Moscow College of Electromechanics and Information Technologies",
+            "role": "Information Systems & Programming (diploma with honors)"
+          },
+          "mtuci": {
+            "title": "Moscow Technical University of Communications and Informatics",
+            "role": "Computer Science and Informatics (bachelor's degree)"
+          },
+          "school": {
+            "title": "Moscow Budgetary School",
+            "role": "Secondary education"
+          }
+        }
+      },
+      "experience": {
         "title": "Experience and awards",
         "year": "Participated in the {year} year",
         "issuedBy": "Certificate Issued by {issuer}",
@@ -152,7 +170,10 @@
       },
       "additional": {
         "title": "Additional Information",
-        "files": "Files",
+        "files": "Materials",
+        "file": {
+          "resume": "Resume"
+        },
         "languages": "Communication Languages",
         "contacts": "Contacts"
       }

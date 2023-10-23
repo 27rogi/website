@@ -16,7 +16,7 @@ const branch = useRuntimeConfig().public.branch
       <p>
         Crafted using
         <span><Icon name="simple-icons:nuxtdotjs" /> {{ version }}</span> and
-        <span><Icon name="vaadin:coffee" /></span> by <span>Igor Ryzhenkov</span>
+        <span><Icon name="bxs:coffee-bean" /></span> by <span>Igor Ryzhenkov</span>
       </p>
     </div>
     <div class="footer__locale">

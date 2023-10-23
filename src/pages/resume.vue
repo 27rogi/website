@@ -93,8 +93,8 @@ definePageMeta({
 </script>
 
 <template>
-  <!-- // TODO: Optimize structure and move parts into separate components -->
   <UiPageBase class="resume">
+    <!-- // TODO: Optimize structure and move parts into separate components -->
     <div class="resume__header">
       <div class="resume__title">
         <h1>{{ t("page.resume.header.name") }}</h1>
@@ -181,8 +181,8 @@ definePageMeta({
         </template>
       </div>
     </div>
-    <div class="resume__section resume__section--expirience">
-      <h2>{{ t("page.resume.expirience.title") }}</h2>
+    <div class="resume__section resume__section--experience">
+      <h2>{{ t("page.resume.experience.title") }}</h2>
       <div class="resume__items">
         <template
           v-for="(expItem, i) in expList"
@@ -195,10 +195,10 @@ definePageMeta({
             <div class="datacard__content">
               <div class="datacard__header">
                 <h3>
-                  {{ t(`page.resume.expirience.items.${expItem.name}.title`) }}
+                  {{ t(`page.resume.experience.items.${expItem.name}.title`) }}
                   <span>({{ expItem.dateJoined }} - {{ expItem.dateLeft }})</span>
                 </h3>
-                <p>{{ t(`page.resume.expirience.items.${expItem.name}.role`) }}</p>
+                <p>{{ t(`page.resume.experience.items.${expItem.name}.role`) }}</p>
               </div>
               <div class="datacard__skills">
                 <template
@@ -226,9 +226,9 @@ definePageMeta({
           >
             <div class="datacard__content">
               <div class="datacard__header">
-                <h3>{{ t(`page.resume.expirience.items.${expItem.name}.title`) }}</h3>
+                <h3>{{ t(`page.resume.experience.items.${expItem.name}.title`) }}</h3>
                 <i18n-t
-                  keypath="page.resume.expirience.year"
+                  keypath="page.resume.experience.year"
                   tag="p"
                 >
                   <template #year>
@@ -249,9 +249,9 @@ definePageMeta({
           >
             <div class="datacard__content">
               <div class="datacard__header">
-                <h3>{{ t(`page.resume.expirience.items.${expItem.name}.title`) }} <span>({{ expItem.date }})</span></h3>
+                <h3>{{ t(`page.resume.experience.items.${expItem.name}.title`) }} <span>({{ expItem.date }})</span></h3>
                 <i18n-t
-                  keypath="page.resume.expirience.issuedBy"
+                  keypath="page.resume.experience.issuedBy"
                   tag="p"
                 >
                   <template #issuer>
@@ -280,7 +280,7 @@ definePageMeta({
             <IconBlock
               is-link
               :to="`/resume_${locale}.pdf`"
-              title="Резюме (PDF)"
+              :title="`${t('page.resume.additional.file.resume')} (PDF)`"
               class="!bg-villa-green-500/40"
               icon="tabler:file-description"
             />
@@ -297,7 +297,7 @@ definePageMeta({
               icon="flag:ru-1x1"
             />
             <IconBlock
-              title="English"
+              title="English (B1)"
               icon="flag:us-1x1"
             />
           </div>
@@ -409,7 +409,7 @@ definePageMeta({
           @apply flex-col;
       }
     }
-    // &--expirience {
+    // &--experience {
     // }
     &--details {
       .detail {
