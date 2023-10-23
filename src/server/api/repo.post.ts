@@ -1,3 +1,5 @@
+import type { ProjectGitHubStats } from '~~/types/project.type'
+
 /* eslint-disable camelcase */
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)
@@ -17,7 +19,7 @@ export default defineEventHandler(async (event) => {
   if (!data) {
     return null
   }
-  const { stargazers_count, forks } = <any>data
+  const { stargazers_count, forks } = <ProjectGitHubStats>data
   return {
     stargazers_count,
     forks,

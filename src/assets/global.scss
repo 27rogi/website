@@ -19,6 +19,7 @@ a {
 
 .bg {
   .bg__blobs {
+    @apply filter blur-[84px];
     .blobs__blob {
       @apply duration-800 transition-all ease-out transform-gpu transform-origin-center;
       &.blobs__blob1 {

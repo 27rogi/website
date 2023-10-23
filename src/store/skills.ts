@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import type Skill from '~~/types/skill.type'
+import type { Skill } from '~~/types/skill.type'
 
 // @unocss-include
 export const useSkillsStore = defineStore('skills', {

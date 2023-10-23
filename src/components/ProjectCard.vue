@@ -7,28 +7,8 @@ const props = defineProps({
     required: true,
   },
 })
-
 const { t } = useI18n()
-
-const github: any = ref(null)
-if (props.project.github) {
-  useFetch('/api/repo', {
-    key: props.project.name,
-    method: 'POST',
-    retry: 3,
-    body: {
-      organization: props.project.github.organization,
-      repository: props.project.github.repository,
-    },
-  }).then((res) => {
-    if (res.data.value) {
-      github.value = res.data.value
-    }
-  })
-}
-
 const skills: any = useSkillsStore().$state
-
 const projectUniqueId = computed(() => props.project.name.toLowerCase().split(' ').join('_'))
 </script>
 
@@ -64,22 +44,7 @@ const projectUniqueId = computed(() => props.project.name.toLowerCase().split(' 
         <p>{{ t(`page.projects.items.${projectUniqueId}.description`) }}</p>
       </div>
     </div>
-    <Transition
-      name="slide"
-      mode="out-in"
-    >
-      <div
-        v-if="github && !github.error"
-        class="project__github"
-      >
-        <p v-if="github.stargazers_count! > 0">
-          <Icon name="tabler:star" /> {{ github.stargazers_count }}
-        </p>
-        <p v-if="github.forks! > 0">
-          <Icon name="tabler:git-fork" /> {{ github.forks }}
-        </p>
-      </div>
-    </Transition>
+    <ProjectCardStats v-if="project.github" :project="project" />
     <nuxt-picture
       v-if="project.icon"
       preset="optimized"

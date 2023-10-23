@@ -20,6 +20,9 @@ defineProps({
 <template>
   <component
     :is="isLink ? NuxtLink : 'div'"
+    :class="{
+      '!gap-0': $props.title == null,
+    }"
     class="iconblock"
   >
     <Icon

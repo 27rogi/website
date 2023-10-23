@@ -42,7 +42,7 @@ const expList = [
     logo: '/ctm.svg',
     dateJoined: 2021,
     dateLeft: 2021,
-    usedSkills: ['css', 'figma'],
+    usedSkills: ['scss', 'figma', 'tailwind'],
   },
   {
     type: 'work',
@@ -50,7 +50,7 @@ const expList = [
     logo: '/premid.webp',
     dateJoined: 2019,
     dateLeft: 2020,
-    // usedSkills: ['ts', 'nuxt', 'scss', 'tailwind'],
+    usedSkills: ['nuxt', 'scss', 'tailwind'],
   },
   {
     type: 'award',
@@ -77,16 +77,11 @@ const contacts = [
     name: 'Telegram',
     style: '!bg-sky-400/20',
     icon: 'tabler:brand-telegram',
-    link: '#',
+    link: 'https://t.me/rogi27',
   },
   {
-    name: 'Discord',
+    name: 'ProtonMail',
     style: '!bg-purple-400/20',
-    icon: 'tabler:brand-discord',
-    link: 'https://htmlacademy.ru/',
-  },
-  {
-    name: 'Email',
     icon: 'tabler:mail',
     link: 'mailto:27rogi@pm.me',
   },
@@ -98,6 +93,7 @@ definePageMeta({
 </script>
 
 <template>
+  <!-- // TODO: Optimize structure and move parts into separate components -->
   <UiPageBase class="resume">
     <div class="resume__header">
       <div class="resume__title">
@@ -203,6 +199,19 @@ definePageMeta({
                   <span>({{ expItem.dateJoined }} - {{ expItem.dateLeft }})</span>
                 </h3>
                 <p>{{ t(`page.resume.expirience.items.${expItem.name}.role`) }}</p>
+              </div>
+              <div class="datacard__skills">
+                <template
+                  v-for="(skill, a) of expItem.usedSkills"
+                  :key="a"
+                >
+                  <IconBlock
+                    v-if="skills[skill]"
+                    class="skill !bg-opacity-20"
+                    :class="skills[skill].color"
+                    :icon="skills[skill].icon"
+                  />
+                </template>
               </div>
             </div>
             <nuxt-img
@@ -386,6 +395,12 @@ definePageMeta({
           span {
             @apply text-villa-green-500;
           }
+        }
+      }
+      &__skills {
+        @apply flex flex-row gap-1;
+        .skill {
+          @apply grow-0;
         }
       }
     }

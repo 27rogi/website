@@ -1,10 +1,15 @@
 <script lang="ts" setup>
 import { DateTime } from 'luxon'
-import type GitHubData from '../../types/github-data.type'
 import { useSkillsStore } from '@/store/skills'
+import type { GitHubData } from '~~/types/github-data.type'
 
 const skills = useSkillsStore().$state
-const { data: ghdata, pending } = useLazyFetch<GitHubData>('/api/github')
+const nuxtApp = useNuxtApp()
+const { data: ghdata, pending } = useFetch<GitHubData>('/api/github', {
+  deep: false,
+  lazy: true,
+  getCachedData: key => nuxtApp.static.data[key] ?? nuxtApp.payload.data[key],
+})
 const { t, locale } = useI18n()
 
 // workaround to remove 'ago' in luxon

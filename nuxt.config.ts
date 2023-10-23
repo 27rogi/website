@@ -4,7 +4,7 @@ import viteSvgLoader from 'vite-svg-loader'
 
 export default defineNuxtConfig({
   srcDir: 'src/',
-  devtools: true,
+  devtools: false,
   experimental: {
     asyncEntry: true,
     clientFallback: true,
@@ -62,6 +62,7 @@ export default defineNuxtConfig({
     },
   },
   modules: [
+    '@nuxtjs/device',
     'nuxt-security',
     '@nuxtjs/critters',
     '@nuxtjs/i18n',

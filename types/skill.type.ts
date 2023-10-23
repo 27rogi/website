@@ -1,4 +1,4 @@
-export default interface Skill {
+interface Skill {
   [key: string]: {
     icon: string
     color: string
@@ -6,4 +6,8 @@ export default interface Skill {
     hidden?: boolean
     stack?: boolean
   }
+}
+
+export type {
+  Skill,
 }

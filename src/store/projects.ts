@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import type { Project } from '~~/types/project.type'
 
 // @unocss-include
 export const useProjectsStore = defineStore('projects', {
@@ -41,7 +42,7 @@ export const useProjectsStore = defineStore('projects', {
           url: 'https://github.com/rogi27/mgkeit-diary-server',
           skills: ['ts', 'nuxt', 'nest', 'mongodb', 'tailwind'],
         },
-      ],
+      ] as Project[],
     },
     {
       title: 'personal',
@@ -80,7 +81,7 @@ export const useProjectsStore = defineStore('projects', {
             repository: 'vkdiary',
           },
         },
-      ],
+      ] as Project[],
     },
     {
       title: 'experiments',
@@ -105,7 +106,7 @@ export const useProjectsStore = defineStore('projects', {
             repository: 'vdiscorde',
           },
         },
-      ],
+      ] as Project[],
     },
   ],
 })

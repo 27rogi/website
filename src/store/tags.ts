@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import type Tag from '~/types/tag.type'
+import type { Tag } from '~~/types/tag.type'
 
 // @unocss-include
 export const useTagsStore = defineStore('tags', {
