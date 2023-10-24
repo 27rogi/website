@@ -126,21 +126,9 @@ export default defineNuxtConfig({
     debug: process.env.NODE_ENV === 'development',
   },
   security: {
-    headers: {
-      contentSecurityPolicy: {
-        'font-src': ['\'self\'', 'https:', 'data:'],
-        'form-action': ['\'self\''],
-        'frame-src': ['\'self\'', 'https:'],
-        'frame-ancestors': ['\'self\'', 'https:'],
-        'img-src': ['\'self\'', 'https:'],
-        'object-src': ['\'none\''],
-        'script-src': ['\'self\'', 'https:', '\'unsafe-inline\''],
-        'style-src': ['\'self\'', 'https:', '\'unsafe-inline\''],
-        'upgrade-insecure-requests': true,
-      },
-      crossOriginEmbedderPolicy: false,
-      crossOriginResourcePolicy: 'same-origin',
-    },
+    // vite has problems with CSP and requires deep look to fix all errors due to script-src and etc...
+    // nonce: true,
+    headers: false,
   },
   critters: {
     config: {

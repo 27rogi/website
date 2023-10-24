@@ -1,4 +1,4 @@
-FROM node:18.15.0-alpine as build
+FROM node:18-alpine as build
 
 WORKDIR /home/rspace
 COPY ./ /home/rspace
@@ -9,7 +9,7 @@ RUN npm install -g pnpm
 RUN pnpm install
 RUN pnpm run build
 
-FROM node:18.15.0-alpine as runnable
+FROM node:18-alpine as runnable
 
 ARG BRANCH
 ENV NUXT_PUBLIC_BRANCH=${BRANCH}

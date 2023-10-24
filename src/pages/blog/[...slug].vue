@@ -50,7 +50,7 @@ const tags = useTagsStore()
             theme="transparent_dark"
             :lang="locale"
             loading="lazy"
-            crossorigin="anonymous"
+            crossorigin
           />
         </div>
       </div>
