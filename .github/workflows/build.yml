@@ -7,7 +7,7 @@ on:
 
 jobs:
   docker:
-    runs-on: [linux, x64]
+    runs-on: ubuntu-latest
     steps:
       - id: commit
         uses: pr-mpt/actions-commit-hash@v3
