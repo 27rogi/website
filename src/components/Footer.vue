@@ -4,14 +4,14 @@ import { version } from 'nuxt/package.json'
 const localePath = useLocalePath()
 const path = computed(() => useRoute().path)
 const { locale } = useI18n()
-const branch = useRuntimeConfig().public.branch
+const { branch } = useRuntimeConfig().public
 </script>
 
 <template>
   <footer class="footer">
     <div class="footer__copyright">
       <p>
-        rogi.su (<span><nuxt-link :to="`https://github.com/rogi27/website/commit/${branch}`">{{ branch }}</nuxt-link></span>)  <Icon name="tabler:copyright" />  {{ new Date().getFullYear() }}
+        rogi.su (<span><nuxt-link :to="`https://github.com/27rogi/website/commit/${branch}`">{{ branch }}</nuxt-link></span>)  <Icon name="tabler:copyright" />  {{ new Date().getFullYear() }}
       </p>
       <p>
         Crafted using

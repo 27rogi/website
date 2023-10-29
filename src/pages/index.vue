@@ -81,7 +81,7 @@ definePageMeta({
       </div>
       <nuxt-link
         v-if="ghdata"
-        to="https://github.com/rogi27"
+        to="https://github.com/27rogi"
         class="intro__card"
       >
         <i18n-t

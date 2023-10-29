@@ -6,15 +6,15 @@ export default defineNuxtConfig({
   srcDir: 'src/',
   devtools: false,
   experimental: {
+    inlineSSRStyles: false,
     asyncEntry: true,
-    clientFallback: true,
-    viewTransition: true,
+    asyncContext: true,
     writeEarlyHints: true,
   },
   runtimeConfig: {
     githubToken: '',
     public: {
-      branch: 'master',
+      branch: 'main',
       siteUrl: 'https://rogi.su',
     },
   },

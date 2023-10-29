@@ -38,7 +38,7 @@ const tags = useTagsStore()
         </div>
         <div class="blogpost__comments w-full">
           <Giscus
-            repo="rogi27/website"
+            repo="27rogi/website"
             repo-id="R_kgDOJRzv3Q"
             category="Comments"
             category-id="DIC_kwDOJRzv3c4CWgWu"

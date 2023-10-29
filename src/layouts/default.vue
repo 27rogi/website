@@ -26,7 +26,7 @@ useSchemaOrg([
     name: () => t('page.resume.header.name'),
     image: '/face.jpg',
     sameAs: [
-      'https://github.com/rogi27',
+      'https://github.com/27rogi',
     ],
   }),
 ])

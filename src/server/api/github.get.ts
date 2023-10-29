@@ -1,11 +1,11 @@
 /* eslint-disable camelcase */
 export default defineEventHandler(async () => {
-  const token = useRuntimeConfig().githubToken
+  const { githubToken } = useRuntimeConfig()
   const data = await $fetch('https://api.github.com/users/27rogi', {
     method: 'GET',
     retry: 3,
     headers: {
-      Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${githubToken}`,
     },
   })
   if (!data) {

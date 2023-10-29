@@ -8,12 +8,12 @@ export default defineEventHandler(async (event) => {
       error: 'No body',
     }
   }
-  const token = useRuntimeConfig().githubToken
+  const { githubToken } = useRuntimeConfig()
   const data = await $fetch(`https://api.github.com/repos/${body.organization}/${body.repository}`, {
     method: 'GET',
     retry: 3,
     headers: {
-      Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${githubToken}`,
     },
   })
   if (!data) {
