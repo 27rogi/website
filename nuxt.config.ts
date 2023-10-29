@@ -7,9 +7,9 @@ export default defineNuxtConfig({
   devtools: false,
   experimental: {
     inlineSSRStyles: false,
-    asyncEntry: true,
-    asyncContext: true,
-    writeEarlyHints: true,
+    // asyncEntry: true,
+    // asyncContext: true,
+    // writeEarlyHints: true,
   },
   runtimeConfig: {
     githubToken: '',
@@ -53,23 +53,24 @@ export default defineNuxtConfig({
     '@fontsource-variable/raleway',
     '~/assets/global.scss',
   ],
-  typescript: {
-    tsConfig: {
-      compilerOptions: {
-        strict: true,
-        moduleResolution: 'bundler',
-      },
-    },
-  },
+  // typescript: {
+  //   tsConfig: {
+  //     compilerOptions: {
+  //       strict: true,
+  //       moduleResolution: 'bundler',
+  //     },
+  //   },
+  // },
   modules: [
-    '@nuxtjs/device',
+    '@unocss/nuxt',
+    // '@nuxtjs/device',
     'nuxt-security',
     '@nuxtjs/critters',
     '@nuxtjs/i18n',
     '@pinia/nuxt',
     '@nuxt/image',
     'nuxt-simple-sitemap',
-    'nuxt-seo-experiments',
+    // 'nuxt-seo-experiments',
     'nuxt-schema-org',
     ['@nuxtjs/robots', {
       rules: {
@@ -81,16 +82,12 @@ export default defineNuxtConfig({
     }],
     'nuxt-icon',
     '@nuxt/content',
-    '@nuxtjs/fontaine',
-    'nuxt-delay-hydration',
-    '@unocss/nuxt',
+    // '@nuxtjs/fontaine',
+    // 'nuxt-delay-hydration',
   ],
 
   // Module Settings
 
-  anime: {
-    composables: true,
-  },
   content: {
     api: {
       baseURL: '/api/_blog',
@@ -172,7 +169,7 @@ export default defineNuxtConfig({
     langDir: 'lang/',
     skipSettingLocaleOnNavigate: true,
   },
-  // schemaOrg: {
-  //   host: 'https://rogi.su',
-  // },
+  schemaOrg: {
+    host: 'https://rogi.su',
+  },
 })
