@@ -1,4 +1,4 @@
-FROM node:20-alpine as build
+FROM node:20-slim as build
 
 WORKDIR /home/rspace
 COPY ./ /home/rspace
@@ -9,14 +9,14 @@ RUN npm install -g pnpm
 RUN pnpm install
 RUN pnpm run build
 
-FROM node:20-alpine as runnable
+FROM node:20-slim as runnable
 
 ARG BRANCH
 ENV NUXT_PUBLIC_BRANCH=${BRANCH}
 
-WORKDIR /home/rspace
+WORKDIR /home/rogisu
 
-COPY --from=build /home/rspace/.output ./
+COPY --from=build /home/rogisu/.output ./
 
 ENV HOST 0.0.0.0
 EXPOSE 3000
