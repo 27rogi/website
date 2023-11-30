@@ -1,15 +1,14 @@
-FROM node:20-slim as build
+FROM gplane/pnpm:8-node20-alpine as build
 
 WORKDIR /home/rogisu
 COPY ./ /home/rogisu
 
 RUN node -v
 
-RUN npm install -g pnpm
 RUN pnpm install
 RUN pnpm run build
 
-FROM node:20-slim as runnable
+FROM gplane/pnpm:8-node20-alpine as runnable
 
 ARG BRANCH
 ENV NUXT_PUBLIC_BRANCH=${BRANCH}

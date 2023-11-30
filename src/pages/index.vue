@@ -169,7 +169,7 @@ definePageMeta({
       }
 
       p {
-        @apply font-semibold text-base leading-snug md:text-xl;
+        @apply font-semibold text-base leading-snug md:text-[1.24rem];
       }
 
       .skills {
