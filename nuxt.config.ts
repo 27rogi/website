@@ -4,7 +4,7 @@ import viteSvgLoader from 'vite-svg-loader'
 
 export default defineNuxtConfig({
   srcDir: 'src/',
-  devtools: true,
+  devtools: { timeline: { enabled: true } },
   experimental: {
     inlineSSRStyles: false,
     // asyncEntry: true,

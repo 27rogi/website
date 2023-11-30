@@ -1,7 +1,7 @@
 FROM node:20-slim as build
 
-WORKDIR /home/rspace
-COPY ./ /home/rspace
+WORKDIR /home/rogisu
+COPY ./ /home/rogisu
 
 RUN node -v
 
