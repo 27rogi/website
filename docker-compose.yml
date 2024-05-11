@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  ryzhenkovspace:
+    image: 27rogi/website:latest
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+      - NUXT_GH_API_TOKEN=${GITHUB_TOKEN}
+    deploy:
+      resources:
+        limits:
+          cpus: 1
+          memory: 512M
+        reservations:
+          memory: 128M

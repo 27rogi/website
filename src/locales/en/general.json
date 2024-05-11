@@ -1,0 +1,12 @@
+{
+  "general": {
+    "title": "{title}rogi#su"
+  },
+  "navbar": {
+    "projects": "Projects"
+  },
+  "footer": {
+    "builtwith": "Built with {magic} and {nuxt}",
+    "status": "Service Status"
+  }
+}
