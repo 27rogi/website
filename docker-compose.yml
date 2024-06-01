@@ -1,10 +1,10 @@
 version: "3.8"
 
 services:
-  ryzhenkovspace:
+  rogisu:
     image: 27rogi/website:latest
     ports:
-      - "3000:3000"
+      - "3005:3000"
     env_file:
       - .env
     environment:
@@ -13,7 +13,7 @@ services:
     deploy:
       resources:
         limits:
-          cpus: 1
+          cpus: '1'
           memory: 512M
         reservations:
           memory: 128M
