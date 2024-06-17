@@ -62,8 +62,6 @@ const skills = await useSkillStore().$state;
         </template>
         <div
           v-if="project.github && ghData"
-          :class="!project.leading ? 'card-gray/30 p-2': null"
-          p="1.5"
           leading="1.25rem"
           u-text="base brilliantsea-50"
         >
@@ -74,10 +72,12 @@ const skills = await useSkillStore().$state;
             gap="1.5"
             flex="~ items-center"
           >
-            <Icon name="ph:star-bold" />
-            {{ ghData.data.value?.stargazers_count }}
-            <Icon name="ph:git-fork-bold" />
-            {{ ghData.data.value?.forks }}
+            <UiBadge icon="ph:star-duotone" px="2">
+              {{ ghData.data.value?.stargazers_count }}
+            </UiBadge>
+            <UiBadge v-if="ghData.data.value?.forks > 0" icon="ph:git-fork-duotone" px="2">
+              {{ ghData.data.value?.forks }}
+            </UiBadge>
           </NuxtLink>
         </div>
       </div>

@@ -47,7 +47,7 @@ const links = [
         <NuxtLinkLocale
           :to="{ path }"
           u-text="hover:greenspring-500"
-          p="4"
+          p="4 first:r-0"
           leading="1px"
         >
           {{ $t(localePath) }}
