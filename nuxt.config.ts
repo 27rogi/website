@@ -41,6 +41,7 @@ export default defineNuxtConfig({
     watcher: "parcel",
   },
   future: {
+    compatibilityVersion: 4,
     typescriptBundlerResolution: true,
   },
   i18n: {
@@ -121,7 +122,6 @@ export default defineNuxtConfig({
       branch: "v3",
     },
   },
-  srcDir: "src",
   typescript: {
     strict: true,
     // Causes some incompatabilities with nuxt-icons

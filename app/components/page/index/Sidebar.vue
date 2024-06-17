@@ -77,6 +77,7 @@ const socials = {
           u-text="0.8em"
           :color="skill.color"
           :icon="skill.icon"
+          size="10"
         />
       </div>
     </div>

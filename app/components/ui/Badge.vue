@@ -10,6 +10,10 @@ defineProps({
     default: null,
     type: String,
   },
+  iconSize: {
+    default: "1.4em",
+    type: String,
+  },
   link: {
     default: null,
     type: String,
@@ -21,7 +25,8 @@ defineProps({
   <component
     :is="link ? NuxtLink : 'div'"
     :to="link ?? null"
-    p="2"
+    h="9"
+    :w="$slots.default ? 'inherit' : '9'"
     rounded="md"
     border="~ slate-300/30"
     u-text="sm"
@@ -32,6 +37,7 @@ defineProps({
       w="full"
       gap="2"
       flex="inline items-center shrink-1 justify-center"
+      h="full"
       align="middle"
     >
       <slot
@@ -42,7 +48,7 @@ defineProps({
         v-else-if="$props.icon"
         :name="$props.icon"
         rounded="md"
-        size="1.4em"
+        :size="$props.iconSize"
       />
       <p
         v-if="$slots.default"
