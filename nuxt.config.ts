@@ -14,17 +14,22 @@ export default defineNuxtConfig({
       ],
     },
   },
+
+  compatibilityDate: "2024-08-02",
+
   css: [
     "@fontsource-variable/unbounded",
     "@fontsource-variable/onest",
     "@unocss/reset/tailwind.css",
   ],
+
   devtools: {
     enabled: isDev,
     timeline: {
       enabled: true,
     },
   },
+
   // Module Settings
   /* eslint-disable sort/object-properties */
   eslint: {
@@ -32,6 +37,7 @@ export default defineNuxtConfig({
       stylistic: false,
     },
   },
+
   experimental: {
     crossOriginPrefetch: true,
     typedPages: true,
@@ -40,10 +46,12 @@ export default defineNuxtConfig({
     // https://nuxt.com/docs/guide/going-further/experimental-features#watcher
     watcher: "parcel",
   },
+
   future: {
     compatibilityVersion: 4,
     typescriptBundlerResolution: true,
   },
+
   i18n: {
     langDir: "locales",
     baseUrl: import.meta.env.VITE_BASE_URL,
@@ -75,11 +83,13 @@ export default defineNuxtConfig({
     lazy: true,
     skipSettingLocaleOnNavigate: true,
   },
+
   image: {
     provider: "ipx",
     quality: 80,
     format: ["png", "jpeg", "webp"],
   },
+
   modules: [
     "@nuxt/eslint",
     "@pinia/nuxt",
@@ -101,6 +111,7 @@ export default defineNuxtConfig({
     // TODO: implement testing, Bun doesn't support Vitest yet
     // "@nuxt/test-utils/module",
   ],
+
   nitro: {
     compressPublicAssets: true,
     esbuild: {
@@ -110,11 +121,13 @@ export default defineNuxtConfig({
     },
     preset: "bun",
   },
+
   routeRules: {
     // Generated at build time for SEO purpose
     "/": { prerender: true },
     "/api/*": { cache: isDev ? false : { maxAge: 15 * 60 }, cors: true },
   },
+
   runtimeConfig: {
     ghApiBase: "https://api.github.com",
     ghApiToken: "",
@@ -122,11 +135,14 @@ export default defineNuxtConfig({
       branch: "v3",
     },
   },
+
   typescript: {
     strict: true,
     // Causes some incompatabilities with nuxt-icons
     // typeCheck: true,
-  },
+  }
+  /* eslint-enable sort/object-properties */,
+
   vite: {
     build: {
       cssMinify: "lightningcss",
@@ -135,6 +151,5 @@ export default defineNuxtConfig({
       viteSVGLoader(),
       unheadVite(),
     ],
-  },
-  /* eslint-enable sort/object-properties */
+  }
 });
