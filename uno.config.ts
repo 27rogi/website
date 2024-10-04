@@ -2,7 +2,7 @@
 import { presetAttributify } from "@unocss/preset-attributify";
 import { presetTypography } from "@unocss/preset-typography";
 import { presetUno } from "@unocss/preset-uno";
-import transformerDirectives from "@unocss/transformer-directives";
+// import transformerDirectives from "@unocss/transformer-directives";
 import transformerVariantGroup from "@unocss/transformer-variant-group";
 import { defineConfig } from "@unocss/vite";
 import presetAutoprefixer from "unocss-preset-autoprefixer";
@@ -12,9 +12,6 @@ export default defineConfig({
     presetUno({
       variablePrefix: "style-",
     }),
-    // produces "No match found" errors
-    // might be related to Bun usage
-    // presetIcons(),
     presetAutoprefixer(),
     presetAttributify({
       prefix: "u-",
@@ -69,6 +66,8 @@ export default defineConfig({
   },
   transformers: [
     transformerVariantGroup(),
-    transformerDirectives(),
+
+    // Causes Nuxt to crash when using Bun's runtime, should be fixed by Bun.
+    // transformerDirectives(),
   ],
 });
