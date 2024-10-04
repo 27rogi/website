@@ -58,7 +58,7 @@ export default defineNuxtConfig({
     locales: [
       {
         code: "en",
-        iso: "en",
+        language: "en",
         files: [
           "en/general.json",
           "en/pages/index.json",
@@ -67,7 +67,7 @@ export default defineNuxtConfig({
       },
       {
         code: "ru",
-        iso: "ru",
+        language: "ru",
         files: [
           "ru/general.json",
           "ru/pages/index.json",
@@ -93,6 +93,7 @@ export default defineNuxtConfig({
   modules: [
     "@nuxt/eslint",
     "@pinia/nuxt",
+    "@nuxtjs/seo",
     // Produces few webpack errors on dev when using Bun
     // seems to also cause https://github.com/nuxt-modules/i18n/issues/2800
     // see: https://github.com/oven-sh/bun/issues/8756
@@ -100,11 +101,9 @@ export default defineNuxtConfig({
     "@unocss/nuxt",
     "@nuxt/image",
     "@vueuse/nuxt",
-    "nuxt-icon",
+    "@nuxt/icon",
     "@nuxtjs/fontaine",
-    "nuxt-simple-robots",
     "nuxt-payload-analyzer",
-    "nuxt-seo-experiments",
     // Security headers interfere with devtools and may
     // cause issues for hot reloading
     isDev ? null : "nuxt-security",
