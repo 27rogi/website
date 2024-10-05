@@ -32,6 +32,11 @@ useSeoMeta({
     >
       <Head>
         <Title>{{ metadata.title }}</Title>
+        <Link
+            href="/favicon.ico"
+            rel="icon"
+            type="image/x-icon"
+          />
         <template
           v-for="link in head.link"
           :key="link.id"
@@ -53,6 +58,7 @@ useSeoMeta({
             :content="meta.content"
           />
         </template>
+        <Meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
       <Body>
         <PageBackground />
