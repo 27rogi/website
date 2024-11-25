@@ -102,11 +102,11 @@ export default defineNuxtConfig({
 
   nitro: {
     compressPublicAssets: true,
-    esbuild: {
-      options: {
-        target: "esnext",
-      },
-    },
+    // esbuild: {
+    //   options: {
+    //     target: "esnext",
+    //   },
+    // },
     preset: "bun",
   },
 
