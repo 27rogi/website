@@ -4,17 +4,6 @@ import viteSVGLoader from "vite-svg-loader";
 const isDev = process.env.NODE_ENV !== "production";
 
 export default defineNuxtConfig({
-  app: {
-    head: {
-      link: [
-        { href: "/favicon.ico", rel: "icon", type: "image/x-icon" },
-      ],
-      meta: [
-        { content: "width=device-width, initial-scale=1", name: "viewport" },
-      ],
-    },
-  },
-
   compatibilityDate: "2024-08-02",
 
   css: [
@@ -113,11 +102,11 @@ export default defineNuxtConfig({
 
   nitro: {
     compressPublicAssets: true,
-    esbuild: {
-      options: {
-        target: "esnext",
-      },
-    },
+    // esbuild: {
+    //   options: {
+    //     target: "esnext",
+    //   },
+    // },
     preset: "bun",
   },
 
