@@ -43,7 +43,7 @@ export default defineNuxtConfig({
 
   i18n: {
     langDir: "locales",
-    baseUrl: import.meta.env.VITE_BASE_URL,
+    baseUrl: "rogi.su",
     locales: [
       {
         code: "en",
