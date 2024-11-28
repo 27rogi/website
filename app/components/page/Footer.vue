@@ -27,6 +27,7 @@ const { public: { branch } } = useRuntimeConfig();
         class="text-sm"
         keypath="footer.builtwith"
         tag="p"
+        scope="global"
       >
       <template #nuxt>
         <span class="colorful">Nuxt {{ version }}</span>

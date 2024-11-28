@@ -49,7 +49,7 @@ const experiences: { [key: string]: ExperienceType } = {
 </script>
 
 <template>
-  <UiCard :header="$t(`page.index.cards.experience.title`)">
+  <UiCard :header="$t(`page.index.cards.experience.title`)" line="left" border="b-0 r-0">
     <div
       grid="~ cols-2 items-stretch [&_div:last-child]:col-span-full"
       gap="4"
@@ -96,6 +96,7 @@ const experiences: { [key: string]: ExperienceType } = {
   <UiCard
     :header="$t(`page.index.cards.education.title`)"
     h="full"
+    border="r-0" mb="-1px" rounded="0 bl-md"
   >
     <div
       grid="~ cols-1 lg:cols-2 items-stretch"

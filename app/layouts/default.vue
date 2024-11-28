@@ -1,6 +1,6 @@
 <script setup>
 const route = useRoute();
-const { t } = useI18n();
+const { t } = useI18n({ useScope: "global" });
 
 const head = useLocaleHead({
   addDirAttribute: true,
@@ -25,6 +25,7 @@ useSeoMeta({
   <div
     bg="greendark-800"
     font="content 500"
+    overflow="hidden"
   >
     <Html
       :lang="head.htmlAttrs.lang"

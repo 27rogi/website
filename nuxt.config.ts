@@ -7,8 +7,8 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-08-02",
 
   css: [
-    "@fontsource-variable/unbounded",
-    "@fontsource-variable/onest",
+    "@fontsource-variable/martian-mono/wdth.css",
+    "@fontsource-variable/geologica",
     "@unocss/reset/tailwind.css",
   ],
 

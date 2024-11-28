@@ -60,8 +60,8 @@ export default defineConfig({
       },
     },
     fontFamily: {
-      content: "'Onest Variable'",
-      head: "'Unbounded Variable'",
+      content: "'Martian Mono Variable'",
+      head: "'Geologica Variable'", 
     },
   },
   transformers: [

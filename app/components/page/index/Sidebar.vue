@@ -47,7 +47,7 @@ const socials = {
 </script>
 
 <template>
-  <UiCard :header="$t(`page.index.cards.skills.title`)">
+  <UiCard :header="$t(`page.index.cards.skills.title`)" line="right" border="b-0" mt="-1px" rounded="0 tr-md">
     <div
       v-for="({ key, items }, i) in categories"
       :key="i"
@@ -92,6 +92,7 @@ const socials = {
     header="GitHub"
     flex="~ col 1"
     class="[&_span]:(text-greenspring-500)"
+    line="right" border="b-0"
   >
     <UiLoadingBlock v-if="pending" />
     <p v-else-if="error">{{ $t("page.index.cards.github.error") }}</p>
@@ -100,6 +101,7 @@ const socials = {
       m="y-auto"
       keypath="page.index.cards.github.text"
       tag="p"
+      scope="global"
     >
       <template #github>
         <span><b>GitHub</b></span>
@@ -121,6 +123,8 @@ const socials = {
   <UiCard
     :header="$t('page.index.cards.socials.title')"
     flex="~ col"
+    mb="-1px"
+    rounded="0 br-md"
   >
     <div
       class="[&_div]:(p-1.5)"
