@@ -8,7 +8,7 @@ export default defineNuxtConfig({
 
   css: [
     "@fontsource-variable/martian-mono/wdth.css",
-    "@fontsource-variable/geologica",
+    "@fontsource-variable/unbounded",
     "@unocss/reset/tailwind.css",
   ],
 

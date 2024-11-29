@@ -11,12 +11,6 @@ const links = [
   //   text: "Minecraft",
   // },
 ];
-
-const router = useRouter();
-const hasPath = computed(() => {
-  if (!router) return false;
-  return ["/","/en","/ru"].find((str) => router.currentRoute.value.path === str) === undefined;
-});
 </script>
 
 <template>
@@ -27,7 +21,6 @@ const hasPath = computed(() => {
     flex="~ items-center"
     p="y-4 x-6"
     leading="0"
-    :class="{'border-x border-greendark-200/10': !hasPath}"
   >
     <NuxtLinkLocale
       :to="{ path: '/' }"

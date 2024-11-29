@@ -61,7 +61,7 @@ export default defineConfig({
     },
     fontFamily: {
       content: "'Martian Mono Variable'",
-      head: "'Geologica Variable'", 
+      head: "'Unbounded Variable'", 
     },
   },
   transformers: [

@@ -21,16 +21,14 @@ defineProps({
     card="greendark/30"
     rounded="none"
     relative
-    :class="line ? (line == 'right' ? '[&_.line]:(left-[100%] right-[-100vw])' : '[&_.line]:(right-[100%] left-[-100vw])'): null"
   >
     <div 
       v-if="$props.line"
-      class="line"
+      :class="{ 'left-[100%] right-[-100vw]': line == 'right', 'right-[100%] left-[-100vw]': line == 'left' }"
       absolute
       top="0"
-      right="0"
       bottom="-1px"
-      border="b greendark-200/10"
+      border="b dashed greendark-300/20"
     />
     <div
       flex="~ 1 col"

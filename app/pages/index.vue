@@ -5,14 +5,12 @@ definePageMeta({
 </script>
 
 <template>
-  <div
-    border="y greendark-200/10"
-  >
     <div
       flex="~ col"
       m="auto"
       w="full"
       max-w="screen-2xl"
+      relative
     >
       <div
         grid="~ rows-1 cols-1 lg:(rows-2 cols-3)"
@@ -61,6 +59,9 @@ definePageMeta({
           <PageIndexSidebar />
         </div>
       </div>
+      <div absolute right="0" left="0" top="-100%" bottom="[calc(100%-0.375rem)]" border="dashed greendark-300/20 x" z="-1" />
+      <div absolute right="0" left="0" top="100%" bottom="[calc(-100%+0.375rem)]" border="dashed greendark-300/20 x" z="-1" />
+      <div absolute right="100%" left="[calc(-100%+0.375rem)]" top="0" bottom="0" border="dashed greendark-300/20 y" z="-1" />
+      <div absolute right="[calc(-100%+0.375rem)]" left="100%" top="0" bottom="0" border="dashed greendark-300/20 y" z="-1" />
     </div>
-  </div>
 </template>
