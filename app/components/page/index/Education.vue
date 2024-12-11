@@ -81,6 +81,7 @@ const experiences: { [key: string]: ExperienceType } = {
           gap="2"
         >
         <template v-for="(skill, index) in exp.skills">
+          <VTooltip v-if="skill" :key="skill.name+index" :aria-id="skill.name+index" placement="bottom">
           <UiBadge
             v-if="skill"
             :key="index"
@@ -89,8 +90,12 @@ const experiences: { [key: string]: ExperienceType } = {
             :color="skill.color"
             :icon="skill.icon"
             p="1"
-            icon-size="10"
+            icon-size="18px"
           />
+          <template #popper>
+          <p font="bold" u-text="sm">{{ skill.name }}</p>
+        </template>
+        </VTooltip>
         </template>
         </div>
       </UiCardDetailed>

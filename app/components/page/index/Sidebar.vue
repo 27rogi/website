@@ -70,8 +70,8 @@ const socials = {
         flex="~ row wrap items-center"
         gap="2"
       >
+      <VTooltip v-for="(skill, index) in items" :key="skill.name+index" :aria-id="skill.name+index" placement="bottom">
         <UiBadge
-          v-for="(skill, index) in items"
           :key="index"
           :title="skill.name"
           u-text="0.8em"
@@ -79,6 +79,10 @@ const socials = {
           :icon="skill.icon"
           icon-size="18px"
         />
+        <template #popper>
+          <p font="bold" u-text="sm">{{ skill.name }}</p>
+        </template>
+      </VTooltip>
       </div>
     </div>
     <p
