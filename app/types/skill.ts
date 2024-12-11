@@ -6,6 +6,6 @@ export type Skill = {
 };
 
 export type SkillCategory = {
-  items: Skill[]
+  items: Array<Skill>
   key: string
 };

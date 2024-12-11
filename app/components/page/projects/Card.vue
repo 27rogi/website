@@ -75,7 +75,7 @@ const skills = await useSkillStore().$state;
             <UiBadge icon="ph:star-duotone" px="2">
               {{ ghData.data.value?.stargazers_count }}
             </UiBadge>
-            <UiBadge v-if="ghData.data.value?.forks > 0" icon="ph:git-fork-duotone" px="2">
+            <UiBadge v-if="ghData.data.value!.forks > 0" icon="ph:git-fork-duotone" px="2">
               {{ ghData.data.value?.forks }}
             </UiBadge>
           </NuxtLink>
@@ -85,7 +85,7 @@ const skills = await useSkillStore().$state;
     <div
       v-if="project.leading"
       overflow="hidden"
-      h="280px"
+      h="240px"
       flex="~ col"
       z="2"
       style="mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 10%, transparent 90%);"
@@ -100,7 +100,7 @@ const skills = await useSkillStore().$state;
     <div
       relative
       z="3"
-      u-text="brilliantsea-50/50"
+      u-text="brilliantsea-50/50 4"
       p="4"
       :class="{ 'mt--6 pt-0': $props.project?.leading }"
       flex="~ col"

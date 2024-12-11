@@ -31,10 +31,7 @@ definePageMeta({
                   <span
                     inline-block
                     font="900"
-                    u-text="transparent"
-                    from="greenspring-400"
-                    to="brilliantsea-700"
-                    bg="clip-text gradient-to-rb"
+                    u-text="greenspring-400"
                   >27rogi</span>
                 </template>
               </i18n-t>

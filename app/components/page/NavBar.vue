@@ -19,7 +19,7 @@ const links = [
     m="x-auto"
     max="w-screen-2xl"
     flex="~ items-center"
-    p="y-4 x-6"
+    p="y-4 x-4"
     leading="0"
   >
     <NuxtLinkLocale

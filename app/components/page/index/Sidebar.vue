@@ -3,26 +3,26 @@ import { formatDistance } from "date-fns";
 import { enUS, ru } from "date-fns/locale";
 import { useSkillStore } from "~/store/skills";
 import type { StatsData } from "~/types/api";
-import type { SkillCategory } from "~/types/skill";
+import type { Skill, SkillCategory } from "~/types/skill";
 
 const { locale } = useI18n();
 const { data: ghData, error, pending } = await useLazyFetch<StatsData>("/api/stats", { key: "ghData" });
-const skills = await useSkillStore().$state;
+const skills: Record<string, Skill> = await useSkillStore().$state;
 const categories: Array<SkillCategory> = [
   {
-    items: [skills.js, skills.ts, skills.java, skills.scss, skills.kotlin],
+    items: [skills.js!, skills.ts!, skills.java!, skills.scss!, skills.kotlin!],
     key: "languages",
   },
   {
-    items: [skills.tailwind, skills.nuxt, skills.vue, skills.fabric, skills.nest],
+    items: [skills.tailwind!, skills.nuxt!, skills.vue!, skills.fabric!, skills.nest!],
     key: "frameworks",
   },
   {
-    items: [skills.mongodb, skills.mysql, skills.prisma],
+    items: [skills.mongodb!, skills.mysql!, skills.prisma!],
     key: "databaseorms",
   },
   {
-    items: [skills.vscode, skills.figma, skills.node, skills.idea, skills.linux, skills.bun, skills.caddy, skills.docker],
+    items: [skills.vscode!, skills.figma!, skills.node!, skills.idea!, skills.linux!, skills.bun!, skills.caddy!, skills.docker!],
     key: "software",
   },
 ];
@@ -77,7 +77,7 @@ const socials = {
           u-text="0.8em"
           :color="skill.color"
           :icon="skill.icon"
-          size="10"
+          icon-size="18px"
         />
       </div>
     </div>

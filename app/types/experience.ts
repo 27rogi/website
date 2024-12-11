@@ -14,7 +14,7 @@ export interface Certificate extends Experience {
 export interface Job extends Experience {
   type: "job"
   yearEnd?: number
-  skills?: Array<Skill>
+  skills?: Array<Skill | undefined>
 }
 
 export interface Competition extends Experience {

@@ -10,7 +10,7 @@ const { public: { branch } } = useRuntimeConfig();
     class="[&_.colorful]:(align-top text-greenspring-500 font-bold)"
     m="x-auto"
     max="w-screen-2xl"
-    p="y-4 x-6"
+    p="y-4 x-4"
     u-text="brilliantsea-50/50"
   >
     <div>
