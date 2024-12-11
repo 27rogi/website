@@ -11,7 +11,6 @@ const head = useLocaleHead({
 const metadata = computed(() => {
   return {
     description: route.meta.key ? t(`page.${route.meta.key}.seo.description`) : null,
-    title: t("general.title", { title: route.meta.key ? `${t(`page.${route.meta.key}.seo.title`)} ~ ` : "" }),
   };
 });
 
@@ -19,6 +18,12 @@ useSeoMeta({
   description: () => metadata.value.description,
   ogImage: "/fulllogo.png",
 });
+
+useHead({
+  titleTemplate: () => {
+    return t("general.title", { title: route.meta.key ? `${t(`page.${route.meta.key}.seo.title`)} ~ ` : "" })
+  }
+})
 </script>
 
 <template>
@@ -32,7 +37,6 @@ useSeoMeta({
       :dir="head.htmlAttrs.dir"
     >
       <Head>
-        <Title>{{ metadata.title }}</Title>
         <Link
             href="/favicon.ico"
             rel="icon"
