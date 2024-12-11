@@ -30,9 +30,9 @@ const links = [
     >
       <TwentySeven
         u-text="white"
-        w="12"
-        h="12"
-        p="1"
+        w="10"
+        h="10"
+        p="0.5"
       />
     </NuxtLinkLocale>
     <UiLanguageToggle />

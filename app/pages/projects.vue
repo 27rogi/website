@@ -10,7 +10,7 @@ definePageMeta({
 
 <template>
   <div
-    p="x-6"
+    p="x-4"
     w="full"
     flex="~ col"
     gap="4"
