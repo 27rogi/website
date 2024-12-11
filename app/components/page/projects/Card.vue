@@ -41,7 +41,7 @@ const skills = await useSkillStore().$state;
       p="2"
       top="1"
       right="1"
-      z="3"
+      z="6"
     >
       <div
         :class="project.leading ? (project.palette ?? 'card-greendark/30') + ' p-2' : 'backdrop-filter-none'"
@@ -53,12 +53,16 @@ const skills = await useSkillStore().$state;
           v-for="skillId in project.skills"
           :key="skillId"
         >
-          <UiBadge
-            v-if="skills[skillId]"
-            :title="skills[skillId].name"
-            :color="skills[skillId].color"
-            :icon="skills[skillId].icon"
-          />
+          <VTooltip v-if="skills[skillId]" :aria-id="skills[skillId].name" placement="bottom">
+            <UiBadge
+                :title="skills[skillId].name"
+                :color="skills[skillId].color"
+                :icon="skills[skillId].icon"
+            />
+            <template #popper>
+              <p font="bold" u-text="sm">{{ skills[skillId].name }}</p>
+            </template>
+          </VTooltip>
         </template>
         <div
           v-if="project.github && ghData"
