@@ -38,7 +38,6 @@ defineProps({
       gap="2"
       flex="inline items-center shrink-1 justify-center"
       h="full"
-      align="middle"
     >
       <slot
         v-if="$slots.icon"

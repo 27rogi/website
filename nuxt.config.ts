@@ -7,8 +7,8 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-08-02",
 
   css: [
+    "@fontsource-variable/martian-mono/wdth.css",
     "@fontsource-variable/unbounded",
-    "@fontsource-variable/onest",
     "@unocss/reset/tailwind.css",
   ],
 
@@ -43,7 +43,7 @@ export default defineNuxtConfig({
 
   i18n: {
     langDir: "locales",
-    baseUrl: import.meta.env.VITE_BASE_URL,
+    baseUrl: "rogi.su",
     locales: [
       {
         code: "en",
@@ -98,6 +98,7 @@ export default defineNuxtConfig({
     isDev ? null : "nuxt-security",
     // TODO: implement testing, Bun doesn't support Vitest yet
     // "@nuxt/test-utils/module",
+    "floating-vue/nuxt",
   ],
 
   nitro: {

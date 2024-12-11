@@ -41,7 +41,7 @@ const skills = await useSkillStore().$state;
       p="2"
       top="1"
       right="1"
-      z="3"
+      z="6"
     >
       <div
         :class="project.leading ? (project.palette ?? 'card-greendark/30') + ' p-2' : 'backdrop-filter-none'"
@@ -53,12 +53,16 @@ const skills = await useSkillStore().$state;
           v-for="skillId in project.skills"
           :key="skillId"
         >
-          <UiBadge
-            v-if="skills[skillId]"
-            :title="skills[skillId].name"
-            :color="skills[skillId].color"
-            :icon="skills[skillId].icon"
-          />
+          <VTooltip v-if="skills[skillId]" :aria-id="skills[skillId].name" placement="bottom">
+            <UiBadge
+                :title="skills[skillId].name"
+                :color="skills[skillId].color"
+                :icon="skills[skillId].icon"
+            />
+            <template #popper>
+              <p font="bold" u-text="sm">{{ skills[skillId].name }}</p>
+            </template>
+          </VTooltip>
         </template>
         <div
           v-if="project.github && ghData"
@@ -75,7 +79,7 @@ const skills = await useSkillStore().$state;
             <UiBadge icon="ph:star-duotone" px="2">
               {{ ghData.data.value?.stargazers_count }}
             </UiBadge>
-            <UiBadge v-if="ghData.data.value?.forks > 0" icon="ph:git-fork-duotone" px="2">
+            <UiBadge v-if="ghData.data.value!.forks > 0" icon="ph:git-fork-duotone" px="2">
               {{ ghData.data.value?.forks }}
             </UiBadge>
           </NuxtLink>
@@ -85,7 +89,7 @@ const skills = await useSkillStore().$state;
     <div
       v-if="project.leading"
       overflow="hidden"
-      h="280px"
+      h="240px"
       flex="~ col"
       z="2"
       style="mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 10%, transparent 90%);"
@@ -100,7 +104,7 @@ const skills = await useSkillStore().$state;
     <div
       relative
       z="3"
-      u-text="brilliantsea-50/50"
+      u-text="brilliantsea-50/50 4"
       p="4"
       :class="{ 'mt--6 pt-0': $props.project?.leading }"
       flex="~ col"

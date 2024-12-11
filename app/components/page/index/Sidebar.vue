@@ -3,26 +3,26 @@ import { formatDistance } from "date-fns";
 import { enUS, ru } from "date-fns/locale";
 import { useSkillStore } from "~/store/skills";
 import type { StatsData } from "~/types/api";
-import type { SkillCategory } from "~/types/skill";
+import type { Skill, SkillCategory } from "~/types/skill";
 
 const { locale } = useI18n();
 const { data: ghData, error, pending } = await useLazyFetch<StatsData>("/api/stats", { key: "ghData" });
-const skills = await useSkillStore().$state;
+const skills: Record<string, Skill> = await useSkillStore().$state;
 const categories: Array<SkillCategory> = [
   {
-    items: [skills.js, skills.ts, skills.java, skills.scss, skills.kotlin],
+    items: [skills.js!, skills.ts!, skills.java!, skills.scss!, skills.kotlin!],
     key: "languages",
   },
   {
-    items: [skills.tailwind, skills.nuxt, skills.vue, skills.fabric, skills.nest],
+    items: [skills.tailwind!, skills.nuxt!, skills.vue!, skills.fabric!, skills.nest!],
     key: "frameworks",
   },
   {
-    items: [skills.mongodb, skills.mysql, skills.prisma],
+    items: [skills.mongodb!, skills.mysql!, skills.prisma!],
     key: "databaseorms",
   },
   {
-    items: [skills.vscode, skills.figma, skills.node, skills.idea, skills.linux, skills.bun, skills.caddy, skills.docker],
+    items: [skills.vscode!, skills.figma!, skills.node!, skills.idea!, skills.linux!, skills.bun!, skills.caddy!, skills.docker!],
     key: "software",
   },
 ];
@@ -47,7 +47,7 @@ const socials = {
 </script>
 
 <template>
-  <UiCard :header="$t(`page.index.cards.skills.title`)">
+  <UiCard :header="$t(`page.index.cards.skills.title`)" line="right" border="b-0" mt="-1px" rounded="0 tr-md">
     <div
       v-for="({ key, items }, i) in categories"
       :key="i"
@@ -70,15 +70,19 @@ const socials = {
         flex="~ row wrap items-center"
         gap="2"
       >
+      <VTooltip v-for="(skill, index) in items" :key="skill.name+index" :aria-id="skill.name+index" placement="bottom">
         <UiBadge
-          v-for="(skill, index) in items"
           :key="index"
           :title="skill.name"
           u-text="0.8em"
           :color="skill.color"
           :icon="skill.icon"
-          size="10"
+          icon-size="18px"
         />
+        <template #popper>
+          <p font="bold" u-text="sm">{{ skill.name }}</p>
+        </template>
+      </VTooltip>
       </div>
     </div>
     <p
@@ -92,6 +96,7 @@ const socials = {
     header="GitHub"
     flex="~ col 1"
     class="[&_span]:(text-greenspring-500)"
+    line="right" border="b-0"
   >
     <UiLoadingBlock v-if="pending" />
     <p v-else-if="error">{{ $t("page.index.cards.github.error") }}</p>
@@ -100,6 +105,7 @@ const socials = {
       m="y-auto"
       keypath="page.index.cards.github.text"
       tag="p"
+      scope="global"
     >
       <template #github>
         <span><b>GitHub</b></span>
@@ -121,6 +127,8 @@ const socials = {
   <UiCard
     :header="$t('page.index.cards.socials.title')"
     flex="~ col"
+    mb="-1px"
+    rounded="0 br-md"
   >
     <div
       class="[&_div]:(p-1.5)"

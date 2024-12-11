@@ -1,6 +1,6 @@
 <script setup>
 const route = useRoute();
-const { t } = useI18n();
+const { t } = useI18n({ useScope: "global" });
 
 const head = useLocaleHead({
   addDirAttribute: true,
@@ -11,7 +11,6 @@ const head = useLocaleHead({
 const metadata = computed(() => {
   return {
     description: route.meta.key ? t(`page.${route.meta.key}.seo.description`) : null,
-    title: t("general.title", { title: route.meta.key ? `${t(`page.${route.meta.key}.seo.title`)} ~ ` : "" }),
   };
 });
 
@@ -19,19 +18,25 @@ useSeoMeta({
   description: () => metadata.value.description,
   ogImage: "/fulllogo.png",
 });
+
+useHead({
+  titleTemplate: () => {
+    return t("general.title", { title: route.meta.key ? `${t(`page.${route.meta.key}.seo.title`)} ~ ` : "" })
+  }
+})
 </script>
 
 <template>
   <div
     bg="greendark-800"
     font="content 500"
+    overflow="hidden"
   >
     <Html
       :lang="head.htmlAttrs.lang"
       :dir="head.htmlAttrs.dir"
     >
       <Head>
-        <Title>{{ metadata.title }}</Title>
         <Link
             href="/favicon.ico"
             rel="icon"

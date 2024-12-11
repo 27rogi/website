@@ -4,6 +4,10 @@ defineProps({
     default: null,
     type: String,
   },
+  line: {
+    default: null,
+    type: [String, null] as PropType<"right" | "left" | null>,
+  },
 });
 </script>
 
@@ -15,23 +19,34 @@ defineProps({
     flex="~ col"
     gap="2"
     card="greendark/30"
-    rounded="md"
+    rounded="none"
+    relative
   >
+    <div 
+      v-if="$props.line"
+      :class="{ 'left-[100%] right-[-100vw]': line == 'right', 'right-[100%] left-[-100vw]': line == 'left' }"
+      absolute
+      top="0"
+      bottom="-1px"
+      border="b dashed greendark-300/20"
+    />
     <div
       flex="~ 1 col"
       gap="2"
     >
       <div
         v-if="$slots.header || $props.header"
-        font="head 700"
+        font="head 800"
         u-text="1.5em"
       >
         <h2 v-if="$props.header">
           {{ $props.header }}
-        </h2>
+        </h2> 
         <slot name="header" />
       </div>
-      <slot />
+      <div contents u-text="1rem">
+        <slot />
+      </div>
     </div>
   </div>
 </template>

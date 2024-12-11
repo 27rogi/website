@@ -113,5 +113,5 @@ export const useSkillStore = defineStore("skills", {
       icon: "vscode-icons:file-type-vue",
       name: "Vue",
     },
-  } as { [key: string]: Skill }),
+  } as Record<string, Skill>),
 });

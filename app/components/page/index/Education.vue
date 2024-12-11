@@ -49,10 +49,10 @@ const experiences: { [key: string]: ExperienceType } = {
 </script>
 
 <template>
-  <UiCard :header="$t(`page.index.cards.experience.title`)">
+  <UiCard :header="$t(`page.index.cards.experience.title`)" line="left" border="b-0 r-0">
     <div
       grid="~ cols-2 items-stretch [&_div:last-child]:col-span-full"
-      gap="4"
+      gap="2"
     >
       <UiCardDetailed
         v-for="(exp, key) in experiences"
@@ -80,15 +80,23 @@ const experiences: { [key: string]: ExperienceType } = {
           flex="~ row wrap items-center"
           gap="2"
         >
+        <template v-for="(skill, index) in exp.skills">
+          <VTooltip v-if="skill" :key="skill.name+index" :aria-id="skill.name+index" placement="bottom">
           <UiBadge
-            v-for="(skill, index) in exp.skills"
+            v-if="skill"
             :key="index"
             :title="skill.name"
             u-text="0.8em"
             :color="skill.color"
             :icon="skill.icon"
             p="1"
+            icon-size="18px"
           />
+          <template #popper>
+          <p font="bold" u-text="sm">{{ skill.name }}</p>
+        </template>
+        </VTooltip>
+        </template>
         </div>
       </UiCardDetailed>
     </div>
@@ -96,10 +104,11 @@ const experiences: { [key: string]: ExperienceType } = {
   <UiCard
     :header="$t(`page.index.cards.education.title`)"
     h="full"
+    border="r-0" mb="-1px" rounded="0 bl-md"
   >
     <div
       grid="~ cols-1 lg:cols-2 items-stretch"
-      gap="4"
+      gap="2"
     >
       <UiCardDetailed
         v-for="(item, key) in education"

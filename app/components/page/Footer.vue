@@ -10,23 +10,26 @@ const { public: { branch } } = useRuntimeConfig();
     class="[&_.colorful]:(align-top text-greenspring-500 font-bold)"
     m="x-auto"
     max="w-screen-2xl"
-    p="y-4 x-6"
-    u-text="brilliantsea-50/50"
+    p="y-4 x-4"
+    u-text="brilliantsea-50/50 sm" leading="loose"
   >
     <div>
-      <p>
+      <p leading="loose">
         <span
           u-text="inherit"
           font="head"
         >rogi#su (<NuxtLink :to="`https://github.com/27rogi/website/commit/${branch}`"><span class="colorful">{{ branch }}</span></NuxtLink>) <Icon
-          name="ph:copyright-duotone"
-          size="1.2em"
+          name="ph:copyright-bold"
+          relative
+          top="1px"
+          size="1em"
         /> {{ new Date().getFullYear() }}</span>
       </p>
       <i18n-t
-        class="text-sm"
+        u-text="xs"
         keypath="footer.builtwith"
         tag="p"
+        scope="global"
       >
       <template #nuxt>
         <span class="colorful">Nuxt {{ version }}</span>
