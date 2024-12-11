@@ -98,6 +98,7 @@ export default defineNuxtConfig({
     isDev ? null : "nuxt-security",
     // TODO: implement testing, Bun doesn't support Vitest yet
     // "@nuxt/test-utils/module",
+    "floating-vue/nuxt",
   ],
 
   nitro: {
