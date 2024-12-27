@@ -2,3 +2,6 @@ logLevel = "debug"
 
 [run]
 bun = true
+
+[install]
+saveTextLockfile = true
