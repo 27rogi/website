@@ -14,6 +14,6 @@ COPY --from=build /app/.output .output
 
 ARG BRANCH
 ENV NUXT_PUBLIC_BRANCH=${BRANCH}
-ENV HOST 0.0.0.0
+ENV HOST=0.0.0.0
 EXPOSE 3000
 ENTRYPOINT [ "bun", "run", ".output/server/index.mjs" ]
