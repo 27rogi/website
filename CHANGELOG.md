@@ -12,6 +12,7 @@ All notable changes to this project will be documented in this file.
 ### 🐛 Bug Fixes
 
 - *(docker)* Remove legacy env declaration
+- *(ci)* Don't trigger docker builds on changelog updates
 
 ### 💼 Other
 
