@@ -6,6 +6,28 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- *(ci)* Build docker image on every branch, but only push it for main
+- *(test)* Try to implement basic unit tests
+
+### 🐛 Bug Fixes
+
+- *(docker)* Remove legacy env declaration
+
+### 💼 Other
+
+- *(bun,nuxt)* Switch lock format for bun and update Nuxt
+- Latest deps as of 02.01.2025
+
+### ⚙️ Miscellaneous Tasks
+
+- *(docker)* Use prebuilt Bun container
+- *(eslint)* Move from .js to experimental .ts file
+- *(nuxt)* Update compatibilityDate to current date
+
+## [31122024] - 2024-12-31
+
+### 🚀 Features
+
 - *(nuxt)* Prepare for v4
 - *(bun)* Make bunfig
 - *(design)* Change fonts, more ruler-like design
