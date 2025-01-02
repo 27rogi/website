@@ -23,6 +23,7 @@ All notable changes to this project will be documented in this file.
 - *(docker)* Use prebuilt Bun container
 - *(eslint)* Move from .js to experimental .ts file
 - *(nuxt)* Update compatibilityDate to current date
+- *(readme)* Make pretty README
 
 ## [31122024] - 2024-12-31
 
