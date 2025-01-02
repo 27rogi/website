@@ -1,8 +1,7 @@
-FROM --platform=$BUILDPLATFORM node:lts-slim as base
+FROM --platform=$BUILDPLATFORM imbios/bun-node:latest-current-alpine as base
 WORKDIR /app
 
 COPY . .
-RUN npm i -g bun
 RUN bun install
 
 FROM base AS build
