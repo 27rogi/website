@@ -1,8 +1,7 @@
-FROM --platform=$BUILDPLATFORM node:lts-slim as base
+FROM --platform=$BUILDPLATFORM imbios/bun-node:latest-current-alpine as base
 WORKDIR /app
 
 COPY . .
-RUN npm i -g bun
 RUN bun install
 
 FROM base AS build
@@ -15,6 +14,6 @@ COPY --from=build /app/.output .output
 
 ARG BRANCH
 ENV NUXT_PUBLIC_BRANCH=${BRANCH}
-ENV HOST 0.0.0.0
+ENV HOST=0.0.0.0
 EXPOSE 3000
 ENTRYPOINT [ "bun", "run", ".output/server/index.mjs" ]

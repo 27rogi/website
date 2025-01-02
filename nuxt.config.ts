@@ -4,7 +4,7 @@ import viteSVGLoader from "vite-svg-loader";
 const isDev = process.env.NODE_ENV !== "production";
 
 export default defineNuxtConfig({
-  compatibilityDate: "2024-08-02",
+  compatibilityDate: "2025-01-02",
 
   css: [
     "@fontsource-variable/martian-mono/wdth.css",

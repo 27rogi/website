@@ -5,22 +5,23 @@ import withNuxt from "./.nuxt/eslint.config.mjs";
 
 export default withNuxt([
   sort.configs["flat/recommended"],
+  // @ts-expect-error - unocss has some weird typing issues, not sure if it's error on my side
   unocss,
   {
     ignores: ["node_modules/*"],
     plugins: {
-      "@stylistic": stylistic
+      "@stylistic": stylistic,
     },
     rules: {
-      "@stylistic/indent": ["error", 2],   
+      "@stylistic/indent": ["error", 2],
       "@stylistic/quotes": ["error", "double"],
-      "vue/component-name-in-template-casing": [
-        "error",
-        "PascalCase",
+      "vue/component-name-in-template-casing": ["error", "PascalCase"],
+      "vue/singleline-html-element-content-newline": [
+        "warn",
+        {
+          ignores: ["textarea", "pre", "p", "span"],
+        },
       ],
-      "vue/singleline-html-element-content-newline": ["warn", {
-        ignores: ["textarea", "pre", "p", "span"],
-      }],
     },
   },
-])
+]);
