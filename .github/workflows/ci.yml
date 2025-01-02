@@ -2,8 +2,6 @@ name: Build and Push Docker Image
 
 on:
   push:
-    branches:
-      - 'v3'
 
 jobs:
   docker:
@@ -25,7 +23,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           no-cache: true
-          push: true
+          push: ${{ github.ref_name == 'v3' }}
           tags: 27rogi/website:latest
           build-args: |
             "BRANCH=${{ steps.commit.outputs.short }}"
