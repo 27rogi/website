@@ -1,75 +1,22 @@
-# Nuxt 3 Minimal Starter
+<p align="center">
+  <img width="600" src=".github/preview.png" />
+</p>
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+# 🍃 [rogi#su](https://rogi.su) 
+This is a portfolio website that I made to list all of my most notable projects and also give small glimpse on my skills and career. I decided to use Nuxt for fast and painless development. Color palette of this website mostly uses [`Green Spring`](https://en.wikipedia.org/wiki/Spring_green) color with some darker variations. Most of the styles are written using UnoCSS with Tailwind preset and directives.
 
-## Setup
+## Bun experiment
+Latest generation of my website is built with Bun and uses it's environment implementation, Docker builds also use special Nitro preset made to work with Bun. Due to this radical approach some features might not work on Node or vise versa. If you notice some issues with the website you can create an issue.
 
-Make sure to install the dependencies:
+## Built with
+* Nuxt 3 (but uses Nuxt 4 experimental features)
+  * **Modules**: `i18n`, `unocss`, `pinia`, `image`, `icon`, `eslint`, `floating-vue` and more!
+* UnoCSS
+* LightningCSS
+* FontSource variable fonts
+* ESLint
+* Bun (`bun run --bun` compatible)
+* TypeScript
 
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Development
+To start development you only need to install Node LTS and Bun latest version, other steps are identical to default Nuxt [guide](https://nuxt.com/docs/getting-started/installation#development-server).
