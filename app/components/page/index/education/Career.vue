@@ -4,14 +4,6 @@ import type { ExperienceType } from "~~/types/experience";
 
 const skills = await useSkillStore().$state;
 /* eslint-disable sort/object-properties */
-const education = {
-  mtuci: {
-    icon: "mdi:university",
-  },
-  mgkeit: {
-    icon: "mdi:college",
-  },
-};
 const experiences: { [key: string]: ExperienceType } = {
   ctm: {
     icon: "mdi:university",
@@ -49,7 +41,7 @@ const experiences: { [key: string]: ExperienceType } = {
 </script>
 
 <template>
-  <UiCard :header="$t(`page.index.cards.experience.title`)" line="left" border="b-0 r-0">
+<UiCard :header="$t(`page.index.cards.experience.title`)" line="left" border="b-0 r-0">
     <div
       grid="~ cols-2 items-stretch [&_div:last-child]:col-span-full"
       gap="2"
@@ -98,26 +90,6 @@ const experiences: { [key: string]: ExperienceType } = {
         </VTooltip>
         </template>
         </div>
-      </UiCardDetailed>
-    </div>
-  </UiCard>
-  <UiCard
-    :header="$t(`page.index.cards.education.title`)"
-    h="full"
-    border="r-0" mb="-1px" rounded="0 bl-md"
-  >
-    <div
-      grid="~ cols-1 lg:cols-2 items-stretch"
-      gap="2"
-    >
-      <UiCardDetailed
-        v-for="(item, key) in education"
-        :key="key"
-        col="span-1"
-        :icon="item.icon"
-        :header="$t(`page.index.cards.education.items.${key}.title`)"
-      >
-        <p>{{ $t(`page.index.cards.education.items.${key}.specialty`) }} (<span>{{ $t(`page.index.cards.education.items.${key}.status`) }}</span>)</p>
       </UiCardDetailed>
     </div>
   </UiCard>
