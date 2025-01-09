@@ -1,4 +1,4 @@
-import type { Skill } from "~/types/skill";
+import type { Skill } from "~~/types/skill";
 
 // @unocss-include
 export const useSkillStore = defineStore("skills", {

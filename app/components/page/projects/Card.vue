@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { NuxtLink } from "#components";
 import { useSkillStore } from "~/store/skills";
-import type { ProjectBasic, ProjectLeading } from "~/types/project";
+import type { ProjectBasic, ProjectLeading } from "~~/types/project";
 
 const props = defineProps({
   project: {

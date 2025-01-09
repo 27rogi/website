@@ -1,4 +1,4 @@
-import type { StatsData } from "~/types/api";
+import type { StatsData } from "~~/types/api";
 
 export default defineEventHandler(async () => {
   const { ghApiBase, ghApiToken } = useRuntimeConfig();
@@ -26,7 +26,7 @@ export default defineEventHandler(async () => {
     followers,
     public_repos,
     total_stars,
-  } = { ...user, total_stars: stars };
+  }: StatsData = { ...user, total_stars: stars };
   return {
     created_at,
     followers,

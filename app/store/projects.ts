@@ -1,4 +1,4 @@
-import type { ProjectBasic, ProjectLeading } from "~/types/project";
+import type { ProjectBasic, ProjectLeading } from "~~/types/project";
 
 // @unocss-include
 export const useProjectStore = defineStore("projects", {

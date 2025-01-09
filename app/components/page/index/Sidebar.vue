@@ -2,8 +2,8 @@
 import { formatDistance } from "date-fns";
 import { enUS, ru } from "date-fns/locale";
 import { useSkillStore } from "~/store/skills";
-import type { StatsData } from "~/types/api";
-import type { Skill, SkillCategory } from "~/types/skill";
+import type { StatsData } from "~~/types/api";
+import type { Skill, SkillCategory } from "~~/types/skill";
 
 const { locale } = useI18n();
 const { data: ghData, error, status } = await useLazyFetch<StatsData>("/api/stats", { key: "ghData" });
@@ -98,7 +98,7 @@ const socials = {
     class="[&_span]:(text-greenspring-500)"
     line="right" border="b-0"
   >
-    <UiLoadingBlock v-if="pending" />
+    <UiLoadingBlock v-if="status == 'pending'" />
     <p v-else-if="error">{{ $t("page.index.cards.github.error") }}</p>
     <i18n-t
       v-else

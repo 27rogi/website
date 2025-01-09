@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useSkillStore } from "~/store/skills";
-import type { ExperienceType } from "~/types/experience";
+import type { ExperienceType } from "~~/types/experience";
 
 const skills = await useSkillStore().$state;
 /* eslint-disable sort/object-properties */
