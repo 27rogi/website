@@ -113,5 +113,15 @@ export const useSkillStore = defineStore("skills", {
       icon: "vscode-icons:file-type-vue",
       name: "Vue",
     },
+    go: {
+      color: "bg-[#6ad7e5]/20",
+      icon: "vscode-icons:file-type-go",
+      name: "Go",
+    },
+    preact: {
+      color: "bg-[#673ab8]/20",
+      icon: "logos:preact",
+      name: "Preact",
+    },
   } as Record<string, Skill>),
 });

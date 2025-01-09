@@ -5,7 +5,7 @@
         "title": "Projects",
         "description": "There are most of the projects that I was involved in or created, they are mostly personal hobby ones."
       },
-      "checkit": "View result...",
+      "checkit": "[View image]",
       "items": {
         "diary": {
           "title": "Web Diary Prototype",
@@ -50,6 +50,18 @@
         "vdiscorde": {
           "title": "VDiscorde",
           "description": "An attempt to develop the first bot that displays information about VK users and allows you to link a page to your Discord account."
+        },
+        "dorion": {
+          "title": "Dorion",
+          "description": "I proposed a new icons that I designed using Figma for the project, one of them was approved and officially used for now."
+        },
+        "zen": {
+          "title": "Zen Browser Website",
+          "description": "I made few small PR's to the website to fix visual issues or make user experience better."
+        },
+        "rogisu": {
+          "title": "rogi#su (this website)",
+          "description": "A small website that I made to play with Bun, Nuxt 4 and other experimental things, but also make them work!"
         }
       }
     }

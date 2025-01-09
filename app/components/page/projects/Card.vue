@@ -69,7 +69,7 @@ const skills = await useSkillStore().$state;
           leading="1.25rem"
           u-text="base brilliantsea-50"
         >
-          <UiLoadingBlock v-if="ghData.pending.value" />
+          <UiLoadingBlock v-if="ghData.status.value == 'pending'" />
           <NuxtLink
             v-else
             :to="`https://github.com/${project.github.organization}/${project.github.repository}`"

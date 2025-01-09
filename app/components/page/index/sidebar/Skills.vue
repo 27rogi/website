@@ -5,11 +5,11 @@ import { useSkillStore } from "~/store/skills";
 const skills: Record<string, Skill> = await useSkillStore().$state;
 const categories: Array<SkillCategory> = [
   {
-    items: [skills.js!, skills.ts!, skills.java!, skills.scss!, skills.kotlin!],
+    items: [skills.js!, skills.ts!, skills.java!, skills.scss!, skills.kotlin!, skills.go!],
     key: "languages",
   },
   {
-    items: [skills.tailwind!, skills.nuxt!, skills.vue!, skills.fabric!, skills.nest!],
+    items: [skills.tailwind!, skills.nuxt!, skills.vue!, skills.fabric!],
     key: "frameworks",
   },
   {
@@ -17,7 +17,7 @@ const categories: Array<SkillCategory> = [
     key: "databaseorms",
   },
   {
-    items: [skills.vscode!, skills.figma!, skills.node!, skills.idea!, skills.linux!, skills.bun!, skills.caddy!, skills.docker!],
+    items: [skills.vscode!, skills.figma!, skills.node!, skills.linux!, skills.bun!, skills.idea!, skills.caddy!, skills.docker!],
     key: "software",
   },
 ];
