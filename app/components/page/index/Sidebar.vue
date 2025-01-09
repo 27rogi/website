@@ -6,7 +6,7 @@ import type { StatsData } from "~/types/api";
 import type { Skill, SkillCategory } from "~/types/skill";
 
 const { locale } = useI18n();
-const { data: ghData, error, pending } = await useLazyFetch<StatsData>("/api/stats", { key: "ghData" });
+const { data: ghData, error, status } = await useLazyFetch<StatsData>("/api/stats", { key: "ghData" });
 const skills: Record<string, Skill> = await useSkillStore().$state;
 const categories: Array<SkillCategory> = [
   {

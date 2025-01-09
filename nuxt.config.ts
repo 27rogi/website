@@ -28,6 +28,8 @@ export default defineNuxtConfig({
   },
 
   experimental: {
+    // results in #app-manifest errors in Bun
+    appManifest: false,
     crossOriginPrefetch: true,
     typedPages: true,
     // Investigate: Using parcel watcher gives better speed for large projects
