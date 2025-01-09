@@ -6,6 +6,26 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- *(test)* Prepare for basic testing
+- Add few projects and update skills
+
+### 🐛 Bug Fixes
+
+- *(ts)* Use correct path for tsconfig
+
+### 💼 Other
+
+- Deps and nuxt 3.15
+
+### ⚙️ Miscellaneous Tasks
+
+- Move types to root directory
+- Split large components to children
+
+## [02012025] - 2025-01-02
+
+### 🚀 Features
+
 - *(ci)* Build docker image on every branch, but only push it for main
 - *(test)* Try to implement basic unit tests
 
