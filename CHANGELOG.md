@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 💼 Other
+
+- Deps and nuxt 3.15.2
+
+## [09012025] - 2025-01-09
+
 ### 🚀 Features
 
 - *(test)* Prepare for basic testing
