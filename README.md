@@ -3,10 +3,10 @@
 </p>
 
 # 🍃 [rogi#su](https://rogi.su) 
-This is a portfolio website that I made to list all of my most notable projects and also give small glimpse on my skills and career. I decided to use Nuxt for fast and painless development. Color palette of this website mostly uses [`Green Spring`](https://en.wikipedia.org/wiki/Spring_green) color with some darker variations. Most of the styles are written using UnoCSS with Tailwind preset and directives.
+This is a portfolio website that I made to list all of my most notable projects and also give small glimpse into my skills and career. I decided to use Nuxt for fast and painless development. The color palette of this website mostly features [`Green Spring`](https://en.wikipedia.org/wiki/Spring_green) tones with some darker variations. Most of the styles are written using UnoCSS with Tailwind preset and directives.
 
 ## Bun experiment
-Latest generation of my website is built with Bun and uses it's environment implementation, Docker builds also use special Nitro preset made to work with Bun. Due to this radical approach some features might not work on Node or vise versa. If you notice some issues with the website you can create an issue.
+The latest generation of my website is built with Bun and uses its environment implementation, Docker builds also use special Nitro preset made to work with Bun. Due to this radical approach some features might not work on Node or vice versa. If you notice some issues with the website you can create an issue.
 
 ## Built with
 * Nuxt 3 (but uses Nuxt 4 experimental features)
