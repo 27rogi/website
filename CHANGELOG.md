@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file.
 ### 💼 Other
 
 - Deps and nuxt 3.15.2
+- Deps and nuxt 3.15.4
 
 ## [09012025] - 2025-01-09
 
