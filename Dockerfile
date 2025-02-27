@@ -16,4 +16,4 @@ ARG BRANCH
 ENV NUXT_PUBLIC_BRANCH=${BRANCH}
 ENV HOST=0.0.0.0
 EXPOSE 3000
-ENTRYPOINT [ "bun", "run", ".output/server/index.mjs" ]
+ENTRYPOINT [ "sh", "-c",  "export NUXT_PUBLIC_BUNVER=$(bun -v) && bun run .output/server/index.mjs" ]

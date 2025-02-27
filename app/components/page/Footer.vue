@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { version } from "nuxt/package.json";
 
-const { public: { branch } } = useRuntimeConfig();
+const { public: { branch, bunver } } = useRuntimeConfig();
 </script>
 
 <template>
@@ -32,7 +32,7 @@ const { public: { branch } } = useRuntimeConfig();
         scope="global"
       >
       <template #nuxt>
-        <span class="colorful">Nuxt {{ version }}</span>
+        <span class="colorful">Nuxt {{ version }} / {{ bunver != "" ? `Bun ${bunver}` : "(not using Bun?)" }}</span>
       </template>
       <template #magic>
         <span class="colorful"><Icon

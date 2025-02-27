@@ -124,6 +124,7 @@ export default defineNuxtConfig({
     ghApiToken: "",
     public: {
       branch: "v3",
+      bunver: "",
     },
   },
 
