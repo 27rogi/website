@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - 'v3'
+    paths-ignore:
+      - '.vscode/**'
+      - '**/*.md'
 
 jobs:
   changelog:
