@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚀 Features
+
+- Show Bun version via env
+
 ### 🐛 Bug Fixes
 
 - Grammar issues
@@ -12,6 +16,11 @@ All notable changes to this project will be documented in this file.
 
 - Deps and nuxt 3.15.2
 - Deps and nuxt 3.15.4
+- Latest unocss and etc.
+
+### ⚙️ Miscellaneous Tasks
+
+- *(ci)* Make gh actions less annoying
 
 ## [09012025] - 2025-01-09
 
