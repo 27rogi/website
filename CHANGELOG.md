@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### ⚙️ Miscellaneous Tasks
+
+- *(ci)* Better styled changelog messages
+
+## [05032025] - 2025-03-05
+
 ### 🚀 Features
 
 - Show Bun version via env
