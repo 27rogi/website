@@ -1,4 +1,3 @@
-import unheadVite from "@unhead/addons/vite";
 import viteSVGLoader from "vite-svg-loader";
 
 const isDev = process.env.NODE_ENV !== "production";
@@ -141,7 +140,6 @@ export default defineNuxtConfig({
     },
     plugins: [
       viteSVGLoader(),
-      unheadVite(),
     ],
   }
 });
