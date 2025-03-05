@@ -7,10 +7,12 @@ All notable changes to this project will be documented in this file.
 ### 🐛 Bug Fixes
 
 - *(ci)* Display changelog content
+- *(ci)* Display only latest changelog in commit
 
 ### ⚙️ Miscellaneous Tasks
 
 - *(ci)* Better styled changelog messages
+- Update changelog
 - Update changelog
 
 ## [05032025] - 2025-03-05
