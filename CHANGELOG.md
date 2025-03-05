@@ -4,9 +4,14 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🐛 Bug Fixes
+
+- *(ci)* Display changelog content
+
 ### ⚙️ Miscellaneous Tasks
 
 - *(ci)* Better styled changelog messages
+- Update changelog
 
 ## [05032025] - 2025-03-05
 
