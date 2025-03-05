@@ -17,10 +17,12 @@ All notable changes to this project will be documented in this file.
 - Deps and nuxt 3.15.2
 - Deps and nuxt 3.15.4
 - Latest unocss and etc.
+- Bump deps
 
 ### ⚙️ Miscellaneous Tasks
 
 - *(ci)* Make gh actions less annoying
+- Remove redutant unhead vite addon
 
 ## [09012025] - 2025-01-09
 
