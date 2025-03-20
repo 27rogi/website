@@ -8,10 +8,17 @@ All notable changes to this project will be documented in this file.
 
 - *(ci)* Display changelog content
 - *(ci)* Display only latest changelog in commit
+- *(ci)* Print unreleased commits in changelog
+- *(bun)* Remove redutant verbose info
+
+### 💼 Other
+
+- Nuxt 3.16 and unocss v66.1
 
 ### ⚙️ Miscellaneous Tasks
 
 - *(ci)* Better styled changelog messages
+- Update changelog
 - Update changelog
 - Update changelog
 
