@@ -3,14 +3,14 @@ import viteSVGLoader from "vite-svg-loader";
 const isDev = process.env.NODE_ENV !== "production";
 
 export default defineNuxtConfig({
-  compatibilityDate: "2025-01-02",
+  compatibilityDate: "2025-03-21",
 
   css: [
     "@fontsource-variable/martian-mono/wdth.css",
     "@fontsource-variable/unbounded",
     "@unocss/reset/tailwind.css",
   ],
-
+  
   devtools: {
     enabled: isDev,
     timeline: {
@@ -31,10 +31,11 @@ export default defineNuxtConfig({
     appManifest: false,
     crossOriginPrefetch: true,
     typedPages: true,
+    // Throwing segfault errors on latest builds.
     // Investigate: Using parcel watcher gives better speed for large projects
     // and works better under windows, according to:
     // https://nuxt.com/docs/guide/going-further/experimental-features#watcher
-    watcher: "parcel",
+    // watcher: "parcel",
   },
 
   future: {
