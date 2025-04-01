@@ -3,7 +3,7 @@ import viteSVGLoader from "vite-svg-loader";
 const isDev = process.env.NODE_ENV !== "production";
 
 export default defineNuxtConfig({
-  compatibilityDate: "2025-03-21",
+  compatibilityDate: "2025-04-01",
 
   css: [
     "@fontsource-variable/martian-mono/wdth.css",
@@ -12,10 +12,8 @@ export default defineNuxtConfig({
   ],
   
   devtools: {
+    // not working with bun since Nuxt 3.16 it seems
     enabled: isDev,
-    timeline: {
-      enabled: true,
-    },
   },
 
   // Module Settings
@@ -44,6 +42,9 @@ export default defineNuxtConfig({
   },
 
   i18n: {
+    bundle: {
+      optimizeTranslationDirective: false,
+    },
     langDir: "locales",
     baseUrl: "rogi.su",
     locales: [
