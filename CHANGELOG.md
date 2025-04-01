@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 💼 Other
+
+- Nuxt 3.16.2
+
+## [21032025] - 2025-03-20
+
 ### 🐛 Bug Fixes
 
 - *(ci)* Display changelog content
@@ -18,6 +24,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - *(ci)* Better styled changelog messages
+- Update changelog
 - Update changelog
 - Update changelog
 - Update changelog
