@@ -1,5 +1,10 @@
 ## [unreleased]
 
+### 🐛 Bug Fixes
+
+- Stop rolldown vite from causing problems
+## [03092025] - 2025-09-02
+
 ### 💼 Other
 
 - Nuxt 3.16.2
@@ -7,6 +12,7 @@
 
 ### ⚙️ Miscellaneous Tasks
 
+- Update changelog
 - Update changelog
 ## [21032025] - 2025-03-20
 
