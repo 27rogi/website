@@ -3,7 +3,7 @@ import viteSVGLoader from "vite-svg-loader";
 const isDev = process.env.NODE_ENV !== "production";
 
 export default defineNuxtConfig({
-  compatibilityDate: "2025-04-01",
+  compatibilityDate: "2025-09-03",
 
   css: [
     "@fontsource-variable/martian-mono/wdth.css",
@@ -12,8 +12,8 @@ export default defineNuxtConfig({
   ],
   
   devtools: {
-    // not working with bun since Nuxt 3.16 it seems
-    enabled: isDev,
+    // to use devtools with bun use --no-fork flag
+    enabled: true
   },
 
   // Module Settings
@@ -25,15 +25,12 @@ export default defineNuxtConfig({
   },
 
   experimental: {
-    // results in #app-manifest errors in Bun
-    appManifest: false,
     crossOriginPrefetch: true,
     typedPages: true,
-    // Throwing segfault errors on latest builds.
     // Investigate: Using parcel watcher gives better speed for large projects
     // and works better under windows, according to:
     // https://nuxt.com/docs/guide/going-further/experimental-features#watcher
-    // watcher: "parcel",
+    watcher: "parcel",
   },
 
   future: {
@@ -42,9 +39,6 @@ export default defineNuxtConfig({
   },
 
   i18n: {
-    bundle: {
-      optimizeTranslationDirective: false,
-    },
     langDir: "locales",
     baseUrl: "rogi.su",
     locales: [
@@ -70,9 +64,6 @@ export default defineNuxtConfig({
     strategy: "prefix",
     detectBrowserLanguage: false,
     defaultLocale: "en",
-    // Reduces downloaded size of the bundle and also
-    // and allows to easily detect unstranslated strings
-    lazy: true,
     skipSettingLocaleOnNavigate: true,
   },
 
@@ -86,13 +77,10 @@ export default defineNuxtConfig({
     "@nuxt/eslint",
     "@pinia/nuxt",
     "@nuxtjs/seo",
-    // Produces few webpack errors on dev when using Bun
-    // seems to also cause https://github.com/nuxt-modules/i18n/issues/2800
-    // see: https://github.com/oven-sh/bun/issues/8756
     "@nuxtjs/i18n",
-    "@unocss/nuxt",
     "@nuxt/image",
     "@vueuse/nuxt",
+    "@unocss/nuxt",
     "@nuxt/icon",
     "@nuxtjs/fontaine",
     "nuxt-payload-analyzer",
@@ -106,12 +94,13 @@ export default defineNuxtConfig({
 
   nitro: {
     compressPublicAssets: true,
-    // esbuild: {
-    //   options: {
-    //     target: "esnext",
-    //   },
-    // },
     preset: "bun",
+    minify: true,
+    esbuild: {
+      options: {
+        target: "esnext",
+      },
+    },
   },
 
   routeRules: {
@@ -143,5 +132,5 @@ export default defineNuxtConfig({
     plugins: [
       viteSVGLoader(),
     ],
-  }
+  },
 });
