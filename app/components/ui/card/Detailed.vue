@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { NuxtLink } from "#components";
+
 defineProps({
   header: {
     default: null,
@@ -8,11 +10,17 @@ defineProps({
     default: null,
     type: String,
   },
+  link: {
+    default: null,
+    type: String,
+  }
 });
 </script>
 
 <template>
-  <div
+  <component
+    :is="link ? NuxtLink : 'div'"
+    :to="link ?? null"
     u-text="1.2em"
     font="600"
     p="4"
@@ -54,5 +62,5 @@ defineProps({
         <slot />
       </div>
     </div>
-  </div>
+  </component>
 </template>

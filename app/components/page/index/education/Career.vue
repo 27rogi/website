@@ -43,7 +43,7 @@ const experiences: { [key: string]: ExperienceType } = {
 <template>
 <UiCard :header="$t(`page.index.cards.experience.title`)" line="left" border="b-0 r-0">
     <div
-      grid="~ cols-2 items-stretch [&_div:last-child]:col-span-full"
+      grid="~ cols-2 items-stretch [&_:last-child]:col-span-full"
       gap="2"
     >
       <UiCardDetailed
@@ -51,6 +51,7 @@ const experiences: { [key: string]: ExperienceType } = {
         :key="key"
         col="span-2 sm:span-1"
         :icon="exp.icon"
+        :link="exp.proof"
       >
         <template #header>
           <h3>
