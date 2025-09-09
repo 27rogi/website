@@ -1,8 +1,18 @@
 ## [unreleased]
 
+### 🚀 Features
+
+- Add vitest back
+- Add proof links to experience & career cards
+
 ### 🐛 Bug Fixes
 
 - Stop rolldown vite from causing problems
+
+### ⚙️ Miscellaneous Tasks
+
+- Update changelog
+- *(ui)* Make more mobile friendly ui
 ## [03092025] - 2025-09-02
 
 ### 💼 Other
