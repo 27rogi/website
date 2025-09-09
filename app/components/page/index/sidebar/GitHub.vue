@@ -12,7 +12,7 @@ const { data: ghData, error, status } = await useLazyFetch<StatsData>("/api/stat
     header="GitHub"
     flex="~ col 1"
     class="[&_span]:(text-greenspring-500)"
-    line="right" border="b-0"
+    line="right" border="x-0 lg:x-1 b-0"
   >
     <UiLoadingBlock v-if="status == 'pending'" />
     <p v-else-if="error">{{ $t("page.index.cards.github.error") }}</p>

@@ -16,7 +16,7 @@ const education = {
   <UiCard
     :header="$t(`page.index.cards.education.title`)"
     h="full"
-    border="r-0" mb="-1px" rounded="0 bl-md"
+    border="x-0 b-0 lg:(b-1 l-1)" mb="-1px" rounded="0 bl-md"
   >
     <div
       grid="~ cols-1 lg:cols-2 items-stretch"

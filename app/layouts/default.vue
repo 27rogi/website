@@ -71,7 +71,7 @@ useHead({
           flex="~ col"
           z="2"
           relative
-          u-text="brilliantsea-50"
+          u-text="brilliantsea-50 size-xs lg:size-base"
           bg="greendark-700/20"
           min-h="screen"
         >

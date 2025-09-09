@@ -24,7 +24,8 @@ const socials = {
     :header="$t('page.index.cards.socials.title')"
     flex="~ col"
     mb="-1px"
-    rounded="0 br-md"
+    rounded="0 lg:br-md"
+    border="x-0 lg:x-1"
   >
     <div
       class="[&_div]:(p-1.5)"

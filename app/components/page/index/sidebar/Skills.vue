@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { Skill, SkillCategory } from "~~/types/skill";
 import { useSkillStore } from "~/store/skills";
+import type { Skill, SkillCategory } from "~~/types/skill";
 
 const skills: Record<string, Skill> = await useSkillStore().$state;
 const categories: Array<SkillCategory> = [
@@ -24,7 +24,7 @@ const categories: Array<SkillCategory> = [
 </script>
 
 <template>
-    <UiCard :header="$t(`page.index.cards.skills.title`)" line="right" border="b-0" mt="-1px" rounded="0 tr-md">
+    <UiCard :header="$t(`page.index.cards.skills.title`)" line="right" border="x-0 lg:x-1 b-0" mt="-1px" rounded="0 lg:tr-md">
     <div
       v-for="({ key, items }, i) in categories"
       :key="i"
