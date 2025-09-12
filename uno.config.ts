@@ -60,8 +60,8 @@ export default defineConfig({
       },
     },
     fontFamily: {
-      content: "'Martian Mono Variable'",
-      head: "'Unbounded Variable'", 
+      content: "'Cascadia Code Variable', monospace",
+      head: "'Unbounded Variable', sans-serif", 
     },
   },
   transformers: [
