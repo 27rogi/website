@@ -39,7 +39,7 @@ defineProps({
       flex="shrink-0"
       :name="$props.icon"
       rounded="md"
-      size="1.4em"
+      size="28px"
     />
     <div
       class="[&_span]:(text-greenspring-500)"
@@ -58,7 +58,7 @@ defineProps({
           name="header"
         />
       </div>
-      <div u-text="sm greendark-200/70">
+      <div u-text="base greendark-200/70">
         <slot />
       </div>
     </div>

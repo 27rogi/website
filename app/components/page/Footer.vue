@@ -26,7 +26,7 @@ const { public: { branch, bunver } } = useRuntimeConfig();
         /> {{ new Date().getFullYear() }}</span>
       </p>
       <i18n-t
-        u-text="xs"
+        u-text="sm"
         keypath="footer.builtwith"
         tag="p"
         scope="global"

@@ -54,7 +54,8 @@ const categories: Array<SkillCategory> = [
           u-text="0.8em"
           :color="skill.color"
           :icon="skill.icon"
-          icon-size="18px"
+          icon-size="1.2rem"
+          class="relative gap-0"
         />
         <template #popper>
           <p font="bold" u-text="sm">{{ skill.name }}</p>

@@ -83,7 +83,7 @@ const experiences: { [key: string]: ExperienceType } = {
             :color="skill.color"
             :icon="skill.icon"
             p="1"
-            icon-size="18px"
+            icon-size="1.2rem"
           />
           <template #popper>
           <p font="bold" u-text="sm">{{ skill.name }}</p>

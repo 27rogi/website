@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-09-03",
 
   css: [
-    "@fontsource-variable/martian-mono/wdth.css",
+    "@fontsource-variable/cascadia-code",
     "@fontsource-variable/unbounded",
     "@unocss/reset/tailwind.css",
   ],

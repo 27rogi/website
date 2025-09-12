@@ -58,7 +58,7 @@
     "vue-tsc": "^3.0.6"
   },
   "dependencies": {
-    "@fontsource-variable/martian-mono": "^5.2.6",
+    "@fontsource-variable/cascadia-code": "^5.2.1",
     "@fontsource-variable/unbounded": "^5.2.6",
     "@nuxt/image": "^1.11.0",
     "@nuxt/types": "^2.18.1",
