@@ -2,7 +2,7 @@
 import { presetAttributify } from "@unocss/preset-attributify";
 import { presetTypography } from "@unocss/preset-typography";
 import presetWind from "@unocss/preset-wind3";
-// import transformerDirectives from "@unocss/transformer-directives";
+import transformerDirectives from "@unocss/transformer-directives";
 import transformerVariantGroup from "@unocss/transformer-variant-group";
 import { defineConfig } from "@unocss/vite";
 import presetAutoprefixer from "unocss-preset-autoprefixer";
@@ -66,8 +66,6 @@ export default defineConfig({
   },
   transformers: [
     transformerVariantGroup(),
-
-    // Causes Nuxt to crash when using Bun's runtime, should be fixed by Bun.
-    // transformerDirectives(),
+    transformerDirectives(),
   ],
 });
