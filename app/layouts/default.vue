@@ -2,12 +2,6 @@
 const route = useRoute();
 const { t } = useI18n({ useScope: "global" });
 
-const head = useLocaleHead({
-  addDirAttribute: true,
-  addSeoAttributes: true,
-  identifierAttribute: "id",
-});
-
 const metadata = computed(() => {
   return {
     description: route.meta.key ? t(`page.${route.meta.key}.seo.description`) : null,
@@ -32,41 +26,16 @@ useHead({
     font="content 500"
     overflow="hidden"
   >
-    <Html
-      :lang="head.htmlAttrs.lang"
-      :dir="head.htmlAttrs.dir"
-    >
+    <Html>
       <Head>
         <Link
             href="/favicon.ico"
             rel="icon"
             type="image/x-icon"
           />
-        <template
-          v-for="link in head.link"
-          :key="link.id"
-        >
-          <Link
-            :id="link.id"
-            :rel="link.rel"
-            :href="link.href"
-            :hreflang="link.hreflang"
-          />
-        </template>
-        <template
-          v-for="meta in head.meta"
-          :key="meta.id"
-        >
-          <Meta
-            :id="meta.id"
-            :property="meta.property"
-            :content="meta.content"
-          />
-        </template>
         <Meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
       <Body>
-        <PageBackground />
         <div
           flex="~ col"
           z="2"
@@ -74,6 +43,7 @@ useHead({
           u-text="brilliantsea-50 size-xs lg:size-base"
           bg="greendark-700/20"
           min-h="screen"
+          selection="bg-greenspring-600/50 text-white"
         >
           <PageNavBar />
           <slot />
@@ -84,6 +54,7 @@ useHead({
             <PageFooter />
           </div>
         </div>
+        <LazyPageBackground hydrate-on-visible />
       </Body>
     </Html>
   </div>

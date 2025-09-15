@@ -65,6 +65,9 @@ export default defineNuxtConfig({
     detectBrowserLanguage: false,
     defaultLocale: "en",
     skipSettingLocaleOnNavigate: true,
+    experimental: {
+      strictSeo: true,
+    }
   },
 
   image: {
