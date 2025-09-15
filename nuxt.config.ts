@@ -1,5 +1,6 @@
 import viteSVGLoader from "vite-svg-loader";
 
+// eslint-disable-next-line node/prefer-global/process
 const isDev = process.env.NODE_ENV !== "production";
 
 export default defineNuxtConfig({
@@ -20,7 +21,11 @@ export default defineNuxtConfig({
   /* eslint-disable sort/object-properties */
   eslint: {
     config: {
+      standalone: false,
       stylistic: false,
+      nuxt: {
+        sortConfigKeys: true,
+      },
     },
   },
 

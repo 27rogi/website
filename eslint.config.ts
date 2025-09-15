@@ -1,27 +1,23 @@
-import stylistic from "@stylistic/eslint-plugin";
-import unocss from "@unocss/eslint-config/flat";
-import sort from "eslint-plugin-sort";
-import withNuxt from "./.nuxt/eslint.config.mjs";
+import antfu from '@antfu/eslint-config'
+import sort from 'eslint-plugin-sort'
+import withNuxt from './.nuxt/eslint.config.mjs'
 
-export default withNuxt([
-  sort.configs["flat/recommended"],
-  // @ts-expect-error - unocss has some weird typing issues, not sure if it's error on my side
-  unocss,
-  {
-    ignores: ["node_modules/*"],
-    plugins: {
-      "@stylistic": stylistic,
+export default withNuxt(antfu({
+  formatters: true,
+  stylistic: true,
+  unocss: true,
+  vue: true,
+}).append()).append(
+  sort.configs['flat/recommended'],
+).overrideRules({
+  '@stylistic/indent': ['error', 2],
+  '@stylistic/quotes': ['error', 'double'],
+  'sort/imports': 'off',
+  'vue/component-name-in-template-casing': ['error', 'PascalCase'],
+  'vue/singleline-html-element-content-newline': [
+    'warn',
+    {
+      ignores: ['textarea', 'pre', 'p', 'span'],
     },
-    rules: {
-      "@stylistic/indent": ["error", 2],
-      "@stylistic/quotes": ["error", "double"],
-      "vue/component-name-in-template-casing": ["error", "PascalCase"],
-      "vue/singleline-html-element-content-newline": [
-        "warn",
-        {
-          ignores: ["textarea", "pre", "p", "span"],
-        },
-      ],
-    },
-  },
-]);
+  ],
+})

@@ -1,7 +1,7 @@
 {
   "name": "rogisu",
-  "private": true,
   "type": "module",
+  "private": true,
   "packageManager": "bun@1.2.20",
   "scripts": {
     "build": "nuxt build",
@@ -13,7 +13,22 @@
     "lint:fix": "eslint . --fix",
     "test": "vitest"
   },
+  "dependencies": {
+    "@fontsource-variable/cascadia-code": "^5.2.1",
+    "@fontsource-variable/unbounded": "^5.2.7",
+    "@nuxt/content": "^3.7.0",
+    "@nuxt/image": "^1.11.0",
+    "@nuxt/types": "^2.18.1",
+    "@unocss/nuxt": "^66.5.1",
+    "@vueuse/nuxt": "^13.9.0",
+    "better-sqlite3": "^12.2.0",
+    "date-fns": "^4.1.0",
+    "floating-vue": "^5.2.2",
+    "nuxt-payload-analyzer": "^0.1.4",
+    "zod": "^4.1.8"
+  },
   "devDependencies": {
+    "@antfu/eslint-config": "^5.3.0",
     "@iconify-json/devicon": "^1.2.43",
     "@iconify-json/file-icons": "^1.2.2",
     "@iconify-json/logos": "^1.2.9",
@@ -32,10 +47,12 @@
     "@stylistic/eslint-plugin": "^5.3.1",
     "@types/bun": "^1.2.22",
     "@unocss/eslint-config": "^66.5.1",
+    "@unocss/eslint-plugin": "^66.5.1",
     "@vue/test-utils": "^2.4.6",
     "browserslist": "^4.25.4",
     "esbuild": "^0.25.9",
     "eslint": "^9.35.0",
+    "eslint-plugin-format": "^1.0.1",
     "eslint-plugin-sort": "^4.0.0",
     "happy-dom": "^18.0.1",
     "lightningcss": "^1.30.1",
@@ -44,6 +61,7 @@
     "nuxt-icon": "^1.0.0-beta.7",
     "nuxt-security": "^2.4.0",
     "playwright-core": "^1.55.0",
+    "prettier": "^3.6.2",
     "sass": "1.92.1",
     "tailwindcss": "^4.1.13",
     "taze": "^19.6.0",
@@ -56,17 +74,6 @@
     "vue": "^3.5.21",
     "vue-router": "^4.5.1",
     "vue-tsc": "^3.0.6"
-  },
-  "dependencies": {
-    "@fontsource-variable/cascadia-code": "^5.2.1",
-    "@fontsource-variable/unbounded": "^5.2.7",
-    "@nuxt/image": "^1.11.0",
-    "@nuxt/types": "^2.18.1",
-    "@unocss/nuxt": "^66.5.1",
-    "@vueuse/nuxt": "^13.9.0",
-    "date-fns": "^4.1.0",
-    "floating-vue": "^5.2.2",
-    "nuxt-payload-analyzer": "^0.1.4"
   },
   "trustedDependencies": [
     "@parcel/watcher",
