@@ -34,12 +34,13 @@ defineProps({
       flex="shrink-0"
       name="icon"
     />
-    <Icon
+    <LazyIcon
       v-else-if="$props.icon"
       flex="shrink-0"
       :name="$props.icon"
       rounded="md"
       size="28px"
+      hydrate-on-visible
     />
     <div
       class="[&_span]:(text-greenspring-500)"

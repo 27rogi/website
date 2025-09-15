@@ -1,5 +1,5 @@
 <template>
   <PageIndexSidebarSkills />
-  <PageIndexSidebarGitHub />
+  <LazyPageIndexSidebarGitHub hydrate-on-visible />
   <PageIndexSidebarSocials />
 </template>

@@ -43,11 +43,12 @@ defineProps({
         v-if="$slots.icon"
         name="icon"
       />
-      <Icon
+      <LazyIcon
         v-else-if="$props.icon"
         :name="$props.icon"
         rounded="md"
         :size="$props.iconSize"
+        hydrate-on-visible
       />
       <p
         v-if="$slots.default"

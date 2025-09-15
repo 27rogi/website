@@ -35,7 +35,7 @@ const links = [
         p="0.5"
       />
     </NuxtLinkLocale>
-    <UiLanguageToggle />
+    <LazyUiLanguageToggle hydrate-on-visible />
     <div
       m="l-auto"
       font="head 600"
