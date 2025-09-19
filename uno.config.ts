@@ -1,24 +1,23 @@
 // uno.config.ts
-import { presetAttributify } from "@unocss/preset-attributify";
-import { presetTypography } from "@unocss/preset-typography";
-import presetWind from "@unocss/preset-wind3";
-import transformerDirectives from "@unocss/transformer-directives";
-import transformerVariantGroup from "@unocss/transformer-variant-group";
-import { defineConfig } from "@unocss/vite";
-import presetAutoprefixer from "unocss-preset-autoprefixer";
+import { presetAttributify } from "@unocss/preset-attributify"
+import { presetTypography } from "@unocss/preset-typography"
+import presetWind from "@unocss/preset-wind3"
+import transformerDirectives from "@unocss/transformer-directives"
+import transformerVariantGroup from "@unocss/transformer-variant-group"
+import { defineConfig } from "@unocss/vite"
 
 export default defineConfig({
   presets: [
     presetWind({
       variablePrefix: "style-",
     }),
-    presetAutoprefixer(),
     presetAttributify({
       prefix: "u-",
     }),
     presetTypography(),
   ],
   shortcuts: [
+    // eslint-disable-next-line regexp/no-super-linear-backtracking
     [/^card-(.*)\/(.*)$/, ([, color, opacity]) => `border border-${color}-200 border-opacity-${opacity} bg-${color}-600 bg-opacity-${Number(opacity) - 10} rounded-md`],
     [/^card-highlight-(.*)$/, ([, c]) => `hover:border-${c}-200/50`],
   ],
@@ -61,11 +60,11 @@ export default defineConfig({
     },
     fontFamily: {
       content: "'Cascadia Code Variable', monospace",
-      head: "'Unbounded Variable', sans-serif", 
+      head: "'Unbounded Variable', sans-serif",
     },
   },
   transformers: [
     transformerVariantGroup(),
     transformerDirectives(),
   ],
-});
+})

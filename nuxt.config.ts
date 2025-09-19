@@ -1,7 +1,9 @@
-import viteSVGLoader from "vite-svg-loader";
+import browserslist from "browserslist"
+import { browserslistToTargets } from "lightningcss"
+import viteSVGLoader from "vite-svg-loader"
 
 // eslint-disable-next-line node/prefer-global/process
-const isDev = process.env.NODE_ENV !== "production";
+const isDev = process.env.NODE_ENV !== "production"
 
 export default defineNuxtConfig({
   compatibilityDate: "2025-09-03",
@@ -137,6 +139,12 @@ export default defineNuxtConfig({
   vite: {
     build: {
       cssMinify: "lightningcss",
+    },
+    css: {
+      lightningcss: {
+        targets: browserslistToTargets(browserslist('>= 0.25%'))
+      },
+      transformer: 'lightningcss',
     },
     plugins: [
       viteSVGLoader(),
