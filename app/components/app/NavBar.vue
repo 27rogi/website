@@ -1,16 +1,20 @@
 <script setup lang="ts">
-import TwentySeven from "~/assets/27.svg?component";
+import TwentySeven from "~/assets/27.svg?component"
+
+const props = defineProps<{
+  reviews?: boolean
+}>()
 
 const links = [
   {
     localePath: "navbar.projects",
     path: "/projects",
   },
-  // {
-  //   path: "/minecraft",
-  //   text: "Minecraft",
-  // },
-];
+  {
+    localePath: "navbar.reviews",
+    path: "/reviews/test",
+  },
+]
 </script>
 
 <template>
@@ -34,6 +38,7 @@ const links = [
         h="10"
         p="0.5"
       />
+      <span v-if="props.reviews">(reviews)</span>
     </NuxtLinkLocale>
     <LazyUiLanguageToggle hydrate-on-visible />
     <div

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { useSkillStore } from "~/store/skills";
-import type { Skill, SkillCategory } from "~~/types/skill";
+import type { Skill, SkillCategory } from "~~/types/skill"
+import { useSkillStore } from "~/store/skills"
 
-const skills: Record<string, Skill> = await useSkillStore().$state;
+const skills: Record<string, Skill> = await useSkillStore().$state
 const categories: Array<SkillCategory> = [
   {
     items: [skills.js!, skills.ts!, skills.java!, skills.scss!, skills.kotlin!, skills.go!],
@@ -20,11 +20,11 @@ const categories: Array<SkillCategory> = [
     items: [skills.vscode!, skills.figma!, skills.node!, skills.linux!, skills.bun!, skills.idea!, skills.caddy!, skills.docker!],
     key: "software",
   },
-];
+]
 </script>
 
 <template>
-    <UiCard :header="$t(`page.index.cards.skills.title`)" line="right" border="x-0 lg:x-1 b-0" mt="-1px" rounded="0 lg:tr-md">
+  <UiCard :header="$t(`page.index.cards.skills.title`)" line="right" border="x-0 lg:x-1 b-0" mt="-1px" rounded="0 lg:tr-md">
     <div
       v-for="({ key, items }, i) in categories"
       :key="i"
@@ -47,20 +47,18 @@ const categories: Array<SkillCategory> = [
         flex="~ row wrap items-center"
         gap="2"
       >
-      <VTooltip v-for="(skill, index) in items" :key="skill.name+index" :aria-id="skill.name+index" placement="bottom">
-        <UiBadge
-          :key="index"
-          :title="skill.name"
-          u-text="0.8em"
-          :color="skill.color"
-          :icon="skill.icon"
-          icon-size="1.2rem"
-          class="relative gap-0"
-        />
-        <template #popper>
-          <p font="bold" u-text="sm">{{ skill.name }}</p>
-        </template>
-      </VTooltip>
+        <VTooltip v-for="(skill, index) in items" :key="skill.name + index" :aria-id="skill.name + index" placement="bottom">
+          <UiBadge
+            :key="index"
+            :color="skill.color"
+            :icon="skill.icon"
+            icon-size="1.2rem"
+            class="relative gap-0"
+          />
+          <template #popper>
+            <p font="bold" u-text="base">{{ skill.name }}</p>
+          </template>
+        </VTooltip>
       </div>
     </div>
     <p

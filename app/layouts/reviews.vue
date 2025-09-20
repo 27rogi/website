@@ -2,27 +2,20 @@
 const route = useRoute()
 const { t } = useI18n({ useScope: "global" })
 
-const metadata = computed(() => {
-  return {
-    description: route.meta.key ? t(`page.${route.meta.key}.seo.description`) : null,
-  }
-})
-
 useSeoMeta({
-  description: () => metadata.value.description,
   ogImage: "/fulllogo.png",
 })
 
 useHead({
   titleTemplate: () => {
-    return t("general.title", { title: route.meta.key ? `${t(`page.${route.meta.key}.seo.title`)} ~ ` : "" })
+    return t("general.title", { title: route.meta.title ? `${route.meta.title} ~ ` : "" })
   },
 })
 </script>
 
 <template>
   <div
-    bg="greendark-800"
+    bg="greendark-900"
     font="content 500"
     overflow="hidden"
   >
@@ -45,7 +38,7 @@ useHead({
           min-h="screen"
           selection="bg-greenspring-600/50 text-white"
         >
-          <AppNavBar />
+          <AppNavBar reviews />
           <div contents>
             <slot />
           </div>
@@ -56,7 +49,6 @@ useHead({
             <AppFooter />
           </div>
         </div>
-        <LazyAppBackground hydrate-on-visible />
       </Body>
     </Html>
   </div>

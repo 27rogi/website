@@ -3,3 +3,24 @@
     <NuxtPage />
   </NuxtLayout>
 </template>
+
+<style>
+.fadePage-enter-active,
+.fadePage-leave-active {
+  transition: all 0.4s;
+}
+.fadePage-enter-from,
+.fadePage-leave-to {
+  opacity: 0;
+}
+
+.fadeLayout-enter-active,
+.fadeLayout-leave-active {
+  transition: all 0.4s;
+}
+.fadeLayout-enter-from,
+.fadeLayout-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
+}
+</style>

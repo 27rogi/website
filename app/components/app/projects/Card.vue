@@ -1,30 +1,31 @@
 <script lang="ts" setup>
-import { NuxtLink } from "#components";
-import { useSkillStore } from "~/store/skills";
-import type { ProjectBasic, ProjectLeading } from "~~/types/project";
+import type { ProjectBasic, ProjectLeading } from "~~/types/project"
+import { NuxtLink } from "#components"
+import { useSkillStore } from "~/store/skills"
 
 const props = defineProps({
   project: {
     default: null,
     type: Object as PropType<ProjectLeading | ProjectBasic>,
   },
-});
+})
 
 const ghData = (props.project?.github)
   ? await useLazyFetch<{ stargazers_count: number, forks: number }>("/api/repo", {
-    key: props.project.github.organization + props.project.github.repository,
-    query: {
-      organization: props.project.github.organization,
-      repository: props.project.github.repository,
-    },
-  })
-  : null;
+      key: props.project.github.organization + props.project.github.repository,
+      query: {
+        organization: props.project.github.organization,
+        repository: props.project.github.repository,
+      },
+    })
+  : null
 
-const skills = await useSkillStore().$state;
+const skills = await useSkillStore().$state
 </script>
 
 <template>
   <div
+    v-if="project"
     u-text="1.2em"
     font="600"
     flex="~ basis-[49%] grow-1 col"
@@ -33,7 +34,7 @@ const skills = await useSkillStore().$state;
     rounded="md"
     overflow="hidden"
     relative
-    :class="project.leading ? project.palette : null"
+    :class="project?.leading ? project.palette : null"
   >
     <div
       v-if="project.skills"
@@ -44,32 +45,34 @@ const skills = await useSkillStore().$state;
       z="6"
     >
       <div
-        :class="project.leading ? (project.palette ?? 'card-greendark/30') + ' p-2' : 'backdrop-filter-none'"
+        :class="project?.leading ? `${project.palette ?? 'card-greendark/30'} p-2` : 'backdrop-filter-none'"
         backdrop="filter blur-xl brightness-20"
         flex="~ row wrap items-center"
         gap="2"
       >
-        <template
-          v-for="skillId in project.skills"
-          :key="skillId"
-        >
-          <VTooltip v-if="skills[skillId]" :aria-id="skills[skillId].name" placement="bottom">
-            <UiBadge
+        <template v-if="project?.skills">
+          <template
+            v-for="skillId in project.skills"
+            :key="skillId"
+          >
+            <VTooltip v-if="skills[skillId]" :aria-id="skills[skillId].name" placement="bottom">
+              <UiBadge
                 :title="skills[skillId].name"
                 :color="skills[skillId].color"
                 :icon="skills[skillId].icon"
-            />
-            <template #popper>
-              <p font="bold" u-text="sm">{{ skills[skillId].name }}</p>
-            </template>
-          </VTooltip>
+              />
+              <template #popper>
+                <p font="bold" u-text="sm">{{ skills[skillId].name }}</p>
+              </template>
+            </VTooltip>
+          </template>
         </template>
         <div
           v-if="project.github && ghData"
           leading="1.25rem"
           u-text="base brilliantsea-50"
         >
-          <UiLoadingBlock v-if="ghData.status.value == 'pending'" />
+          <UiLoadingBlock v-if="ghData.status.value === 'pending'" />
           <NuxtLink
             v-else
             :to="`https://github.com/${project.github.organization}/${project.github.repository}`"
@@ -87,7 +90,7 @@ const skills = await useSkillStore().$state;
       </div>
     </div>
     <div
-      v-if="project.leading"
+      v-if="project?.leading"
       overflow="hidden"
       h="240px"
       flex="~ col"

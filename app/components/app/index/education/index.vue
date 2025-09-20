@@ -7,12 +7,12 @@ const education = {
   mgkeit: {
     icon: "mdi:college",
   },
-};
+}
 /* eslint-enable sort/object-properties */
 </script>
 
 <template>
-  <PageIndexEducationCareer />
+  <AppIndexEducationCareer />
   <UiCard
     :header="$t(`page.index.cards.education.title`)"
     h="full"

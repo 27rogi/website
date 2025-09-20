@@ -1,20 +1,20 @@
 <script setup lang="ts">
+import type { StatsData } from "~~/types/api";
 import { formatDistance } from "date-fns";
 import { enUS, ru } from "date-fns/locale";
-import type { StatsData } from "~~/types/api";
 
-const { locale } = useI18n();
-const { data: ghData, error, status } = await useLazyFetch<StatsData>("/api/stats", { key: "ghData" });
+const { locale } = useI18n()
+const { data: ghData, error, status } = await useLazyFetch<StatsData>('/api/stats', { key: 'ghData' })
 </script>
 
 <template>
-    <UiCard
+  <UiCard
     header="GitHub"
     flex="~ col 1"
     class="[&_span]:(text-greenspring-500)"
     line="right" border="x-0 lg:x-1 b-0"
   >
-    <UiLoadingBlock v-if="status == 'pending'" />
+    <UiLoadingBlock v-if="status === 'pending'" />
     <p v-else-if="error">{{ $t("page.index.cards.github.error") }}</p>
     <i18n-t
       v-else

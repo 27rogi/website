@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { useSkillStore } from "~/store/skills";
-import type { ExperienceType } from "~~/types/experience";
+import type { ExperienceType } from "~~/types/experience"
+import { useSkillStore } from "~/store/skills"
 
-const skills = await useSkillStore().$state;
+const skills = await useSkillStore().$state
 /* eslint-disable sort/object-properties */
 const experiences: { [key: string]: ExperienceType } = {
   ctm: {
@@ -36,12 +36,12 @@ const experiences: { [key: string]: ExperienceType } = {
     type: "certificate",
     year: 2023,
   },
-};
+}
 /* eslint-enable sort/object-properties */
 </script>
 
 <template>
-<UiCard :header="$t(`page.index.cards.experience.title`)" line="left" border="x-0 b-0 lg:(l-1)">
+  <UiCard :header="$t(`page.index.cards.experience.title`)" line="left" border="x-0 b-0 lg:(l-1)">
     <div
       grid="~ cols-2 items-stretch [&_:last-child]:col-span-full"
       gap="2"
@@ -56,7 +56,7 @@ const experiences: { [key: string]: ExperienceType } = {
         <template #header>
           <h3>
             {{ $t(`page.index.cards.experience.items.${key}.title`) }}
-            <template v-if="exp.type == 'job'">
+            <template v-if="exp.type === 'job'">
               (<span>{{ exp.yearEnd ? `${exp.year}-${exp.yearEnd}` : exp.year }}</span>)
             </template>
             <template v-else-if="exp.year">
@@ -64,32 +64,32 @@ const experiences: { [key: string]: ExperienceType } = {
             </template>
           </h3>
         </template>
-        <p v-if="exp.type == 'certificate' && exp.issuer">{{ $t(`page.index.cards.experience.issuedBy`) }} <span>{{ exp.issuer }}</span></p>
-        <p v-if="exp.type == 'job'">{{ $t(`page.index.cards.experience.items.${key}.role`) }}</p>
-        <p v-if="exp.type == 'competition'">{{ $t(`page.index.cards.experience.in`) }} <span>{{ $t(`page.index.cards.experience.items.${key}.competition`) }}</span></p>
+        <p v-if="exp.type === 'certificate' && exp.issuer">{{ $t(`page.index.cards.experience.issuedBy`) }} <span>{{ exp.issuer }}</span></p>
+        <p v-if="exp.type === 'job'">{{ $t(`page.index.cards.experience.items.${key}.role`) }}</p>
+        <p v-if="exp.type === 'competition'">{{ $t(`page.index.cards.experience.in`) }} <span>{{ $t(`page.index.cards.experience.items.${key}.competition`) }}</span></p>
         <div
-          v-if="exp.type == 'job' && exp.skills"
+          v-if="exp.type === 'job' && exp.skills"
           m="t-2"
           flex="~ row wrap items-center"
           gap="2"
         >
-        <template v-for="(skill, index) in exp.skills">
-          <VTooltip v-if="skill" :key="skill.name+index" :aria-id="skill.name+index" placement="bottom">
-          <UiBadge
-            v-if="skill"
-            :key="index"
-            :title="skill.name"
-            u-text="0.8em"
-            :color="skill.color"
-            :icon="skill.icon"
-            p="1"
-            icon-size="1.2rem"
-          />
-          <template #popper>
-          <p font="bold" u-text="sm">{{ skill.name }}</p>
-        </template>
-        </VTooltip>
-        </template>
+          <template v-for="(skill, index) in exp.skills">
+            <VTooltip v-if="skill" :key="skill.name + index" :aria-id="skill.name + index" placement="bottom">
+              <UiBadge
+                v-if="skill"
+                :key="index"
+                :title="skill.name"
+                u-text="0.8em"
+                :color="skill.color"
+                :icon="skill.icon"
+                p="1"
+                icon-size="1.2rem"
+              />
+              <template #popper>
+                <p font="bold" u-text="sm">{{ skill.name }}</p>
+              </template>
+            </VTooltip>
+          </template>
         </div>
       </UiCardDetailed>
     </div>

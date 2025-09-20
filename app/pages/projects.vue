@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { useProjectStore } from "~/store/projects";
+import { useProjectStore } from "~/store/projects"
 
-const categories = await useProjectStore().$state;
+const categories = await useProjectStore().$state
 
 definePageMeta({
   key: "projects",
-});
+})
 </script>
 
 <template>
@@ -25,7 +25,7 @@ definePageMeta({
         flex="~ wrap"
         gap="4"
       >
-        <PageProjectsCard
+        <AppProjectsCard
           v-for="(project, key) in projects"
           :key="key"
           :project="project"
@@ -47,7 +47,8 @@ definePageMeta({
               {{ $t(`page.projects.checkit`) }}
             </NuxtLink>
           </p>
-        </PageProjectsCard>
+          <AppProjectsCard />
+        </appprojectscard>
       </div>
     </div>
   </div>
