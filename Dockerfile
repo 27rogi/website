@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM imbios/bun-node:latest-current-alpine as base
+FROM --platform=$BUILDPLATFORM imbios/bun-node:latest-current-alpine AS base
 WORKDIR /app
 
 COPY . .
