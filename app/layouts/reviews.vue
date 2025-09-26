@@ -1,15 +1,6 @@
 <script setup lang="ts">
-const route = useRoute()
-const { t } = useI18n({ useScope: "global" })
-
 useSeoMeta({
   ogImage: "/fulllogo.png",
-})
-
-useHead({
-  titleTemplate: () => {
-    return t("general.title", { title: route.meta.title ? `${route.meta.title} ~ ` : "" })
-  },
 })
 </script>
 

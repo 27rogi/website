@@ -1,20 +1,23 @@
 <script lang="ts" setup>
-const { locale, locales } = useI18n();
-const availableLocales = computed(() => {
-  return locales.value.filter(i => i.code !== locale.value);
-});
+const { locale, locales } = useI18n()
 </script>
 
 <template>
-  <a
-    v-for="{ code } in availableLocales"
-    :key="code"
-    font="head 600"
-    p="4"
-    u-text="white hover:greenspring-500"
-    leading="1px"
-    :href="`/${code}`"
-  >
-    {{ code }}
-  </a>
+  <div flex="~ row" items-center>
+    <a
+      v-for="{ code } in locales"
+      :key="code"
+      font="content 800"
+      u-text="white hover:greenspring-500"
+      leading="0"
+      p="y-5 x-2"
+      border="~ greendark-200/30 first:r-none"
+      rounded="last:r-md first:l-md"
+      bg="greendark-500/60"
+      :href="`/${code}`"
+      :class="{ 'bg-greendark-400/30! text-greenspring-500!': locale === code }"
+    >
+      /{{ code }}/
+    </a>
+  </div>
 </template>

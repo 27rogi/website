@@ -7,11 +7,11 @@ const props = defineProps<{
 
 const links = [
   {
-    localePath: "navbar.projects",
+    localePath: "navbar.link.projects",
     path: "/projects",
   },
   {
-    localePath: "navbar.reviews",
+    localePath: "navbar.link.reviews",
     path: "/reviews/test",
   },
 ]
@@ -31,6 +31,10 @@ const links = [
       rounded="md"
       border="~ greendark-200/30"
       bg="greendark-500/60"
+      flex="~ row"
+      gap="0.5"
+      items-center
+      :class="{ 'pr-10px': props.reviews === true }"
     >
       <TwentySeven
         u-text="white"
@@ -38,9 +42,9 @@ const links = [
         h="10"
         p="0.5"
       />
-      <span v-if="props.reviews">(reviews)</span>
+      <span v-if="props.reviews">{{ $t('navbar.reviews') }}</span>
     </NuxtLinkLocale>
-    <LazyUiLanguageToggle hydrate-on-visible />
+    <LazyUiLanguageToggle m="l-2" hydrate-on-visible />
     <div
       m="l-auto"
       font="head 600"
@@ -51,11 +55,12 @@ const links = [
       >
         <NuxtLinkLocale
           :to="{ path }"
-          u-text="hover:greenspring-500"
-          p="4 first:r-0"
+          hover="text-greenspring-500"
+          p="y-2 x-2 last:r-0"
           leading="1px"
+          active-class="text-greenspring-500"
         >
-          {{ $t(localePath) }}
+          <span>[</span> {{ $t(localePath) }} <span>]</span>
         </NuxtLinkLocale>
       </template>
     </div>
