@@ -28,6 +28,11 @@ export const useSkillStore = defineStore("skills", {
       icon: "devicon:figma",
       name: "Figma",
     },
+    go: {
+      color: "bg-[#6ad7e5]/20",
+      icon: "vscode-icons:file-type-go",
+      name: "Go",
+    },
     idea: {
       color: "bg-[#fc2856]/20",
       icon: "devicon:intellij",
@@ -78,6 +83,11 @@ export const useSkillStore = defineStore("skills", {
       icon: "vscode-icons:file-type-nuxt",
       name: "Nuxt",
     },
+    preact: {
+      color: "bg-[#673ab8]/20",
+      icon: "logos:preact",
+      name: "Preact",
+    },
     prisma: {
       color: "bg-[#015a6a]/20",
       icon: "vscode-icons:file-type-prisma",
@@ -112,16 +122,6 @@ export const useSkillStore = defineStore("skills", {
       color: "bg-[#40b782]/20",
       icon: "vscode-icons:file-type-vue",
       name: "Vue",
-    },
-    go: {
-      color: "bg-[#6ad7e5]/20",
-      icon: "vscode-icons:file-type-go",
-      name: "Go",
-    },
-    preact: {
-      color: "bg-[#673ab8]/20",
-      icon: "logos:preact",
-      name: "Preact",
     },
   } as Record<string, Skill>),
 });
