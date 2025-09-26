@@ -5,6 +5,10 @@
 </template>
 
 <style>
+body {
+  --at-apply: bg-greendark-900;
+}
+
 .fadePage-enter-active,
 .fadePage-leave-active {
   transition: all 0.4s;
