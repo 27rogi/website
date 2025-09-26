@@ -26,6 +26,7 @@ definePageMeta({
               keypath="page.index.intro.header"
               tag="h2"
               scope="global"
+              leading="normal"
             >
               <template #username>
                 <span

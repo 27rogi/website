@@ -6,7 +6,7 @@ defineProps({
   },
   line: {
     default: null,
-    type: [String, null] as PropType<'right' | 'left' | null>,
+    type: [String, null] as PropType<"right" | "left" | null>,
   },
 })
 </script>
@@ -20,7 +20,7 @@ defineProps({
     />
     <div flex="~ 1 col" gap="2">
       <div v-if="$slots.header || $props.header" font="head 800" u-text="1.5em">
-        <h2 v-if="$props.header">
+        <h2 v-if="$props.header" leading="normal">
           {{ $props.header }}
         </h2>
         <slot name="header" />

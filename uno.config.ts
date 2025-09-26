@@ -1,15 +1,21 @@
 // uno.config.ts
 import { presetAttributify } from "@unocss/preset-attributify"
 import { presetTypography } from "@unocss/preset-typography"
-import presetWind from "@unocss/preset-wind3"
+import presetWind from "@unocss/preset-wind4"
+import { createRemToPxProcessor } from "@unocss/preset-wind4/utils"
 import transformerDirectives from "@unocss/transformer-directives"
 import transformerVariantGroup from "@unocss/transformer-variant-group"
 import { defineConfig } from "@unocss/vite"
 
 export default defineConfig({
+  postprocess: [
+    createRemToPxProcessor(),
+  ],
   presets: [
     presetWind({
-      variablePrefix: "style-",
+      preflights: {
+        reset: false,
+      },
     }),
     presetAttributify({
       prefix: "u-",
@@ -58,7 +64,7 @@ export default defineConfig({
         900: "#012d1d",
       },
     },
-    fontFamily: {
+    font: {
       content: "'Cascadia Code Variable', monospace",
       head: "'Unbounded Variable', sans-serif",
     },

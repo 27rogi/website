@@ -9,12 +9,12 @@ const hasPath = computed(() => {
 
 <template>
   <div
-    inset="0" z="1" max-h="100vh" overflow="hidden" opacity="1" absolute transition-600 transition-all ease-in :class="{
+    inset="0" z="1" max-h="100vh" overflow="hidden" opacity="1" transition-600 transition-all ease-in absolute :class="{
       '[&_.blob]:(opacity-10! animate-paused!)': hasPath,
     }" bg="greendark-800" style="mask-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));"
   >
     <svg
-      class="z-1 [&_.blob]:(fill-greendark-800/0 opacity-30 transition ease-in-out)" blur="[84px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 100 1620 1620"
+      class="z-1 [&_.blob]:(opacity-30 transition ease-in-out fill-greendark-800/0)" blur="[8rem]" xmlns="http://www.w3.org/2000/svg" viewBox="0 100 1620 1620"
       fill="none"
     >
       <g fill-rule="evenodd" clip-rule="evenodd" filter="url(#a)">
@@ -65,7 +65,7 @@ const hasPath = computed(() => {
     --at-apply: fill-[rgba(16, 185, 129, 0.1)];
     transform: scale(1) translateY(0%);
   }
-  25% {
+  10% {
     --at-apply: fill-brilliantsea-400/20;
     transform: scale(0.9) translateY(-9%);
   }

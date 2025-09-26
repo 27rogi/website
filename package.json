@@ -68,7 +68,6 @@
     "typescript": "^5.9.2",
     "unconfig": "7.3.3",
     "unocss": "^66.5.2",
-    "unocss-preset-autoprefixer": "^0.0.9",
     "vite-svg-loader": "^5.1.0",
     "vitest": "4.0.0-beta.10",
     "vue": "^3.5.22",
