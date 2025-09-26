@@ -10,6 +10,7 @@ nuxt.d.ts
 .cache
 .output
 dist
+.data
 
 # Logs
 logs
