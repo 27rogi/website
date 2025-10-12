@@ -25,7 +25,7 @@ defineProps({
         </h2>
         <slot name="header" />
       </div>
-      <div contents u-text="1.2rem">
+      <div contents u-text="1rem">
         <slot />
       </div>
     </div>

@@ -59,7 +59,7 @@ defineProps({
           name="header"
         />
       </div>
-      <div u-text="base greendark-200/70">
+      <div u-text="sm greendark-200/70">
         <slot />
       </div>
     </div>

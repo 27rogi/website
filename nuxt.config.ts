@@ -48,7 +48,7 @@ export default defineNuxtConfig({
   },
 
   css: [
-    "@fontsource-variable/cascadia-code",
+    "@fontsource-variable/martian-mono",
     "@fontsource-variable/unbounded",
     // UnoCSS Wind4 has preflight reset that breaks lightningcss, using old method until fixed
     "@unocss/reset/tailwind.css",

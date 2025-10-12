@@ -35,7 +35,7 @@ definePageMeta({
           <template #header>
             <h2>{{ $t(`page.projects.items.${key}.title`) }}</h2>
           </template>
-          <p u-text="1.1em">
+          <p>
             {{ $t(`page.projects.items.${key}.description`) }}
             <NuxtLink
               v-if="project.image && !project.leading"

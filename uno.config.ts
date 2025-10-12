@@ -65,7 +65,7 @@ export default defineConfig({
       },
     },
     font: {
-      content: "'Cascadia Code Variable', monospace",
+      content: "'Martian Mono Variable', monospace",
       head: "'Unbounded Variable', sans-serif",
     },
   },

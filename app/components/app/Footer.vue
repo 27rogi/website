@@ -18,7 +18,7 @@ const { public: { branch, bunver } } = useRuntimeConfig()
           <Icon name="ph:copyright-bold" relative top="1px" size="1em" /> {{ new Date().getFullYear() }}
         </span>
       </p>
-      <i18n-t u-text="sm" keypath="footer.builtwith" tag="p" scope="global">
+      <i18n-t u-text="xs" keypath="footer.builtwith" tag="p" scope="global">
         <template #nuxt>
           <span class="colorful">Nuxt {{ version }} / {{ bunver !== "" ? `Bun ${bunver}` : "(not using Bun?)" }}</span>
         </template>
