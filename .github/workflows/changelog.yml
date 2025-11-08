@@ -3,7 +3,7 @@ name: Update CHANGELOG.md
 on:
   push:
     branches:
-      - 'v3'
+      - 'v4'
     paths-ignore:
       - '.vscode/**'
       - '**/*.md'
@@ -41,10 +41,10 @@ jobs:
 
       - name: Commit
         run: |
-          git checkout v3
+          git checkout v4
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           set +e
           git add CHANGELOG.md
           git commit -m "ci: update changelog" -m "${{ steps.git-cliff.outputs.content }}"
-          git push https://${{ secrets.GITHUB_TOKEN }}@github.com/27rogi/website.git v3
+          git push https://${{ secrets.GITHUB_TOKEN }}@github.com/27rogi/website.git v4

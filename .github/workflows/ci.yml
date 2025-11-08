@@ -3,7 +3,7 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - 'v3'
+      - 'v4'
     paths-ignore:
       - '.vscode/**'
       - '**/*.md'
@@ -28,7 +28,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           no-cache: true
-          push: ${{ github.ref_name == 'v3' }}
+          push: ${{ github.ref_name == 'v4' }}
           tags: 27rogi/website:latest
           build-args: |
             "BRANCH=${{ steps.commit.outputs.short }}"
