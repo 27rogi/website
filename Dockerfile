@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM imbios/bun-node:latest-current-alpine AS base
+FROM --platform=$BUILDPLATFORM imbios/bun-node:1.2.21-current-alpine AS base
 WORKDIR /app
 COPY . .
 RUN bun install
