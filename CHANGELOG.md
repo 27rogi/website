@@ -4,15 +4,43 @@
 
 - Add vitest back
 - Add proof links to experience & career cards
+- Swap monospace font to Cascadia
+- Merge blobs with component & optimize
+- *(i18n)* Try to use strict seo mode
+- *(unocss)* Restore transformerDirectives
+- *(seo)* Make some components lazy
+- *(content,nuxt)* Add @nuxt/content and rework nuxt config
+- *(unocss)* Migrate to wind4 preset
+- Return old monospace font
 
 ### 🐛 Bug Fixes
 
 - Stop rolldown vite from causing problems
+- Change name for monospace font
+- *(eslint)* Remove outdated setting
+- *(docker)* Use correct syntax
+- *(unocss)* Apply body background for app
+
+### 💼 Other
+
+- Latest packages
+- Nuxt 4.1.2
+- Latest deps & @nuxt/content
+- Latest nuxt & deps
 
 ### ⚙️ Miscellaneous Tasks
 
 - Update changelog
 - *(ui)* Make more mobile friendly ui
+- Update changelog
+- *(eslint)* Migrate to antfu config
+- Use lightningcss autoprefix instead of unocss
+- *(ui)* Rework UI for layout and page transitions and @nuxt/content
+- *(eslint)* Tweak eslint settings
+- *(eslint)* Append nuxt instead of wrap
+- Sort skills store
+- Cosmetic changes to match original ui version
+- Migrate from v3 to v4 branch
 ## [03092025] - 2025-09-02
 
 ### 💼 Other
