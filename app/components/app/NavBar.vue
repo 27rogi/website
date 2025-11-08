@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { isDev } from "~~/nuxt.config";
 import TwentySeven from "~/assets/27.svg?component"
 
 const props = defineProps<{
@@ -8,14 +7,9 @@ const props = defineProps<{
 
 const links = [
   {
-    localePath: "navbar.link.reviews",
-    path: "/reviews/test",
-  },
-  // not ready for production yet, so let it be only in dev
-  isDev ? {
     localePath: "navbar.link.projects",
     path: "/projects",
-  } : null,
+  },
 ]
 </script>
 

@@ -66,7 +66,6 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    "/": { prerender: true },
     "/api/*": { cache: isDev ? false : { maxAge: 15 * 60 }, cors: true },
   },
 
@@ -84,10 +83,8 @@ export default defineNuxtConfig({
     watcher: "parcel",
     payloadExtraction: false,
     renderJsonPayloads: true,
-    viteEnvironmentApi: true,
-    typescriptPlugin: true,
   },
-  compatibilityDate: "2025-09-03",
+  compatibilityDate: "2025-11-08",
 
   nitro: {
     compressPublicAssets: true,
@@ -167,4 +164,10 @@ export default defineNuxtConfig({
     quality: 80,
     format: ["png", "jpeg", "webp"],
   },
+
+  content: {
+    experimental: {
+      sqliteConnector: 'native'
+    }
+  }
 })
