@@ -5,7 +5,8 @@ RUN bun install
 
 FROM base AS build
 ENV NODE_ENV=production
-RUN bun -b run build
+# somehow using --bun causes memory leak or internal issues while building
+RUN bun run build
 
 FROM oven/bun:alpine AS runtime
 COPY --from=build /app/.output .output
