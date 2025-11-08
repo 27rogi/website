@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import type { StatsData } from "~~/types/api";
-import { formatDistance } from "date-fns";
-import { enUS, ru } from "date-fns/locale";
+import type { StatsData } from "~~/types/api"
+import { formatDistance } from "date-fns"
+import { enUS, ru } from "date-fns/locale"
 
 const { locale } = useI18n()
-const { data: ghData, error, status } = await useLazyFetch<StatsData>('/api/stats', { key: 'ghData' })
+const { data: ghData, error, status } = await useLazyFetch<StatsData>("/api/stats", { key: "ghData" })
 </script>
 
 <template>

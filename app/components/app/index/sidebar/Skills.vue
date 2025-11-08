@@ -53,7 +53,7 @@ const categories: Array<SkillCategory> = [
             :color="skill.color"
             :icon="skill.icon"
             icon-size="1.2rem"
-            class="relative gap-0"
+            class="gap-0 relative"
           />
           <template #popper>
             <p font="bold" u-text="base">{{ skill.name }}</p>

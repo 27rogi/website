@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { version } from 'nuxt/package.json'
+import { version } from "nuxt/package.json"
 
 const { public: { branch, bunver } } = useRuntimeConfig()
 </script>
 
 <template>
   <div
-    flex="~ items-center" class="[&_.colorful]:(align-top text-greenspring-500 font-bold)" m="x-auto"
+    flex="~ items-center" class="[&_.colorful]:(text-greenspring-500 font-bold align-top)" m="x-auto"
     max="w-screen-2xl" p="y-4 x-4" u-text="brilliantsea-50/50 sm" leading="loose"
   >
     <div>

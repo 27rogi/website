@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { NuxtLink } from "#components";
+import { NuxtLink } from "#components"
 
 defineProps({
   header: {
@@ -13,8 +13,8 @@ defineProps({
   link: {
     default: null,
     type: String,
-  }
-});
+  },
+})
 </script>
 
 <template>
@@ -24,7 +24,7 @@ defineProps({
     u-text="1.2em"
     font="600"
     p="4"
-    flex="~ row items-center"
+    flex="~ row items-start"
     gap="4"
     card="greenspring/20"
     rounded="md"
@@ -41,10 +41,12 @@ defineProps({
       rounded="md"
       size="28px"
       hydrate-on-visible
+      mt="4px"
     />
     <div
       class="[&_span]:(text-greenspring-500)"
       flex="~ col"
+      gap="0.5"
     >
       <div
         v-if="$props.header || $slots.header"

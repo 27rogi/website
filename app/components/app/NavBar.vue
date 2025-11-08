@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { isDev } from "~~/nuxt.config";
 import TwentySeven from "~/assets/27.svg?component"
 
 const props = defineProps<{
@@ -7,13 +8,14 @@ const props = defineProps<{
 
 const links = [
   {
-    localePath: "navbar.link.projects",
-    path: "/projects",
-  },
-  {
     localePath: "navbar.link.reviews",
     path: "/reviews/test",
   },
+  // not ready for production yet, so let it be only in dev
+  isDev ? {
+    localePath: "navbar.link.projects",
+    path: "/projects",
+  } : null,
 ]
 </script>
 
@@ -50,17 +52,18 @@ const links = [
       font="head 600"
     >
       <template
-        v-for="{ path, localePath } in links"
-        :key="path"
+        v-for="(linkKey, index) in links.keys()"
+        :key="linkKey"
       >
+        <span v-if="(index + 1) % 2 === 0" select="none" text="greenspring-500">/</span>
         <NuxtLinkLocale
-          :to="{ path }"
+          :to="{ path: links[linkKey]!.path }"
           hover="text-greenspring-500"
           p="y-2 x-2 last:r-0"
           leading="1px"
           active-class="text-greenspring-500"
         >
-          <span>[</span> {{ $t(localePath) }} <span>]</span>
+          {{ $t(links[linkKey]!.localePath) }}
         </NuxtLinkLocale>
       </template>
     </div>
