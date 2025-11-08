@@ -4,7 +4,7 @@ import { browserslistToTargets } from "lightningcss"
 import viteSVGLoader from "vite-svg-loader"
 
 // eslint-disable-next-line node/prefer-global/process
-const isDev = process.env.NODE_ENV !== "production"
+export const isDev = process.env.NODE_ENV !== "production"
 
 /* eslint-disable sort/object-properties */
 export default defineNuxtConfig({
@@ -34,6 +34,7 @@ export default defineNuxtConfig({
   devtools: {
     // to use devtools with bun use --no-fork flag
     enabled: true,
+    timeline: { enabled: true },
   },
 
   app: {
@@ -83,6 +84,8 @@ export default defineNuxtConfig({
     watcher: "parcel",
     payloadExtraction: false,
     renderJsonPayloads: true,
+    viteEnvironmentApi: true,
+    typescriptPlugin: true,
   },
   compatibilityDate: "2025-09-03",
 
