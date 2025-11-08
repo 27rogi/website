@@ -3,10 +3,12 @@
 ### 🐛 Bug Fixes
 
 - Rollback to nuxt 4.1.3 due to build & cli issues
+- Seems like bun 1.3 has memory leak during build, using 1.2
 
 ### ⚙️ Miscellaneous Tasks
 
 - *(docker)* Explicit bun use and few changes
+- Update changelog
 ## [08112025] - 2025-11-08
 
 ### 🚀 Features
