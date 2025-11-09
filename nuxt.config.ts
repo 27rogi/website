@@ -66,6 +66,7 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
+    "/": { prerender: true },
     "/api/*": { cache: isDev ? false : { maxAge: 15 * 60 }, cors: true },
   },
 
@@ -98,9 +99,6 @@ export default defineNuxtConfig({
   },
 
   vite: {
-    build: {
-      cssMinify: isDev ? undefined : "lightningcss",
-    },
     css: {
       lightningcss: {
         targets: browserslistToTargets(browserslist(">= 0.25%")),
@@ -167,7 +165,7 @@ export default defineNuxtConfig({
 
   content: {
     experimental: {
-      sqliteConnector: 'native'
-    }
-  }
+      sqliteConnector: "native",
+    },
+  },
 })
