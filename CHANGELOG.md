@@ -5,6 +5,11 @@
 - Rollback to nuxt 4.1.3 due to build & cli issues
 - Seems like bun 1.3 has memory leak during build, using 1.2
 - Fix image build once and for all, i suppose
+- Bring back `/` prerender
+
+### 💼 Other
+
+- Bring back nuxt 4.2, try vue 3.6.0
 
 ### ⚙️ Miscellaneous Tasks
 
@@ -12,6 +17,8 @@
 - Update changelog
 - Update changelog
 - *(docker)* Add ci builds for next branch
+- Update changelog
+- *(docker)* Use bun 1.2.22 image as base
 ## [08112025] - 2025-11-08
 
 ### 🚀 Features
