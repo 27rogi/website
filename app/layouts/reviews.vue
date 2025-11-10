@@ -28,6 +28,7 @@ useSeoMeta({
           bg="greendark-700/20"
           min-h="screen"
           selection="bg-greenspring-600/50 text-white"
+          class="[&_p]:leading-normal"
         >
           <AppNavBar reviews />
           <div contents>

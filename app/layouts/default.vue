@@ -39,11 +39,13 @@ useHead({
         <div
           flex="~ col"
           z="2"
-          relative
+
           u-text="brilliantsea-50 size-xs lg:size-base"
           bg="greendark-700/20"
           min-h="screen"
           selection="bg-greenspring-600/50 text-white"
+          relative
+          class="[&_p]:leading-normal"
         >
           <AppNavBar />
           <div contents>
