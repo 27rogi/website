@@ -1,4 +1,4 @@
-import type { ProjectBasic, ProjectLeading } from "~~/types/project";
+import type { ProjectBasic, ProjectLeading } from "~~/types/project"
 
 // @unocss-include
 export const useProjectStore = defineStore("projects", {
@@ -32,7 +32,7 @@ export const useProjectStore = defineStore("projects", {
       premid: {
         github: {
           organization: "premid",
-          repository: "website",
+          repository: "website-old",
         },
         image: "/premid.png",
         leading: true,
@@ -40,13 +40,13 @@ export const useProjectStore = defineStore("projects", {
         palette: "card-purple/30",
         repository: "premid",
         skills: ["ts", "nuxt", "tailwind", "scss"],
-        url: "https://github.com/PreMiD/Website/commits?author=27rogi",
+        url: "https://github.com/PreMiD/Website-old/commits?author=27rogi",
       },
       rumc: {
         image: "/rumc.png",
         leading: true,
         palette: "card-orange/40",
-        skills: ["ts", "js", "tailwind", "scss", "bun" ],
+        skills: ["ts", "js", "tailwind", "scss", "bun"],
         url: "https://ru-minecraft.com/",
       },
     } as Record<string, ProjectLeading>,
@@ -135,4 +135,4 @@ export const useProjectStore = defineStore("projects", {
     } as Record<string, ProjectBasic>,
   }),
   /* eslint-enable sort/object-properties */
-});
+})

@@ -67,26 +67,27 @@ const skills = await useSkillStore().$state
             </VTooltip>
           </template>
         </template>
-        <div
-          v-if="project.github && ghData"
-          leading="1.25rem"
-          u-text="base brilliantsea-50"
-        >
-          <UiLoadingBlock v-if="ghData.status.value === 'pending'" />
-          <NuxtLink
-            v-else
-            :to="`https://github.com/${project.github.organization}/${project.github.repository}`"
-            gap="1.5"
-            flex="~ items-center"
+        <template v-if="project.github && ghData && ghData.status.value !== 'error'">
+          <div
+            leading="1.25rem"
+            u-text="base brilliantsea-50"
           >
-            <UiBadge icon="ph:star-duotone" px="2">
-              {{ ghData.data.value?.stargazers_count }}
-            </UiBadge>
-            <UiBadge v-if="ghData.data.value!.forks > 0" icon="ph:git-fork-duotone" px="2">
-              {{ ghData.data.value?.forks }}
-            </UiBadge>
-          </NuxtLink>
-        </div>
+            <UiLoadingBlock v-if="ghData.status.value === 'pending'" />
+            <NuxtLink
+              v-else-if="ghData.status.value === 'success' && ghData.data.value"
+              :to="`https://github.com/${project.github.organization}/${project.github.repository}`"
+              gap="1.5"
+              flex="~ items-center"
+            >
+              <UiBadge icon="ph:star-duotone" px="2">
+                {{ ghData.data.value?.stargazers_count }}
+              </UiBadge>
+              <UiBadge v-if="ghData.data.value!.forks > 0" icon="ph:git-fork-duotone" px="2">
+                {{ ghData.data.value?.forks }}
+              </UiBadge>
+            </NuxtLink>
+          </div>
+        </template>
       </div>
     </div>
     <div
