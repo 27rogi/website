@@ -1,3 +1,5 @@
+import fs from 'node:fs'
+import path from 'node:path'
 import viteUnoCSS from "@unocss/vite"
 import browserslist from "browserslist"
 import { browserslistToTargets } from "lightningcss"
@@ -8,6 +10,11 @@ export const isDev = process.env.NODE_ENV !== "production"
 
 /* eslint-disable sort/object-properties */
 export default defineNuxtConfig({
+
+  features: {
+    // reduces CLS (https://kylev.dev/blog/fixing-cumulative-layout-shift-nuxt-3/)
+    inlineStyles: false,
+  },
 
   modules: [
     "@nuxt/eslint",
@@ -29,6 +36,8 @@ export default defineNuxtConfig({
     // "@nuxt/test-utils/module",
     "floating-vue/nuxt",
     "@nuxt/content",
+    'nuxt-booster',
+    'nuxt-vitalizer',
   ],
 
   devtools: {
@@ -66,7 +75,9 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    "/": { prerender: true },
+    "/": { prerender: false },
+    "/ru": { prerender: true },
+    "/en": { prerender: true },
     "/reviews": { swr: true },
     "/reviews/**": { swr: 3600 },
     "/projects": { swr: true },
@@ -88,6 +99,7 @@ export default defineNuxtConfig({
     payloadExtraction: false,
     renderJsonPayloads: true,
   },
+
   compatibilityDate: "2025-11-08",
 
   nitro: {
@@ -99,9 +111,17 @@ export default defineNuxtConfig({
         target: "esnext",
       },
     },
+    prerender: {
+      autoSubfolderIndex: false,
+      failOnError: false,
+      crawlLinks: true,
+      routes: ['/sitemap.xml', '/robots.txt'],
+    },
   },
 
   vite: {
+    // using lightningcss to minify builds causes prerender issues
+    // better off using esbuild for now
     css: {
       lightningcss: {
         targets: browserslistToTargets(browserslist(">= 0.25%")),
@@ -130,7 +150,7 @@ export default defineNuxtConfig({
 
   i18n: {
     langDir: "locales",
-    baseUrl: "rogi.su",
+    baseUrl: "https://rogi.su",
     locales: [
       {
         code: "en",
@@ -158,12 +178,19 @@ export default defineNuxtConfig({
     experimental: {
       strictSeo: true,
     },
+    rootRedirect: "/en",
   },
 
   image: {
     provider: "ipx",
     quality: 80,
     format: ["png", "jpeg", "webp"],
+    // nuxt-booster requirements
+    domains: ['img.youtube.com', 'i.vimeocdn.com'],
+    alias: {
+      youtube: 'https://img.youtube.com',
+      vimeo: 'https://i.vimeocdn.com',
+    }
   },
 
   content: {

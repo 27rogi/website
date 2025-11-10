@@ -24,7 +24,9 @@
     "date-fns": "^4.1.0",
     "floating-vue": "^5.2.2",
     "lightningcss": "^1.30.2",
-    "nuxt-payload-analyzer": "^0.1.4"
+    "nuxt-booster": "^3.3.1",
+    "nuxt-payload-analyzer": "^0.1.4",
+    "nuxt-vitalizer": "^2.0.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^6.2.0",

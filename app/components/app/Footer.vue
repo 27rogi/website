@@ -30,9 +30,9 @@ const { public: { branch, bunver } } = useRuntimeConfig()
       </i18n-t>
     </div>
     <div m="l-auto">
-      <NuxtLink class="colorful" to="https://status.rogi.su">
+      <a class="colorful" target="_blank" href="https://status.rogi.su">
         {{ $t("footer.status") }}
-      </NuxtLink>
+      </a>
     </div>
   </div>
 </template>
