@@ -6,6 +6,7 @@
 - Seems like bun 1.3 has memory leak during build, using 1.2
 - Fix image build once and for all, i suppose
 - Bring back `/` prerender
+- Found cause of failing builds, optimized deps, temporary removed testing
 
 ### 💼 Other
 
@@ -19,6 +20,7 @@
 - *(docker)* Add ci builds for next branch
 - Update changelog
 - *(docker)* Use bun 1.2.22 image as base
+- Update changelog
 ## [08112025] - 2025-11-08
 
 ### 🚀 Features
