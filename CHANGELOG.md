@@ -1,5 +1,10 @@
 ## [unreleased]
 
+### 🚀 Features
+
+- Provide gh token for prerender
+- *(seo)* Prerender optimizations, cls hack
+
 ### 🐛 Bug Fixes
 
 - Rollback to nuxt 4.1.3 due to build & cli issues
@@ -7,6 +12,7 @@
 - Fix image build once and for all, i suppose
 - Bring back `/` prerender
 - Found cause of failing builds, optimized deps, temporary removed testing
+- Remove unused imports
 
 ### 💼 Other
 
@@ -20,6 +26,7 @@
 - *(docker)* Add ci builds for next branch
 - Update changelog
 - *(docker)* Use bun 1.2.22 image as base
+- Update changelog
 - Update changelog
 ## [08112025] - 2025-11-08
 
