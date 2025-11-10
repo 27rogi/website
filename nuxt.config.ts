@@ -1,5 +1,3 @@
-import fs from 'node:fs'
-import path from 'node:path'
 import viteUnoCSS from "@unocss/vite"
 import browserslist from "browserslist"
 import { browserslistToTargets } from "lightningcss"
