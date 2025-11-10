@@ -23,21 +23,13 @@
     "@vueuse/nuxt": "^14.0.0",
     "date-fns": "^4.1.0",
     "floating-vue": "^5.2.2",
-    "nuxt-payload-analyzer": "^0.1.4",
-    "zod": "^4.1.12"
+    "lightningcss": "^1.30.2",
+    "nuxt-payload-analyzer": "^0.1.4"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^6.2.0",
-    "@iconify-json/devicon": "^1.2.46",
-    "@iconify-json/file-icons": "^1.2.2",
-    "@iconify-json/logos": "^1.2.10",
-    "@iconify-json/mdi": "^1.2.3",
-    "@iconify-json/ph": "^1.2.2",
-    "@iconify-json/simple-icons": "^1.2.57",
-    "@iconify-json/vscode-icons": "^1.2.33",
     "@nuxt/eslint": "^1.10.0",
     "@nuxt/icon": "^2.1.0",
-    "@nuxt/test-utils": "^3.20.1",
     "@nuxtjs/fontaine": "^0.5.0",
     "@nuxtjs/i18n": "^10.2.0",
     "@nuxtjs/seo": "^3.2.2",
@@ -46,30 +38,21 @@
     "@types/bun": "^1.3.2",
     "@unocss/eslint-config": "^66.5.5",
     "@unocss/eslint-plugin": "^66.5.5",
-    "@vue/test-utils": "^2.4.6",
     "browserslist": "^4.27.0",
     "esbuild": "^0.27.0",
     "eslint": "^9.39.1",
     "eslint-plugin-format": "^1.0.2",
     "eslint-plugin-sort": "^4.0.0",
-    "happy-dom": "^20.0.10",
-    "lightningcss": "npm:lightningcss-wasm@latest",
     "nuxt": "^4.2.1",
     "nuxt-delay-hydration": "^1.3.8",
     "nuxt-icon": "^1.0.0-beta.7",
     "nuxt-security": "^2.4.0",
-    "playwright-core": "^1.56.1",
     "prettier": "^3.6.2",
-    "sass": "^1.93.3",
-    "tailwindcss": "^4.1.17",
-    "taze": "^19.9.0",
     "typescript": "^5.9.3",
     "unocss": "^66.5.5",
     "vite-svg-loader": "^5.1.0",
-    "vitest": "^4.0.8",
     "vue": "^3.6.0-alpha.3",
-    "vue-router": "^4.6.3",
-    "vue-tsc": "^3.1.3"
+    "vue-router": "^4.6.3"
   },
   "trustedDependencies": [
     "@parcel/watcher",
@@ -80,7 +63,6 @@
     "vue-demi"
   ],
   "overrides": {
-    "@nuxt/cli": "3.28.0",
     "lightningcss": "npm:lightningcss-wasm@latest"
   }
 }

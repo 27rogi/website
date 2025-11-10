@@ -1,12 +1,13 @@
-FROM --platform=$BUILDPLATFORM imbios/bun-node:1.2.22-current-alpine AS base
+FROM --platform=$BUILDPLATFORM oven/bun:alpine AS base
 WORKDIR /app
 COPY . .
+# looks like now image can be built without nodejs, keeping commented just in case
+# RUN apk install --update nodejs npm
 RUN bun install
 
 FROM base AS build
 ENV NODE_ENV=production
-# somehow using --bun causes memory leak or internal issues while building
-RUN bun run build
+RUN bun run -b build
 
 FROM oven/bun:alpine AS runtime
 COPY --from=build /app/.output .output

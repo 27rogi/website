@@ -26,7 +26,7 @@ export default defineNuxtConfig({
     // cause issues for hot reloading
     isDev ? null : "nuxt-security",
     // TODO: implement testing, Bun is able to run Vitest now, but stability is unknown
-    "@nuxt/test-utils/module",
+    // "@nuxt/test-utils/module",
     "floating-vue/nuxt",
     "@nuxt/content",
   ],
@@ -67,11 +67,14 @@ export default defineNuxtConfig({
 
   routeRules: {
     "/": { prerender: true },
+    "/reviews": { swr: true },
+    "/reviews/**": { swr: 3600 },
+    "/projects": { swr: true },
     "/api/*": { cache: isDev ? false : { maxAge: 15 * 60 }, cors: true },
   },
 
   future: {
-    compatibilityVersion: 4,
+    compatibilityVersion: 5,
     typescriptBundlerResolution: true,
   },
 
