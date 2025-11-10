@@ -7,7 +7,8 @@ RUN bun install
 
 FROM base AS build
 ENV NODE_ENV=production
-RUN bun run -b build
+RUN --mount=type=secret,id=gh_token \
+    NUXT_GH_API_TOKEN="$(cat /run/secrets/gh_token)" bun run -b build
 
 FROM oven/bun:alpine AS runtime
 COPY --from=build /app/.output .output

@@ -25,3 +25,5 @@ jobs:
           tags: user/app:latest
           build-args: |
             "BRANCH=${{ steps.commit.outputs.short }}"
+          secrets: |
+            gh_token=${{ secrets.GH_API_TOKEN }}
