@@ -58,7 +58,7 @@ useHead({
             <AppFooter />
           </div>
         </div>
-        <LazyAppBackground hydrate-on-visible />
+        <AppBackground />
       </Body>
     </Html>
   </div>

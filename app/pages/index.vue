@@ -9,7 +9,7 @@ definePageMeta({
     flex="~ col"
     m="auto"
     w="full"
-    max-w="screen-2xl"
+    max-w="xl:screen-xl 2xl:screen-2xl"
     relative
   >
     <div

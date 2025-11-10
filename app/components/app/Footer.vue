@@ -2,12 +2,13 @@
 import { version } from "nuxt/package.json"
 
 const { public: { branch, bunver } } = useRuntimeConfig()
+const isHome = useRoute().path === "/en" || useRoute().path === "/ru"
 </script>
 
 <template>
   <div
     flex="~ items-center" class="[&_.colorful]:(text-greenspring-500 font-bold align-top)" m="x-auto"
-    max="w-screen-2xl" p="y-4 x-4" u-text="brilliantsea-50/50 sm" leading="loose"
+    :class="isHome ? 'xl:max-w-screen-xl 2xl:max-w-screen-2xl' : 'max-w-screen-2xl'" p="y-4 x-4" u-text="brilliantsea-50/50 sm" leading="loose"
   >
     <div>
       <p leading="loose">

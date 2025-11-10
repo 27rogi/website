@@ -11,16 +11,18 @@ const links = [
     path: "/projects",
   },
 ]
+
+const isHome = useRoute().path === "/en" || useRoute().path === "/ru"
 </script>
 
 <template>
   <div
     w="full"
     m="x-auto"
-    max="w-screen-2xl"
     flex="~ items-center"
     p="y-4 x-4"
     leading="0"
+    :class="isHome ? 'xl:max-w-screen-xl 2xl:max-w-screen-2xl' : 'max-w-screen-2xl'"
   >
     <NuxtLinkLocale
       :to="{ path: '/' }"
