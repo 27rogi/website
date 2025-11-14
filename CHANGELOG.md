@@ -16,6 +16,7 @@
 - Remove unused imports
 - Better check for ghData missing
 - Set leading for <p>
+- Nuxt-security cors tweaks
 
 ### 💼 Other
 
@@ -29,6 +30,7 @@
 - *(docker)* Add ci builds for next branch
 - Update changelog
 - *(docker)* Use bun 1.2.22 image as base
+- Update changelog
 - Update changelog
 - Update changelog
 - Update changelog
