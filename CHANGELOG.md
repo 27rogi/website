@@ -5,6 +5,8 @@
 - Provide gh token for prerender
 - *(seo)* Prerender optimizations, cls hack
 - Add more flexibility for homepage
+- Bump required bun version
+- Add headers for i18n
 
 ### 🐛 Bug Fixes
 
@@ -17,10 +19,13 @@
 - Better check for ghData missing
 - Set leading for <p>
 - Nuxt-security cors tweaks
+- Bring back i18n fix via declaration
+- Disable strictSeo and add more cors rules
 
 ### 💼 Other
 
 - Bring back nuxt 4.2, try vue 3.6.0
+- Latest packages
 
 ### ⚙️ Miscellaneous Tasks
 
@@ -34,6 +39,9 @@
 - Update changelog
 - Update changelog
 - Update changelog
+- Update changelog
+- Rename store dir to stores
+- Only use nuxt-link for local paths
 ## [08112025] - 2025-11-08
 
 ### 🚀 Features
