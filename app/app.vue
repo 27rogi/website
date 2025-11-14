@@ -1,6 +1,19 @@
+<script setup lang="ts">
+const { finalizePendingLocaleChange } = useI18n()
+
+// see: https://i18n.nuxtjs.org/docs/guide/lang-switcher#wait-for-page-transition
+async function onBeforeEnter () {
+  await finalizePendingLocaleChange()
+}
+</script>
+
 <template>
   <NuxtLayout>
-    <NuxtPage />
+    <NuxtPage :transition="{
+      name: 'fadePage',
+      mode: 'out-in',
+      onBeforeEnter
+    }" />
   </NuxtLayout>
 </template>
 

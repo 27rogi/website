@@ -6,10 +6,10 @@ const switchLocale = useSwitchLocalePath()
 <template>
   <div flex="~ row" items-center>
     <NuxtLink 
-      v-for="{ code } in locales"
+      v-for="{ code, name } in locales"
       :to="switchLocale(code)"
       :key="code"
-      title="Switch to {{ code }}"
+      :title="name ?? code"
       font="head 800"
       u-text="white hover:greenspring-500 xs"
       leading="0"
