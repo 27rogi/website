@@ -7,6 +7,7 @@
 - Add more flexibility for homepage
 - Bump required bun version
 - Add headers for i18n
+- *(ci)* Add id to changelog commit
 
 ### 🐛 Bug Fixes
 
@@ -24,6 +25,7 @@
 - Try different cors headers
 - Make LanguageToggle work again
 - Use function call inside useHead
+- Remove workaround for LanguageToggle
 
 ### 💼 Other
 
@@ -48,6 +50,7 @@
 - Update changelog
 - Update changelog
 - Add link titles for seo, update reviews template
+- Update changelog
 - Update changelog
 ## [08112025] - 2025-11-08
 
