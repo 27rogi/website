@@ -34,8 +34,8 @@ export default defineNuxtConfig({
     // "@nuxt/test-utils/module",
     "floating-vue/nuxt",
     "@nuxt/content",
-    'nuxt-booster',
-    'nuxt-vitalizer',
+    "nuxt-booster",
+    "nuxt-vitalizer",
   ],
 
   devtools: {
@@ -113,7 +113,7 @@ export default defineNuxtConfig({
       autoSubfolderIndex: false,
       failOnError: false,
       crawlLinks: true,
-      routes: ['/sitemap.xml', '/robots.txt'],
+      routes: ["/sitemap.xml", "/robots.txt"],
     },
   },
 
@@ -185,11 +185,11 @@ export default defineNuxtConfig({
     quality: 80,
     format: ["png", "jpeg", "webp"],
     // nuxt-booster requirements
-    domains: ['img.youtube.com', 'i.vimeocdn.com'],
+    domains: ["img.youtube.com", "i.vimeocdn.com"],
     alias: {
-      youtube: 'https://img.youtube.com',
-      vimeo: 'https://i.vimeocdn.com',
-    }
+      youtube: "https://img.youtube.com",
+      vimeo: "https://i.vimeocdn.com",
+    },
   },
 
   content: {
@@ -200,23 +200,29 @@ export default defineNuxtConfig({
 
   security: {
     headers: {
-      crossOriginEmbedderPolicy: 'unsafe-none',
-      // fix, because default security headers seem to block cloudflare and some scripts
+      crossOriginEmbedderPolicy: false,
+      // firefox fix: https://nuxt-security.vercel.app/advanced/faq#issue-on-firefox-when-using-iframe
+      crossOriginOpenerPolicy: false,
+      // fix, because default security headers seem to block external cloudflare scripts
       contentSecurityPolicy: {
-        'img-src': ["'self'", 'data:'],
-        'script-src': [
+        "img-src": ["'self'", "data:"],
+        "script-src": [
           "'self'",
-          "'strict-dynamic'",
-          "'nonce-{{nonce}}'",
-          "https:"
+          "https:",
+          "'unsafe-inline'",
+          "'unsafe-eval'",
         ],
-        'script-src-elem': [
+        "script-src-elem": [
           "'self'",
-          "'strict-dynamic'",
-          "'nonce-{{nonce}}'",
-          "https:"
-        ]
-      }
-    }
+          "https:",
+          "'unsafe-inline'",
+          "'unsafe-eval'",
+        ],
+        "connect-src": [
+          "'self'",
+          "https:",
+        ],
+      },
+    },
   },
 })
