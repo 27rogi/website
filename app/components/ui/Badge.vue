@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { NuxtLink } from "#components";
+import { NuxtLinkLocale } from '#components';
 
 defineProps({
   color: {
@@ -18,13 +18,18 @@ defineProps({
     default: null,
     type: String,
   },
+  nuxtLink: {
+    default: null,
+    type: String,
+  },
 });
 </script>
 
 <template>
   <component
-    :is="link ? NuxtLink : 'div'"
-    :to="link ?? null"
+    :is="nuxtLink ? NuxtLinkLocale : link ? 'a' : 'div'"
+    :to="nuxtLink ?? null"
+    :href="link ?? null"
     h="9"
     :w="$slots.default ? 'inherit' : '9'"
     rounded="md"

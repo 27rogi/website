@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Skill, SkillCategory } from "~~/types/skill"
-import { useSkillStore } from "~/store/skills"
+import { useSkillStore } from "~/stores/skills"
 
 const skills: Record<string, Skill> = await useSkillStore().$state
 const categories: Array<SkillCategory> = [

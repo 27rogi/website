@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useProjectStore } from "~/store/projects"
+import { useProjectStore } from "~/stores/projects"
 
 const categories = await useProjectStore().$state
 
@@ -37,15 +37,15 @@ definePageMeta({
           </template>
           <p>
             {{ $t(`page.projects.items.${key}.description`) }}
-            <NuxtLink
+            <a
               v-if="project.image && !project.leading"
               target="_blank"
-              :to="project.image"
+              :href="project.image"
               u-text="greenspring-500"
               font="bold"
             >
               {{ $t(`page.projects.checkit`) }}
-            </NuxtLink>
+            </a>
           </p>
           <AppProjectsCard />
         </appprojectscard>

@@ -12,10 +12,10 @@ const isHome = useRoute().path === "/en" || useRoute().path === "/ru"
   >
     <div>
       <p leading="loose">
-        <span u-text="inherit" font="head">rogi#su (<NuxtLink
-          :to="`https://github.com/27rogi/website/commit/${branch}`"
+        <span u-text="inherit" font="head">rogi#su (<a
+          :href="`https://github.com/27rogi/website/commit/${branch}`" target="_blank"
         ><span class="colorful">{{ branch }}</span>
-        </NuxtLink>)
+        </a>)
           <Icon name="ph:copyright-bold" relative top="1px" size="1em" /> {{ new Date().getFullYear() }}
         </span>
       </p>

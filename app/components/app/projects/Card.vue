@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import type { ProjectBasic, ProjectLeading } from "~~/types/project"
-import { NuxtLink } from "#components"
-import { useSkillStore } from "~/store/skills"
+import { useSkillStore } from "~/stores/skills"
 
 const props = defineProps({
   project: {
@@ -73,9 +72,9 @@ const skills = await useSkillStore().$state
             u-text="base brilliantsea-50"
           >
             <UiLoadingBlock v-if="ghData.status.value === 'pending'" />
-            <NuxtLink
+            <a
               v-else-if="ghData.status.value === 'success' && ghData.data.value"
-              :to="`https://github.com/${project.github.organization}/${project.github.repository}`"
+              :href="`https://github.com/${project.github.organization}/${project.github.repository}`"
               gap="1.5"
               flex="~ items-center"
             >
@@ -85,7 +84,7 @@ const skills = await useSkillStore().$state
               <UiBadge v-if="ghData.data.value!.forks > 0" icon="ph:git-fork-duotone" px="2">
                 {{ ghData.data.value?.forks }}
               </UiBadge>
-            </NuxtLink>
+            </a>
           </div>
         </template>
       </div>
@@ -115,8 +114,8 @@ const skills = await useSkillStore().$state
       gap="2"
     >
       <component
-        :is="project.url ? NuxtLink : 'div'"
-        :to="project.url ?? null"
+        :is="project.url ? 'a' : 'div'"
+        :href="project.url ?? null"
         flex="~ row gap-2 items-center"
         mb="2"
       >
