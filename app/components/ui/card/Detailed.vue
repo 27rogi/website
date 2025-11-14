@@ -26,6 +26,7 @@ defineProps({
     :is="nuxtLink ? NuxtLinkLocale : link ? 'a' : 'div'"
     :to="nuxtLink ?? null"
     :href="link ?? null"
+    :title="nuxtLink ?? link ?? null"
     u-text="1.2em"
     font="600"
     p="4"

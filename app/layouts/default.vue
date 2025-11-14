@@ -1,12 +1,11 @@
 <script setup lang="ts">
 const route = useRoute()
-const { t } = useI18n({ useScope: "global" })
 // to be replaced in i18n with experimental.strictSeo
 const localeHead = useLocaleHead({ seo: true})
 
 const metadata = computed(() => {
   return {
-    description: route.meta.key ? t(`page.${route.meta.key}.seo.description`) : null,
+    description: route.meta.key ? $t(`page.${route.meta.key}.seo.description`) : null,
   }
 })
 
@@ -22,7 +21,7 @@ useHead({
   link: [...(localeHead.value.link || [])],
   meta: [...(localeHead.value.meta || [])],
   titleTemplate: () => {
-    return t("general.title", { title: route.meta.key ? `${t(`page.${route.meta.key}.seo.title`)} ~ ` : "" })
+    return $t("general.title", { title: route.meta.key ? `${$t(`page.${route.meta.key}.seo.title`)} ~ ` : "" })
   }
 })
 </script>

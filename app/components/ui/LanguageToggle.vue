@@ -9,6 +9,7 @@ const switchLocale = useSwitchLocalePath()
       v-for="{ code } in locales"
       :to="switchLocale(code)"
       :key="code"
+      title="Switch to {{ code }}"
       font="head 800"
       u-text="white hover:greenspring-500 xs"
       leading="0"

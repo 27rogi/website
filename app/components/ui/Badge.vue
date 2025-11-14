@@ -30,6 +30,7 @@ defineProps({
     :is="nuxtLink ? NuxtLinkLocale : link ? 'a' : 'div'"
     :to="nuxtLink ?? null"
     :href="link ?? null"
+    :title="nuxtLink ?? link ?? null"
     h="9"
     :w="$slots.default ? 'inherit' : '9'"
     rounded="md"

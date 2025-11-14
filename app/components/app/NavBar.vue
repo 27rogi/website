@@ -26,6 +26,7 @@ const isHome = useRoute().path === "/en" || useRoute().path === "/ru"
   >
     <NuxtLinkLocale
       :to="{ path: '/' }"
+      title="27rogi"
       rounded="md"
       border="~ greendark-200/30"
       bg="greendark-500/60"
@@ -54,6 +55,7 @@ const isHome = useRoute().path === "/en" || useRoute().path === "/ru"
         <span v-if="(index + 1) % 2 === 0" select="none" text="greenspring-500">/</span>
         <NuxtLinkLocale
           :to="{ path: links[linkKey]!.path }"
+          :title="$t(links[linkKey]!.localePath)"
           hover="text-greenspring-500"
           p="y-2 x-2 last:r-0"
           leading="1px"

@@ -40,6 +40,7 @@ definePageMeta({
           <p>
             {{ $t(`page.index.intro.about_me`) }}
             <NuxtLinkLocale
+              title="/projects"
               :to="{ path: '/projects' }"
               class="text-greenspring-400"
             >
