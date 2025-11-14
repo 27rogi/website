@@ -45,11 +45,10 @@ export default defineNuxtConfig({
   },
 
   app: {
-    // i18n requires to define pageTransition inside app.vue
-    // pageTransition: {
-    //   name: "fadePage",
-    //   mode: "out-in",
-    // },
+    pageTransition: {
+      name: "fadePage",
+      mode: "out-in",
+    },
     layoutTransition: {
       name: "fadeLayout",
       mode: "out-in",
@@ -175,7 +174,7 @@ export default defineNuxtConfig({
     strategy: "prefix",
     detectBrowserLanguage: false,
     defaultLocale: "en",
-    skipSettingLocaleOnNavigate: true,
+    skipSettingLocaleOnNavigate: false,
     // currently has issues: https://github.com/Baroshem/nuxt-security/issues/642
     // experimental: {
     //   strictSeo: true,
