@@ -23,6 +23,7 @@
 - Disable strictSeo and add more cors rules
 - Try different cors headers
 - Make LanguageToggle work again
+- Use function call inside useHead
 
 ### 💼 Other
 
@@ -47,6 +48,7 @@
 - Update changelog
 - Update changelog
 - Add link titles for seo, update reviews template
+- Update changelog
 ## [08112025] - 2025-11-08
 
 ### 🚀 Features
