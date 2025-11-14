@@ -22,6 +22,7 @@
 - Bring back i18n fix via declaration
 - Disable strictSeo and add more cors rules
 - Try different cors headers
+- Make LanguageToggle work again
 
 ### 💼 Other
 
@@ -44,6 +45,8 @@
 - Rename store dir to stores
 - Only use nuxt-link for local paths
 - Update changelog
+- Update changelog
+- Add link titles for seo, update reviews template
 ## [08112025] - 2025-11-08
 
 ### 🚀 Features
