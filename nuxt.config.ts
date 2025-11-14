@@ -196,4 +196,20 @@ export default defineNuxtConfig({
       sqliteConnector: "native",
     },
   },
+
+  security: {
+    headers: {
+      crossOriginEmbedderPolicy: 'unsafe-none',
+      // fix, because default security headers seem to block cloudflare and some scripts
+      contentSecurityPolicy: {
+        'img-src': ["'self'", 'data:'],
+        'script-src': [
+          "'self'",
+          'https:',
+          "'unsafe-inline'",
+          "'unsafe-eval'"
+        ],
+      }
+    }
+  },
 })
