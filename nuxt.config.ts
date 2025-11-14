@@ -173,9 +173,10 @@ export default defineNuxtConfig({
     detectBrowserLanguage: false,
     defaultLocale: "en",
     skipSettingLocaleOnNavigate: true,
-    experimental: {
-      strictSeo: true,
-    },
+    // currently has issues: https://github.com/Baroshem/nuxt-security/issues/642
+    // experimental: {
+    //   strictSeo: true,
+    // },
     rootRedirect: "/en",
   },
 
@@ -205,10 +206,16 @@ export default defineNuxtConfig({
         'img-src': ["'self'", 'data:'],
         'script-src': [
           "'self'",
-          'https:',
-          "'unsafe-inline'",
-          "'unsafe-eval'"
+          "'strict-dynamic'",
+          "'nonce-{{nonce}}'",
+          "https:"
         ],
+        'script-src-elem': [
+          "'self'",
+          "'strict-dynamic'",
+          "'nonce-{{nonce}}'",
+          "https:"
+        ]
       }
     }
   },
