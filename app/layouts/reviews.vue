@@ -5,13 +5,14 @@ useSeoMeta({
   ogImage: "/fulllogo.png",
 })
 
-useHead({
+// () => is required here, see: https://github.com/nuxt-modules/i18n/issues/3206
+useHead(() => ({
   htmlAttrs: {
     lang: localeHead.value.htmlAttrs!.lang
   },
   link: [...(localeHead.value.link || [])],
   meta: [...(localeHead.value.meta || [])],
-})
+}))
 </script>
 
 <template>

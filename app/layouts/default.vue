@@ -14,7 +14,8 @@ useSeoMeta({
   ogImage: "/fulllogo.png",
 })
 
-useHead({
+// () => is required here, see: https://github.com/nuxt-modules/i18n/issues/3206
+useHead(() => ({
   htmlAttrs: {
     lang: localeHead.value.htmlAttrs!.lang
   },
@@ -23,7 +24,7 @@ useHead({
   titleTemplate: () => {
     return $t("general.title", { title: route.meta.key ? `${$t(`page.${route.meta.key}.seo.title`)} ~ ` : "" })
   }
-})
+}))
 </script>
 
 <template>
