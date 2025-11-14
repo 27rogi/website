@@ -21,6 +21,7 @@
 - Nuxt-security cors tweaks
 - Bring back i18n fix via declaration
 - Disable strictSeo and add more cors rules
+- Try different cors headers
 
 ### 💼 Other
 
@@ -42,6 +43,7 @@
 - Update changelog
 - Rename store dir to stores
 - Only use nuxt-link for local paths
+- Update changelog
 ## [08112025] - 2025-11-08
 
 ### 🚀 Features
