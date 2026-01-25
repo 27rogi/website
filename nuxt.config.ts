@@ -1,4 +1,4 @@
-import viteUnoCSS from "@unocss/vite"
+// import viteUnoCSS from "@unocss/vite"
 import browserslist from "browserslist"
 import { browserslistToTargets } from "lightningcss"
 import viteSVGLoader from "vite-svg-loader"
@@ -23,7 +23,7 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     // TODO: Seems to be buggy when using lightningcss as Vite transformer, using
     // UnoCSS vite plugin seems to be more stable, but needs further investigation
-    // "@unocss/nuxt",
+    "@unocss/nuxt",
     "@nuxt/icon",
     "@nuxtjs/fontaine",
     "nuxt-payload-analyzer",
@@ -88,14 +88,15 @@ export default defineNuxtConfig({
   },
 
   experimental: {
+    writeEarlyHints: true,
     crossOriginPrefetch: true,
     typedPages: true,
     // Investigate: Using parcel watcher gives better speed for large projects
     // and works better under windows, according to:
     // https://nuxt.com/docs/guide/going-further/experimental-features#watcher
-    watcher: "parcel",
-    payloadExtraction: false,
-    renderJsonPayloads: true,
+    // watcher: "parcel",
+    buildCache: true,
+    typescriptPlugin: true,
   },
 
   compatibilityDate: "2025-11-08",
@@ -127,13 +128,15 @@ export default defineNuxtConfig({
       transformer: "lightningcss",
     },
     plugins: [
-      viteUnoCSS(),
+      // viteUnoCSS(),
       viteSVGLoader(),
     ],
-  },
-
-  typescript: {
-    strict: true,
+    optimizeDeps: {
+      include: [
+        "@vue/devtools-core",
+        "@vue/devtools-kit",
+      ],
+    },
   },
 
   // Module Settings
@@ -175,11 +178,15 @@ export default defineNuxtConfig({
     detectBrowserLanguage: false,
     defaultLocale: "en",
     skipSettingLocaleOnNavigate: false,
-    // currently has issues: https://github.com/Baroshem/nuxt-security/issues/642
-    // experimental: {
-    //   strictSeo: true,
-    // },
+    experimental: {
+      // currently has issues: https://github.com/Baroshem/nuxt-security/issues/642
+      // strictSeo: true,
+      typedPages: true,
+      typedOptionsAndMessages: "default",
+    },
     rootRedirect: "/en",
+    // when true it produces type error with `$t` on type ComponentCustomProperties
+    autoDeclare: false,
   },
 
   image: {
