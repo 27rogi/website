@@ -22,11 +22,11 @@
     "@unocss/nuxt": "^66.6.0",
     "@vueuse/nuxt": "^14.0.0",
     "date-fns": "^4.1.0",
-    "floating-vue": "^5.2.2",
     "lightningcss": "^1.31.1",
     "nuxt-booster": "^3.3.1",
     "nuxt-payload-analyzer": "^0.1.4",
-    "nuxt-vitalizer": "^2.0.0"
+    "nuxt-vitalizer": "^2.0.0",
+    "vue-tippy": "^6.7.1"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^7.2.0",
@@ -65,6 +65,7 @@
     "vue-demi"
   ],
   "overrides": {
-    "lightningcss": "npm:lightningcss-wasm@latest"
+     "lightningcss": "npm:lightningcss-wasm@latest",
+     "vite": "npm:rolldown-vite@latest"
   }
 }

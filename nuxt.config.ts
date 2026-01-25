@@ -1,6 +1,6 @@
-// import viteUnoCSS from "@unocss/vite"
-import browserslist from "browserslist"
-import { browserslistToTargets } from "lightningcss"
+import viteUnoCSS from "@unocss/vite"
+// import browserslist from "browserslist"
+// import { browserslistToTargets } from "lightningcss"
 import viteSVGLoader from "vite-svg-loader"
 
 // eslint-disable-next-line node/prefer-global/process
@@ -23,14 +23,13 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     // TODO: Seems to be buggy when using lightningcss as Vite transformer, using
     // UnoCSS vite plugin seems to be more stable, but needs further investigation
-    "@unocss/nuxt",
+    //"@unocss/nuxt",
     "@nuxt/icon",
     "@nuxtjs/fontaine",
     "nuxt-payload-analyzer",
     "nuxt-security",
     // TODO: implement testing, Bun is able to run Vitest now, but stability is unknown
     // "@nuxt/test-utils/module",
-    "floating-vue/nuxt",
     "@nuxt/content",
     "nuxt-booster",
     "nuxt-vitalizer",
@@ -117,22 +116,15 @@ export default defineNuxtConfig({
   },
 
   vite: {
-    // using lightningcss to minify builds causes prerender issues
-    // better off using esbuild for now
-    css: {
-      lightningcss: {
-        targets: browserslistToTargets(browserslist(">= 0.25%")),
-      },
-      transformer: "lightningcss",
-    },
     plugins: [
-      // viteUnoCSS(),
+      viteUnoCSS(),
       viteSVGLoader(),
     ],
     optimizeDeps: {
       include: [
         "@vue/devtools-core",
         "@vue/devtools-kit",
+        "vue-tippy",
       ],
     },
   },
