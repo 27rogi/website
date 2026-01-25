@@ -27,9 +27,7 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxtjs/fontaine",
     "nuxt-payload-analyzer",
-    // Security headers interfere with devtools and may
-    // cause issues for hot reloading
-    isDev ? null : "nuxt-security",
+    "nuxt-security",
     // TODO: implement testing, Bun is able to run Vitest now, but stability is unknown
     // "@nuxt/test-utils/module",
     "floating-vue/nuxt",
