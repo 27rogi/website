@@ -26,6 +26,7 @@ const categories: Array<SkillCategory> = [
 
 <template>
   <UiCard :header="t(`page.index.cards.skills.title`)" line="right" border="x-0 lg:x-1 b-0" mt="-1px" rounded="0 lg:tr-md">
+    <p v-tippy="{ content: 'Hi!' }">haaaaa</p>
     <div
       v-for="({ key, items }, i) in categories"
       :key="i"
@@ -48,18 +49,18 @@ const categories: Array<SkillCategory> = [
         flex="~ row wrap items-center"
         gap="2"
       >
-        <VTooltip v-for="(skill, index) in items" :key="skill.name + index" :aria-id="skill.name + index" placement="bottom">
-          <UiBadge
+      <tippy arrow v-for="(skill, index) in items" :key="skill.name + index" :aria-id="skill.name + index">
+        <UiBadge
             :key="index"
             :color="skill.color"
             :icon="skill.icon"
             icon-size="1.2rem"
             class="gap-0 relative"
           />
-          <template #popper>
+          <template #content>
             <p font="bold" u-text="base">{{ skill.name }}</p>
           </template>
-        </VTooltip>
+      </tippy>
       </div>
     </div>
     <p

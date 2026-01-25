@@ -54,16 +54,16 @@ const skills = await useSkillStore().$state
             v-for="skillId in project.skills"
             :key="skillId"
           >
-            <VTooltip v-if="skills[skillId]" :aria-id="skills[skillId].name" placement="bottom">
+          <tippy arrow v-if="skills[skillId]" :aria-id="skills[skillId].name">
               <UiBadge
                 :title="skills[skillId].name"
                 :color="skills[skillId].color"
                 :icon="skills[skillId].icon"
               />
-              <template #popper>
+              <template #content>
                 <p font="bold" u-text="sm">{{ skills[skillId].name }}</p>
               </template>
-            </VTooltip>
+          </tippy>
           </template>
         </template>
         <template v-if="project.github && ghData && ghData.status.value !== 'error'">
