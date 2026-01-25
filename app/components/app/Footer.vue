@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { version } from "nuxt/package.json"
 
+const { t } = useI18n()
 const { public: { branch, bunver } } = useRuntimeConfig()
 const isHome = useRoute().path === "/en" || useRoute().path === "/ru"
 </script>
@@ -21,7 +22,7 @@ const isHome = useRoute().path === "/en" || useRoute().path === "/ru"
       </p>
       <i18n-t u-text="xs" keypath="footer.builtwith" tag="p" scope="global">
         <template #nuxt>
-          <span class="colorful">Nuxt {{ version }} / {{ bunver !== "" ? `Bun ${bunver}` : "(not using Bun?)" }}</span>
+          <span class="colorful">Nuxt {{ version }} / {{ bunver !== "" ? `Bun ${bunver}` : "Bun not detected ⚠️" }}</span>
         </template>
         <template #magic>
           <span class="colorful">
@@ -32,7 +33,7 @@ const isHome = useRoute().path === "/en" || useRoute().path === "/ru"
     </div>
     <div m="l-auto">
       <a class="colorful" target="_blank" href="https://status.rogi.su">
-        {{ $t("footer.status") }}
+        {{ t("footer.status") }}
       </a>
     </div>
   </div>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { ExperienceType } from "~~/types/experience"
 import { useSkillStore } from "~/stores/skills"
-
+const { t } = useI18n()
 const skills = await useSkillStore().$state
 /* eslint-disable sort/object-properties */
 const experiences: { [key: string]: ExperienceType } = {
@@ -41,7 +41,7 @@ const experiences: { [key: string]: ExperienceType } = {
 </script>
 
 <template>
-  <UiCard :header="$t(`page.index.cards.experience.title`)" line="left" border="x-0 b-0 lg:(l-1)">
+  <UiCard :header="t(`page.index.cards.experience.title`)" line="left" border="x-0 b-0 lg:(l-1)">
     <div
       grid="~ cols-2 items-stretch [&_:last-child]:col-span-full"
       gap="2"
@@ -55,7 +55,7 @@ const experiences: { [key: string]: ExperienceType } = {
       >
         <template #header>
           <h3>
-            {{ $t(`page.index.cards.experience.items.${key}.title`) }}
+            {{ t(`page.index.cards.experience.items.${key}.title`) }}
             <template v-if="exp.type === 'job'">
               (<span>{{ exp.yearEnd ? `${exp.year}-${exp.yearEnd}` : exp.year }}</span>)
             </template>
@@ -64,9 +64,9 @@ const experiences: { [key: string]: ExperienceType } = {
             </template>
           </h3>
         </template>
-        <p v-if="exp.type === 'certificate' && exp.issuer">{{ $t(`page.index.cards.experience.issuedBy`) }} <span>{{ exp.issuer }}</span></p>
-        <p v-if="exp.type === 'job'">{{ $t(`page.index.cards.experience.items.${key}.role`) }}</p>
-        <p v-if="exp.type === 'competition'">{{ $t(`page.index.cards.experience.in`) }} <span>{{ $t(`page.index.cards.experience.items.${key}.competition`) }}</span></p>
+        <p v-if="exp.type === 'certificate' && exp.issuer">{{ t(`page.index.cards.experience.issuedBy`) }} <span>{{ exp.issuer }}</span></p>
+        <p v-if="exp.type === 'job'">{{ t(`page.index.cards.experience.items.${key}.role`) }}</p>
+        <p v-if="exp.type === 'competition'">{{ t(`page.index.cards.experience.in`) }} <span>{{ t(`page.index.cards.experience.items.${key}.competition`) }}</span></p>
         <div
           v-if="exp.type === 'job' && exp.skills"
           m="t-2"

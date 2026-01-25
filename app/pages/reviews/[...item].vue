@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import type { Collections } from "@nuxt/content"
-
 interface RouteParams {
   item: string[]
 }
 
+const { t } = useI18n()
 const route = useRouter()
 const { item } = route.currentRoute.value.params as RouteParams
 const { locale } = useI18n()
@@ -40,7 +39,7 @@ definePageMeta({
     relative
   >
     <div v-if="page?.differentLocale === true" p="4" card="amber/60">
-      <p>{{ $t("general.lang_missing") }}</p>
+      <p>{{ t("general.lang_missing") }}</p>
     </div>
     <div v-if="page" flex="~ col">
       <div relative text="xl" flex="~ col" gap="2" p="4" card="greendark/30" leading-tight>

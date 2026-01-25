@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import TwentySeven from "~/assets/27.svg?component"
+const { t } = useI18n()
 
 const props = defineProps<{
   reviews?: boolean
@@ -41,7 +42,7 @@ const isHome = useRoute().path === "/en" || useRoute().path === "/ru"
         h="10"
         p="0.5"
       />
-      <span v-if="props.reviews">{{ $t('navbar.reviews') }}</span>
+      <span v-if="props.reviews">{{ t('navbar.reviews') }}</span>
     </NuxtLinkLocale>
     <LazyUiLanguageToggle m="l-2" hydrate-on-visible />
     <div
@@ -55,13 +56,13 @@ const isHome = useRoute().path === "/en" || useRoute().path === "/ru"
         <span v-if="(index + 1) % 2 === 0" select="none" text="greenspring-500">/</span>
         <NuxtLinkLocale
           :to="{ path: links[linkKey]!.path }"
-          :title="$t(links[linkKey]!.localePath)"
+          :title="t(links[linkKey]!.localePath)"
           hover="text-greenspring-500"
           p="y-2 x-2 last:r-0"
           leading="1px"
           active-class="text-greenspring-500"
         >
-          {{ $t(links[linkKey]!.localePath) }}
+          {{ t(links[linkKey]!.localePath) }}
         </NuxtLinkLocale>
       </template>
     </div>

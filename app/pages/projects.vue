@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useProjectStore } from "~/stores/projects"
 
+const { t } = useI18n()
 const categories = await useProjectStore().$state
 
 definePageMeta({
@@ -33,10 +34,10 @@ definePageMeta({
           transition="all delay-50 ease-in-out"
         >
           <template #header>
-            <h2>{{ $t(`page.projects.items.${key}.title`) }}</h2>
+            <h2>{{ t(`page.projects.items.${key}.title`) }}</h2>
           </template>
           <p>
-            {{ $t(`page.projects.items.${key}.description`) }}
+            {{ t(`page.projects.items.${key}.description`) }}
             <a
               v-if="project.image && !project.leading"
               target="_blank"
@@ -44,7 +45,7 @@ definePageMeta({
               u-text="greenspring-500"
               font="bold"
             >
-              {{ $t(`page.projects.checkit`) }}
+              {{ t(`page.projects.checkit`) }}
             </a>
           </p>
           <AppProjectsCard />

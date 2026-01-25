@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const { t } = useI18n()
 definePageMeta({
   key: "index",
 })
@@ -38,13 +39,13 @@ definePageMeta({
             </i18n-t>
           </template>
           <p>
-            {{ $t(`page.index.intro.about_me`) }}
+            {{ t(`page.index.intro.about_me`) }}
             <NuxtLinkLocale
               title="/projects"
               :to="{ path: '/projects' }"
               class="text-greenspring-400"
             >
-              {{ $t(`page.index.intro.to_projects`) }}
+              {{ t(`page.index.intro.to_projects`) }}
             </NuxtLinkLocale>.
           </p>
         </UiCard>

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const { t } = useI18n()
 const socials = {
   github: {
     color: "bg-[#2d2d2d]/30",
@@ -21,7 +22,7 @@ const socials = {
 
 <template>
   <UiCard
-    :header="$t('page.index.cards.socials.title')"
+    :header="t('page.index.cards.socials.title')"
     flex="~ col"
     mb="-1px"
     rounded="0 lg:br-md"

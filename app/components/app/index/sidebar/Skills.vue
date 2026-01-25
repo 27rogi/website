@@ -2,6 +2,7 @@
 import type { Skill, SkillCategory } from "~~/types/skill"
 import { useSkillStore } from "~/stores/skills"
 
+const { t } = useI18n()
 const skills: Record<string, Skill> = await useSkillStore().$state
 const categories: Array<SkillCategory> = [
   {
@@ -24,7 +25,7 @@ const categories: Array<SkillCategory> = [
 </script>
 
 <template>
-  <UiCard :header="$t(`page.index.cards.skills.title`)" line="right" border="x-0 lg:x-1 b-0" mt="-1px" rounded="0 lg:tr-md">
+  <UiCard :header="t(`page.index.cards.skills.title`)" line="right" border="x-0 lg:x-1 b-0" mt="-1px" rounded="0 lg:tr-md">
     <div
       v-for="({ key, items }, i) in categories"
       :key="i"
@@ -37,7 +38,7 @@ const categories: Array<SkillCategory> = [
         relative
         gap="4"
       >
-        <p>{{ $t(`page.index.cards.skills.categories.${key}`) }}</p>
+        <p>{{ t(`page.index.cards.skills.categories.${key}`) }}</p>
         <div
           border="b greendark-200/30"
           flex="grow"
@@ -65,7 +66,7 @@ const categories: Array<SkillCategory> = [
       mt="0.5em"
       u-text="xs greendark-200/70"
     >
-      {{ $t(`page.index.cards.skills.hint`) }}
+      {{ t(`page.index.cards.skills.hint`) }}
     </p>
   </UiCard>
 </template>
