@@ -12,6 +12,7 @@
 - Allow nuxt-security in dev mode
 - *(!)* Migrate to rolldown-vite, drop lightningcss
 - Migrate from floating-vue to tippy-vue
+- Prepare for nuxt-i18n-micro
 
 ### 🐛 Bug Fixes
 
@@ -33,6 +34,7 @@
 - Remove test tippy elem
 - Eslint quick fix
 - Disable features that break dev and builds
+- Edit cors to allow vue-tippy to load
 
 ### 💼 Other
 
@@ -62,6 +64,10 @@
 - Update changelog
 - *(id19373645497)* Update changelog
 - *(i18n)* Use import instead of $t for i18n to avoid issues
+- *(id21398613205)* Update changelog
+- Actualize readme
+- Migrate translations
+- Update lockfile
 ## [08112025] - 2025-11-08
 
 ### 🚀 Features
