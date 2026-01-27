@@ -1,4 +1,4 @@
-import viteUnoCSS from "@unocss/vite"
+// import viteUnoCSS from "@unocss/vite"
 // import browserslist from "browserslist"
 // import { browserslistToTargets } from "lightningcss"
 import viteSVGLoader from "vite-svg-loader"
@@ -15,15 +15,17 @@ export default defineNuxtConfig({
   },
 
   modules: [
+    "@nuxt/devtools",
     "@nuxt/eslint",
     "@pinia/nuxt",
     "@nuxtjs/seo",
+    // TODO: migrate to i18n-micro: https://s00d.github.io/nuxt-i18n-micro/guide/folder-structure
     "@nuxtjs/i18n",
     "@nuxt/image",
     "@vueuse/nuxt",
     // TODO: Seems to be buggy when using lightningcss as Vite transformer, using
     // UnoCSS vite plugin seems to be more stable, but needs further investigation
-    //"@unocss/nuxt",
+    "@unocss/nuxt",
     "@nuxt/icon",
     "@nuxtjs/fontaine",
     "nuxt-payload-analyzer",
@@ -31,12 +33,13 @@ export default defineNuxtConfig({
     // TODO: implement testing, Bun is able to run Vitest now, but stability is unknown
     // "@nuxt/test-utils/module",
     "@nuxt/content",
-    "nuxt-booster",
+    // TODO: breaks loading of devtools and other modules on latest Nuxt, investigate later
+    // "nuxt-booster",
     "nuxt-vitalizer",
   ],
 
+  // to use devtools with bun on Windows use --no-fork flag
   devtools: {
-    // to use devtools with bun use --no-fork flag
     enabled: true,
     timeline: { enabled: true },
   },
@@ -57,7 +60,7 @@ export default defineNuxtConfig({
     "@fontsource-variable/unbounded",
     // UnoCSS Wind4 has preflight reset that breaks lightningcss, using old method until fixed
     "@unocss/reset/tailwind.css",
-    "virtual:uno.css",
+    // "virtual:uno.css",
   ],
 
   runtimeConfig: {
@@ -85,6 +88,8 @@ export default defineNuxtConfig({
   },
 
   experimental: {
+    // as of Nuxt 4.3.0 this feature breaks DevTools, vue-tippy and other modules
+    viteEnvironmentApi: false,
     writeEarlyHints: true,
     crossOriginPrefetch: true,
     typedPages: true,
@@ -117,7 +122,7 @@ export default defineNuxtConfig({
 
   vite: {
     plugins: [
-      viteUnoCSS(),
+      // viteUnoCSS(),
       viteSVGLoader(),
     ],
     optimizeDeps: {
@@ -125,6 +130,8 @@ export default defineNuxtConfig({
         "@vue/devtools-core",
         "@vue/devtools-kit",
         "vue-tippy",
+        "date-fns",
+        "date-fns/locale",
       ],
     },
   },
