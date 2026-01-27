@@ -16,6 +16,7 @@ export default antfu({
   .overrideRules({
     "@stylistic/indent": ["error", 2],
     "@stylistic/quotes": ["error", "double"],
+    "perfectionist/sort-imports": "off",
     "sort/imports": "off",
     "vue/component-name-in-template-casing": ["error", "PascalCase"],
     "vue/first-attribute-linebreak": ["warn", {
