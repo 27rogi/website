@@ -2,21 +2,35 @@
   <img width="600" src=".github/preview.png" />
 </p>
 
-# 🍃 [rogi#su](https://rogi.su) 
+# 🍃 [rogi#su](https://rogi.su)
+
 This is a portfolio website that I made to list all of my most notable projects and also give small glimpse into my skills and career. I decided to use Nuxt for fast and painless development. The color palette of this website mostly features [`Green Spring`](https://en.wikipedia.org/wiki/Spring_green) tones with some darker variations. Most of the styles are written using UnoCSS with Tailwind preset and directives.
 
 ## Bun experiment
+
 The latest generation of my website is built with Bun and uses its environment implementation, Docker builds also use special Nitro preset made to work with Bun. Due to this radical approach some features might not work on Node or vice versa. If you notice some issues with the website you can create an issue.
 
-## Built with
-* Nuxt 3 (but uses Nuxt 4 experimental features)
-  * **Modules**: `i18n`, `unocss`, `pinia`, `image`, `icon`, `eslint`, `floating-vue` and more!
-* UnoCSS
-* LightningCSS
-* FontSource variable fonts
-* ESLint
+## Used stack
+
+* Nuxt 4 (Nuxt 5 parity where possible)
+  * **Modules**: `@nuxtjs/i18n`, `unocss`, `pinia`, `@nuxt/image`, `@nuxt/icon`, `@nuxt/eslint`, `vue-tippy`, `nuxt-security` and more!
+* Vite Rolldown
+* UnoCSS (with Tailwind 4 preset)
 * Bun (`bun run --bun` compatible)
 * TypeScript
 
+## Features
+
+* Nuxt 5 ready (using `compatabilityVersion: 5`)
+* Store management (Pinia)
+* Icons (by Iconify using nuxt-icon)
+* Core Web Vitals optimizations
+* Sitemap, Meta Tags, Open Graph, Twitter Cards (nuxt-seo)
+* Internationalization (i18n-next)
+* Code Linting (ESLint using @antfu config with tweaks)
+* CORS (nuxt-security)
+* ...and something else, I'm just lazy to write it all down :)
+
 ## Development
-To start development you only need to install Node LTS and Bun latest version, other steps are identical to default Nuxt [guide](https://nuxt.com/docs/getting-started/installation#development-server).
+
+To start development you only need to install Bun latest version, other steps are identical to default Nuxt [guide](https://nuxt.com/docs/getting-started/installation#development-server).
