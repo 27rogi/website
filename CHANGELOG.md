@@ -8,6 +8,10 @@
 - Bump required bun version
 - Add headers for i18n
 - *(ci)* Add id to changelog commit
+- Tweak nuxt config
+- Allow nuxt-security in dev mode
+- *(!)* Migrate to rolldown-vite, drop lightningcss
+- Migrate from floating-vue to tippy-vue
 
 ### 🐛 Bug Fixes
 
@@ -26,11 +30,15 @@
 - Make LanguageToggle work again
 - Use function call inside useHead
 - Remove workaround for LanguageToggle
+- Remove test tippy elem
+- Eslint quick fix
+- Disable features that break dev and builds
 
 ### 💼 Other
 
 - Bring back nuxt 4.2, try vue 3.6.0
 - Latest packages
+- Latest deps
 
 ### ⚙️ Miscellaneous Tasks
 
@@ -52,6 +60,8 @@
 - Add link titles for seo, update reviews template
 - Update changelog
 - Update changelog
+- *(id19373645497)* Update changelog
+- *(i18n)* Use import instead of $t for i18n to avoid issues
 ## [08112025] - 2025-11-08
 
 ### 🚀 Features
