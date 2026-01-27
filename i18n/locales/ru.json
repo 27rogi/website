@@ -1,0 +1,17 @@
+{
+  "general": {
+    "title": "{title}rogi#su",
+    "lang_missing": "Статья отображена на другом языке из-за отсутствия перевода для текущего языка!"
+  },
+  "navbar": {
+    "link": {
+      "projects": "Проекты",
+      "reviews": "Обзоры"
+    },
+    "reviews": "/обзоры"
+  },
+  "footer": {
+    "builtwith": "Создано используя {magic} и {nuxt}",
+    "status": "Статус сервисов"
+  }
+}
