@@ -205,6 +205,7 @@ export default defineNuxtConfig({
   },
 
   security: {
+    nonce: true,
     headers: {
       crossOriginEmbedderPolicy: false,
       // firefox fix: https://nuxt-security.vercel.app/advanced/faq#issue-on-firefox-when-using-iframe
@@ -215,15 +216,10 @@ export default defineNuxtConfig({
         "script-src": [
           "'self'",
           "https:",
-          "'unsafe-inline'",
           "'unsafe-eval'",
+          "'strict-dynamic'", 
         ],
-        "script-src-elem": [
-          "'self'",
-          "https:",
-          "'unsafe-inline'",
-          "'unsafe-eval'",
-        ],
+        "script-src-elem": false,
         "connect-src": [
           "'self'",
           "https:",
