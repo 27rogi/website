@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import TwentySeven from "~/assets/27.svg?component"
-const { t } = useI18n()
 
 const props = defineProps<{
   reviews?: boolean
 }>()
+
+const { t } = useI18n()
 
 const links = [
   {
@@ -25,8 +26,8 @@ const isHome = useRoute().path === "/en" || useRoute().path === "/ru"
     leading="0"
     :class="isHome ? 'xl:max-w-screen-xl 2xl:max-w-screen-2xl' : 'max-w-screen-2xl'"
   >
-    <NuxtLinkLocale
-      :to="{ path: '/' }"
+    <nuxt-link
+      to="/"
       title="27rogi"
       rounded="md"
       border="~ greendark-200/30"
@@ -43,8 +44,8 @@ const isHome = useRoute().path === "/en" || useRoute().path === "/ru"
         p="0.5"
       />
       <span v-if="props.reviews">{{ t('navbar.reviews') }}</span>
-    </NuxtLinkLocale>
-    <LazyUiLanguageToggle m="l-2" hydrate-on-visible />
+    </nuxt-link>
+    <UiLanguageToggle m="l-2" />
     <div
       m="l-auto"
       font="head 600"
@@ -54,16 +55,16 @@ const isHome = useRoute().path === "/en" || useRoute().path === "/ru"
         :key="linkKey"
       >
         <span v-if="(index + 1) % 2 === 0" select="none" text="greenspring-500">/</span>
-        <NuxtLinkLocale
-          :to="{ path: links[linkKey]!.path }"
-          :title="t(links[linkKey]!.localePath)"
+        <nuxt-link
+          :to="links[linkKey]!.path"
+          :title="t(links[linkKey]!.localePath)?.toString()"
           hover="text-greenspring-500"
           p="y-2 x-2 last:r-0"
           leading="1px"
           active-class="text-greenspring-500"
         >
           {{ t(links[linkKey]!.localePath) }}
-        </NuxtLinkLocale>
+        </nuxt-link>
       </template>
     </div>
   </div>

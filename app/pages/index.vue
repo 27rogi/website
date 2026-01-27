@@ -26,7 +26,6 @@ definePageMeta({
             <i18n-t
               keypath="page.index.intro.header"
               tag="h2"
-              scope="global"
               leading="normal"
             >
               <template #username>
@@ -38,16 +37,20 @@ definePageMeta({
               </template>
             </i18n-t>
           </template>
-          <p>
-            {{ t(`page.index.intro.about_me`) }}
-            <NuxtLinkLocale
-              title="/projects"
-              :to="{ path: '/projects' }"
-              class="text-greenspring-400"
-            >
-              {{ t(`page.index.intro.to_projects`) }}
-            </NuxtLinkLocale>.
-          </p>
+          <i18n-t
+            keypath="page.index.intro.about_me"
+            tag="p"
+          >
+            <template #to_projects>
+              <nuxt-link
+                title="/projects"
+                to="/projects"
+                class="text-greenspring-400"
+              >
+                {{ t(`page.index.intro.to_projects`) }}
+              </nuxt-link>.
+            </template>
+          </i18n-t>
         </UiCard>
         <AppIndexEducation />
       </div>

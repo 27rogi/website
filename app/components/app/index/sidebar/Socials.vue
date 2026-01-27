@@ -22,7 +22,7 @@ const socials = {
 
 <template>
   <UiCard
-    :header="t('page.index.cards.socials.title')"
+    :header="t('page.index.cards.socials.title')?.toString()"
     flex="~ col"
     mb="-1px"
     rounded="0 lg:br-md"

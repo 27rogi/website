@@ -1,5 +1,11 @@
 <script setup lang="ts">
-const localeHead = useLocaleHead({ seo: true })
+const { t } = useI18n()
+const route = useRoute()
+const localeHead = useLocaleHead({
+  addDirAttribute: true,
+  addSeoAttributes: true,
+  identifierAttribute: "id",
+})
 
 useSeoMeta({
   ogImage: "/fulllogo.png",
@@ -7,12 +13,12 @@ useSeoMeta({
 
 // () => is required here, see: https://github.com/nuxt-modules/i18n/issues/3206
 useHead(() => ({
-  htmlAttrs: {
-    lang: localeHead.value.htmlAttrs!.lang
+  ...localeHead.metaObject.value,
+  titleTemplate: () => {
+    return t("general.title", { title: route.meta.key ? `${t(`page.${route.meta.key}.seo.title`)} ~ ` : "" })!.toString()
   },
-  link: [...(localeHead.value.link || [])],
-  meta: [...(localeHead.value.meta || [])],
 }))
+watch(() => route.fullPath, () => localeHead.updateMeta(), { immediate: true })
 </script>
 
 <template>

@@ -15,7 +15,7 @@ const education = {
 <template>
   <AppIndexEducationCareer />
   <UiCard
-    :header="t(`page.index.cards.education.title`)"
+    :header="t(`page.index.cards.education.title`)?.toString()"
     h="full"
     border="x-0 b-0 lg:(b-1 l-1)" mb="-1px" rounded="0 bl-md"
   >
@@ -28,7 +28,7 @@ const education = {
         :key="key"
         col="span-1"
         :icon="item.icon"
-        :header="t(`page.index.cards.education.items.${key}.title`)"
+        :header="t(`page.index.cards.education.items.${key}.title`)?.toString()"
       >
         <p>{{ t(`page.index.cards.education.items.${key}.specialty`) }} (<span>{{ t(`page.index.cards.education.items.${key}.status`) }}</span>)</p>
       </UiCardDetailed>

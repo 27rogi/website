@@ -2,30 +2,41 @@
 const { t } = useI18n()
 const route = useRoute()
 // to be replaced in i18n with experimental.strictSeo
-const localeHead = useLocaleHead({ seo: true})
-
-const metadata = computed(() => {
-  return {
-    description: route.meta.key ? t(`page.${route.meta.key}.seo.description`) : null,
-  }
+const localeHead = useLocaleHead({
+  addDirAttribute: true,
+  addSeoAttributes: true,
+  identifierAttribute: "id",
 })
 
-useSeoMeta({
-  description: () => metadata.value.description,
-  ogImage: "/fulllogo.png",
-})
+// const metadata = computed(() => {
+//   return {
+//     description: route.meta.key ? t(`page.${route.meta.key}.seo.description`) : null,
+//   }
+// })
+
+// useSeoMeta({
+//   description: () => metadata.value.description?.toString(),
+//   ogImage: "/fulllogo.png",
+// })
 
 // () => is required here, see: https://github.com/nuxt-modules/i18n/issues/3206
+// useHead(() => ({
+//   htmlAttrs: {
+//     lang: localeHead..value.htmlAttrs!.lang
+//   },
+//   link: [...(localeHead.value.link || [])],
+//   meta: [...(localeHead.value.meta || [])],
+//   titleTemplate: () => {
+//     return t("general.title", { title: route.meta.key ? `${t(`page.${route.meta.key}.seo.title`)} ~ ` : "" })
+//   }
+// }))
 useHead(() => ({
-  htmlAttrs: {
-    lang: localeHead.value.htmlAttrs!.lang
-  },
-  link: [...(localeHead.value.link || [])],
-  meta: [...(localeHead.value.meta || [])],
+  ...localeHead.metaObject.value,
   titleTemplate: () => {
-    return t("general.title", { title: route.meta.key ? `${t(`page.${route.meta.key}.seo.title`)} ~ ` : "" })
-  }
+    return t("general.title", { title: route.meta.key ? `${t(`page.${route.meta.key}.seo.title`)} ~ ` : "" })!.toString()
+  },
 }))
+watch(() => route.fullPath, () => localeHead.updateMeta(), { immediate: true })
 </script>
 
 <template>

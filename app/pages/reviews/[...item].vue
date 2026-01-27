@@ -6,19 +6,18 @@ interface RouteParams {
 const { t } = useI18n()
 const route = useRouter()
 const { item } = route.currentRoute.value.params as RouteParams
-const { locale } = useI18n()
+const { getLocale } = useI18n()
+const locale = getLocale() as "ru" | "en"
 
-const { data: page, status } = await useAsyncData(`page-${locale.value}-${item}`, async () => {
-  const article = await queryCollection((`reviews_${locale.value}`)).path(`/reviews/${item.join("/")}`).first()
+const { data: page, status } = await useAsyncData(`page-${locale}-${item}`, async () => {
+  const article = await queryCollection((`reviews_${locale}`)).path(`/reviews/${item.join("/")}`).first()
 
   // if no content found on current language try to use another one (ru/en or en/ru)
   if (!article) {
-    const altLocale = locale.value === "ru" ? "en" : "ru"
+    const altLocale = locale === "ru" ? "en" : "ru"
     return { article: await queryCollection(`reviews_${altLocale}`).path(`/reviews/${item.join("/")}`).first(), differentLocale: true }
   }
   return { article, differentLocale: false }
-}, {
-  watch: [locale],
 })
 
 definePageMeta({

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { ExperienceType } from "~~/types/experience"
 import { useSkillStore } from "~/stores/skills"
+
 const { t } = useI18n()
 const skills = await useSkillStore().$state
 /* eslint-disable sort/object-properties */
@@ -41,7 +42,7 @@ const experiences: { [key: string]: ExperienceType } = {
 </script>
 
 <template>
-  <UiCard :header="t(`page.index.cards.experience.title`)" line="left" border="x-0 b-0 lg:(l-1)">
+  <UiCard :header="t(`page.index.cards.experience.title`)?.toString()" line="left" border="x-0 b-0 lg:(l-1)">
     <div
       grid="~ cols-2 items-stretch [&_:last-child]:col-span-full"
       gap="2"

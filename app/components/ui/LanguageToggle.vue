@@ -1,15 +1,14 @@
 <script lang="ts" setup>
-const { locale, locales } = useI18n()
-const switchLocale = useSwitchLocalePath()
+const { getLocale, getLocales, switchLocale } = useI18n()
+const locales = getLocales()
+const locale = computed(() => getLocale())
 </script>
 
 <template>
   <div flex="~ row" items-center>
-    <NuxtLink 
-      v-for="{ code, name } in locales"
-      :to="switchLocale(code)"
+    <button
+      v-for="{ code } in locales"
       :key="code"
-      :title="name ?? code"
       font="head 800"
       u-text="white hover:greenspring-500 xs"
       leading="0"
@@ -18,8 +17,9 @@ const switchLocale = useSwitchLocalePath()
       rounded="last:r-md first:l-md"
       bg="greendark-500/60"
       :class="{ 'bg-greendark-400/25! text-greenspring-500!': locale === code }"
+      @click="switchLocale(code)"
     >
       {{ code }}
-  </NuxtLink>
+    </button>
   </div>
 </template>

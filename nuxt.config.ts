@@ -19,8 +19,7 @@ export default defineNuxtConfig({
     "@nuxt/eslint",
     "@pinia/nuxt",
     "@nuxtjs/seo",
-    // TODO: migrate to i18n-micro: https://s00d.github.io/nuxt-i18n-micro/guide/folder-structure
-    "@nuxtjs/i18n",
+    "nuxt-i18n-micro",
     "@nuxt/image",
     "@vueuse/nuxt",
     // TODO: Seems to be buggy when using lightningcss as Vite transformer, using
@@ -97,7 +96,6 @@ export default defineNuxtConfig({
     // and works better under windows, according to:
     // https://nuxt.com/docs/guide/going-further/experimental-features#watcher
     // watcher: "parcel",
-    buildCache: true,
     typescriptPlugin: true,
   },
 
@@ -147,43 +145,24 @@ export default defineNuxtConfig({
   },
 
   i18n: {
-    langDir: "locales",
-    baseUrl: "https://rogi.su",
     locales: [
-      {
-        code: "en",
-        name: "English",
-        language: "en",
-        files: [
-          "en/general.json",
-          "en/pages/index.json",
-          "en/pages/projects.json",
-        ],
-      },
-      {
-        code: "ru",
-        name: "Русский",
-        language: "ru",
-        files: [
-          "ru/general.json",
-          "ru/pages/index.json",
-          "ru/pages/projects.json",
-        ],
-      },
+      { code: "en", iso: "en-US", dir: "ltr" },
+      { code: "ru", iso: "ru-RU", dir: "ltr" },
     ],
-    strategy: "prefix",
-    detectBrowserLanguage: false,
     defaultLocale: "en",
-    skipSettingLocaleOnNavigate: false,
+    translationDir: "i18n/locales",
+    meta: true,
     experimental: {
-      // currently has issues: https://github.com/Baroshem/nuxt-security/issues/642
-      // strictSeo: true,
-      typedPages: true,
-      typedOptionsAndMessages: "default",
-    },
-    rootRedirect: "/en",
-    // when true it produces type error with `$t` on type ComponentCustomProperties
-    autoDeclare: false,
+      i18nPreviousPageFallback: true
+    }
+  },
+
+  site: {
+    url: "https://rogi.su",
+  },
+
+  sitemap: {
+    zeroRuntime: true,
   },
 
   image: {
@@ -205,7 +184,8 @@ export default defineNuxtConfig({
   },
 
   security: {
-    nonce: true,
+    // TODO: check why it causes payload errors if enabled
+    ssg: false,
     headers: {
       crossOriginEmbedderPolicy: false,
       // firefox fix: https://nuxt-security.vercel.app/advanced/faq#issue-on-firefox-when-using-iframe
@@ -216,10 +196,15 @@ export default defineNuxtConfig({
         "script-src": [
           "'self'",
           "https:",
+          "'unsafe-inline'",
           "'unsafe-eval'",
-          "'strict-dynamic'", 
         ],
-        "script-src-elem": false,
+        "script-src-elem": [
+          "'self'",
+          "https:",
+          "'unsafe-inline'",
+          "'unsafe-eval'",
+        ],
         "connect-src": [
           "'self'",
           "https:",

@@ -42,9 +42,9 @@ const props = defineProps({
             name="ph:shooting-star-duotone"
             size="1.5em"
           /></span>
-          {{ props.error?.statusCode == 404 ? "How did you get here?" : "A wild error appears!" }}
+          {{ props.error?.statusCode === 404 ? "How did you get here?" : "A wild error appears!" }}
         </h1>
-        <div v-if="props.error?.statusCode != 404">
+        <div v-if="props.error?.statusCode !== 404">
           <h3
             font="bold"
             u-text="2xl"

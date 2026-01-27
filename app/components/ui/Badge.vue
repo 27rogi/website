@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { NuxtLinkLocale } from '#components';
+import { NuxtLink } from '#components';
 
 defineProps({
   color: {
@@ -27,7 +27,7 @@ defineProps({
 
 <template>
   <component
-    :is="nuxtLink ? NuxtLinkLocale : link ? 'a' : 'div'"
+    :is="nuxtLink ? NuxtLink : link ? 'a' : 'div'"
     :to="nuxtLink ?? null"
     :href="link ?? null"
     :title="nuxtLink ?? link ?? null"

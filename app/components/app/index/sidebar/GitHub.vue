@@ -3,7 +3,7 @@ import type { StatsData } from "~~/types/api"
 import { formatDistance } from "date-fns"
 import { enUS, ru } from "date-fns/locale"
 
-const { locale, t } = useI18n()
+const { getLocale, t, tc } = useI18n()
 const { data: ghData, error, status } = await useLazyFetch<StatsData>("/api/stats", { key: "ghData" })
 </script>
 
@@ -21,22 +21,21 @@ const { data: ghData, error, status } = await useLazyFetch<StatsData>("/api/stat
       m="y-auto"
       keypath="page.index.cards.github.text"
       tag="p"
-      scope="global"
     >
       <template #github>
         <span><b>GitHub</b></span>
       </template>
       <template #time>
-        <span>{{ formatDistance(new Date(ghData!.created_at), new Date(), { locale: locale === 'ru' ? ru : enUS }) }}</span>
+        <span>{{ formatDistance(new Date(ghData!.created_at), new Date(), { locale: getLocale() === 'ru' ? ru : enUS }) }}</span>
       </template>
       <template #followers>
-        <span>{{ t("page.index.cards.github.followers", { n: ghData?.followers }) }}</span>
+        <span>{{ tc("page.index.cards.github.followers", ghData!.followers) }}</span>
       </template>
       <template #public_repos>
-        <span>{{ t("page.index.cards.github.public_repos", { n: ghData?.public_repos }) }}</span>
+        <span>{{ tc("page.index.cards.github.public_repos", ghData!.public_repos) }}</span>
       </template>
       <template #stars>
-        <span>{{ t("page.index.cards.github.stars", { n: ghData?.total_stars }) }}</span>
+        <span>{{ tc("page.index.cards.github.stars", ghData!.total_stars) }}</span>
       </template>
     </i18n-t>
   </UiCard>

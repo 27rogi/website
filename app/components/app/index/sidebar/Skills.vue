@@ -25,7 +25,7 @@ const categories: Array<SkillCategory> = [
 </script>
 
 <template>
-  <UiCard :header="t(`page.index.cards.skills.title`)" line="right" border="x-0 lg:x-1 b-0" mt="-1px" rounded="0 lg:tr-md">
+  <UiCard :header="t(`page.index.cards.skills.title`)?.toString()" line="right" border="x-0 lg:x-1 b-0" mt="-1px" rounded="0 lg:tr-md">
     <div
       v-for="({ key, items }, i) in categories"
       :key="i"
