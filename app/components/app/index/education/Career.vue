@@ -65,7 +65,11 @@ const experiences: { [key: string]: ExperienceType } = {
             </template>
           </h3>
         </template>
-        <p v-if="exp.type === 'certificate' && exp.issuer">{{ t(`page.index.cards.experience.issuedBy`) }} <span>{{ exp.issuer }}</span></p>
+        <i18n-t v-if="exp.type === 'certificate' && exp.issuer" keypath="page.index.cards.experience.issuedBy" tag="p">
+          <template #issuer>
+            <span>{{ exp.issuer }}</span>
+          </template>
+        </i18n-t>
         <p v-if="exp.type === 'job'">{{ t(`page.index.cards.experience.items.${key}.role`) }}</p>
         <p v-if="exp.type === 'competition'">{{ t(`page.index.cards.experience.in`) }} <span>{{ t(`page.index.cards.experience.items.${key}.competition`) }}</span></p>
         <div
