@@ -1,4 +1,4 @@
-import type { Skill } from "~~/types/skill";
+import type { Skill } from "~~/types/skill"
 
 // @unocss-include
 export const useSkillStore = defineStore("skills", {
@@ -85,7 +85,7 @@ export const useSkillStore = defineStore("skills", {
     },
     preact: {
       color: "bg-[#673ab8]/20",
-      icon: "logos:preact",
+      icon: "vscode-icons:file-type-preact",
       name: "Preact",
     },
     prisma: {
@@ -124,4 +124,4 @@ export const useSkillStore = defineStore("skills", {
       name: "Vue",
     },
   } as Record<string, Skill>),
-});
+})

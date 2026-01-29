@@ -4,6 +4,18 @@ import { version } from "nuxt/package.json"
 const { t } = useI18n()
 const { public: { branch, bunver } } = useRuntimeConfig()
 const isHome = useRoute().path === "/en" || useRoute().path === "/ru"
+
+const variantKey = useState("variantKey", () => {
+  const variants = Object.keys(t("footer.builtwith.variants")!)
+  return variants[Math.floor(Math.random() * variants.length)]
+})
+const variantIcons = {
+  bugs: "ph:bug-beetle-duotone",
+  magic: "ph:magic-wand-fill",
+  quantum: "ph:atom-duotone",
+  reactor: "ph:nuclear-plant-fill",
+  scrap: "ph:crane-duotone",
+} as Record<string, string>
 </script>
 
 <template>
@@ -13,21 +25,24 @@ const isHome = useRoute().path === "/en" || useRoute().path === "/ru"
   >
     <div>
       <p leading="loose">
-        <span u-text="inherit" font="head">rogi#su (<a
+        <span u-text="inherit"><span font="head">rogi#su</span> [<a
           :href="`https://github.com/27rogi/website/commit/${branch}`" target="_blank"
         ><span class="colorful">{{ branch }}</span>
-        </a>)
-          <Icon name="ph:copyright-bold" relative top="1px" size="1em" /> {{ new Date().getFullYear() }}
+        </a>]
+          <Icon name="ph:copyright-bold" relative top="0.1rem" size="1em" /> {{ new Date().getFullYear() }}
         </span>
       </p>
-      <i18n-t u-text="xs" keypath="footer.builtwith" tag="p" scope="global">
-        <template #nuxt>
-          <span class="colorful">Nuxt {{ version }} / {{ bunver !== "" ? `Bun ${bunver}` : "Bun not detected ⚠️" }}</span>
+      <i18n-t u-text="xs" keypath="footer.builtwith.base" tag="p" scope="global">
+        <template #variant>
+          <!-- somehow using v-if on slots for i18n breaks them, so we are making another layer -->
+          <template v-if="variantKey">
+            <span class="colorful">
+              <Icon :name="variantIcons[variantKey]!" relative top="0.1rem" size="1.2em" /> {{ t(`footer.builtwith.variants.${variantKey!}`) }}
+            </span>
+          </template>
         </template>
-        <template #magic>
-          <span class="colorful">
-            <Icon name="ph:magic-wand-fill" size="1.2em" />
-          </span>
+        <template #versions>
+          <span class="colorful"><Icon name="devicon:nuxt" relative top="0.1rem" size="1.2em" /> Nuxt {{ version }} | <Icon name="devicon:bun" relative top="0.1rem" size="1.2em" /> {{ bunver !== "" ? `Bun ${bunver}` : "Bun not detected ⚠️" }}</span>
         </template>
       </i18n-t>
     </div>

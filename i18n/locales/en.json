@@ -11,7 +11,16 @@
     "reviews": "/reviews"
   },
   "footer": {
-    "builtwith": "Built with {magic} and {nuxt}",
+    "builtwith": {
+      "base": "Running on {variant} and {versions}",
+      "variants": {
+        "magic": "dark magic",
+        "scrap": "bare scrap metal",
+        "reactor": "nuclear reactor",
+        "quantum": "quantum formulas",
+        "bugs": "power of bugs"
+      }
+    },
     "status": "Service Status"
   }
 }

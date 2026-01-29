@@ -11,7 +11,16 @@
     "reviews": "/обзоры"
   },
   "footer": {
-    "builtwith": "Создано используя {magic} и {nuxt}",
+    "builtwith": {
+      "base": "Работает на {variant} и {versions}",
+      "variants": {
+        "magic": "темной магии",
+        "scrap": "обломках металлолома",
+        "reactor": "ядерном реакторе",
+        "quantum": "квантовых формулах",
+        "bugs": "силе багов"
+      }
+    },
     "status": "Статус сервисов"
   }
 }
