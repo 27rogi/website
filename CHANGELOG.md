@@ -13,6 +13,7 @@
 - *(!)* Migrate to rolldown-vite, drop lightningcss
 - Migrate from floating-vue to tippy-vue
 - Prepare for nuxt-i18n-micro
+- Make footer prettier and have joke phrases :smiley_cat:
 
 ### 🐛 Bug Fixes
 
@@ -35,11 +36,13 @@
 - Eslint quick fix
 - Disable features that break dev and builds
 - Edit cors to allow vue-tippy to load
+- Use i18n placeholder corretly
 
 ### 💼 Other
 
 - Bring back nuxt 4.2, try vue 3.6.0
 - Latest packages
+- Latest deps
 - Latest deps
 
 ### ⚙️ Miscellaneous Tasks
@@ -68,6 +71,10 @@
 - Actualize readme
 - Migrate translations
 - Update lockfile
+- *(id21410519179)* Update changelog
+- Add mostly used icon collections as dev deps
+- Add mostly used icon collections as dev deps
+- Ignore i18n-micro files
 ## [08112025] - 2025-11-08
 
 ### 🚀 Features
