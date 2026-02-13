@@ -44,6 +44,7 @@
 - Latest packages
 - Latest deps
 - Latest deps
+- Latest deps and nuxt
 
 ### ⚙️ Miscellaneous Tasks
 
@@ -75,6 +76,8 @@
 - Add mostly used icon collections as dev deps
 - Add mostly used icon collections as dev deps
 - Ignore i18n-micro files
+- *(id21753395302)* Update changelog
+- *(i18n)* Add required entries for micro-i18n
 ## [08112025] - 2025-11-08
 
 ### 🚀 Features
