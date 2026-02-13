@@ -152,9 +152,11 @@ export default defineNuxtConfig({
     defaultLocale: "en",
     translationDir: "i18n/locales",
     meta: true,
+    localeCookie: "user-locale", // Required for redirects to work properly
+    autoDetectLanguage: false,
     experimental: {
-      i18nPreviousPageFallback: true
-    }
+      i18nPreviousPageFallback: true,
+    },
   },
 
   site: {
