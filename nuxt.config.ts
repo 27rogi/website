@@ -35,6 +35,7 @@ export default defineNuxtConfig({
     // TODO: breaks loading of devtools and other modules on latest Nuxt, investigate later
     // "nuxt-booster",
     "nuxt-vitalizer",
+    "nuxt-elysia",
   ],
 
   // to use devtools with bun on Windows use --no-fork flag
@@ -130,6 +131,7 @@ export default defineNuxtConfig({
         "vue-tippy",
         "date-fns",
         "date-fns/locale",
+        "@elysiajs/eden",
       ],
     },
   },

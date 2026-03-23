@@ -2,6 +2,7 @@
 import type { ProjectBasic, ProjectLeading } from "~~/types/project"
 import { useSkillStore } from "~/stores/skills"
 
+const { $api } = useNuxtApp()
 const props = defineProps({
   project: {
     default: null,
@@ -10,13 +11,15 @@ const props = defineProps({
 })
 
 const ghData = (props.project?.github)
-  ? await useLazyFetch<{ stargazers_count: number, forks: number }>("/api/repo", {
-      key: props.project.github.organization + props.project.github.repository,
+  ? await useLazyAsyncData(props.project.github!.organization + props.project.github!.repository, async () => {
+    const { data } = await $api.repo.get({
       query: {
-        organization: props.project.github.organization,
-        repository: props.project.github.repository,
-      },
+        organization: props.project.github!.organization,
+        repository: props.project.github!.repository,
+      }
     })
+    return data
+  })
   : null
 
 const skills = await useSkillStore().$state
@@ -66,12 +69,12 @@ const skills = await useSkillStore().$state
           </tippy>
           </template>
         </template>
-        <template v-if="project.github && ghData && ghData.status.value !== 'error'">
+        <template v-if="project.github && ghData && ghData.error.value === undefined">
           <div
             leading="1.25rem"
             u-text="base brilliantsea-50"
           >
-            <UiLoadingBlock v-if="ghData.status.value === 'pending'" />
+            <UiLoadingBlock v-if="ghData.status.value !== 'success'" />
             <a
               v-else-if="ghData.status.value === 'success' && ghData.data.value"
               :href="`https://github.com/${project.github.organization}/${project.github.repository}`"
@@ -79,10 +82,10 @@ const skills = await useSkillStore().$state
               flex="~ items-center"
             >
               <UiBadge icon="ph:star-duotone" px="2">
-                {{ ghData.data.value?.stargazers_count }}
+                {{ ghData.data.value.stargazers_count ?? 0 }}
               </UiBadge>
               <UiBadge v-if="ghData.data.value!.forks > 0" icon="ph:git-fork-duotone" px="2">
-                {{ ghData.data.value?.forks }}
+                {{ ghData.data.value.forks ?? 0 }}
               </UiBadge>
             </a>
           </div>

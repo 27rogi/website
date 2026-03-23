@@ -48,8 +48,7 @@ definePageMeta({
               {{ t(`page.projects.checkit`) }}
             </a>
           </p>
-          <AppProjectsCard />
-        </appprojectscard>
+        </AppProjectsCard>
       </div>
     </div>
   </div>
