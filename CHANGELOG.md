@@ -1,5 +1,22 @@
 ## [unreleased]
 
+### 🐛 Bug Fixes
+
+- Use defineSitemapSchema and fix zod for it to work
+- Add external dep to fix build warning
+- Ignore non-existing i18n routes in prerender
+- Use correct routeRules
+
+### 💼 Other
+
+- Latest deps
+
+### ⚙️ Miscellaneous Tasks
+
+- Changes for @nuxtjs/seo 5.0.0
+- Fix: use correct dev branch name
+## [09042026] - 2026-04-09
+
 ### 🚀 Features
 
 - Provide gh token for prerender
@@ -84,6 +101,7 @@
 - *(id21753395302)* Update changelog
 - *(i18n)* Add required entries for micro-i18n
 - *(id21969601017)* Update changelog
+- *(id24212268635)* Update changelog
 ## [08112025] - 2025-11-08
 
 ### 🚀 Features
