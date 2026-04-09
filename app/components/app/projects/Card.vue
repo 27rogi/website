@@ -11,7 +11,6 @@ const props = defineProps({
 })
 
 const ghData = (props.project?.github)
-  ? await useLazyAsyncData(props.project.github!.organization + props.project.github!.repository, async () => {
     const { data } = await $api.repo.get({
       query: {
         organization: props.project.github!.organization,
