@@ -75,9 +75,8 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    "/": { prerender: false },
+    "/": { prerender: true },
     "/ru": { prerender: true },
-    "/en": { prerender: true },
     "/reviews": { swr: true },
     "/reviews/**": { swr: 3600 },
     "/projects": { swr: true },
