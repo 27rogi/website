@@ -72,6 +72,7 @@
     "vue-demi"
   ],
   "overrides": {
-    "vite": "npm:rolldown-vite@latest"
+    "vite": "npm:rolldown-vite@latest",
+    "zod": "4.1.12"
   }
 }
