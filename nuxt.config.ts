@@ -118,6 +118,11 @@ export default defineNuxtConfig({
       failOnError: false,
       crawlLinks: true,
       routes: ["/sitemap.xml", "/robots.txt"],
+      ignore: [
+        // ignore duplicating i18n pathes
+        /^\/en$/,
+        /^\/ru\/(en|ru)/,
+      ],
     },
   },
 
