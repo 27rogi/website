@@ -3,7 +3,7 @@ name: Build Dev Docker Image
 on:
   push:
     branches:
-      - 'next'
+      - 'staging'
     paths-ignore:
       - '.vscode/**'
       - '**/*.md'
