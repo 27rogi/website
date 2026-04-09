@@ -2,23 +2,23 @@
 import type { ProjectBasic, ProjectLeading } from "~~/types/project"
 import { useSkillStore } from "~/stores/skills"
 
-const { $api } = useNuxtApp()
 const props = defineProps({
   project: {
     default: null,
     type: Object as PropType<ProjectLeading | ProjectBasic>,
   },
 })
-
+const { $api } = useNuxtApp()
 const ghData = (props.project?.github)
-    const { data } = await $api.repo.get({
-      query: {
-        organization: props.project.github!.organization,
-        repository: props.project.github!.repository,
-      }
+  ? await useLazyAsyncData(`${props.project.github!.organization}/${props.project.github!.repository}`, async () => {
+      const { data } = await $api.repo.get({
+        query: {
+          organization: props.project.github!.organization,
+          repository: props.project.github!.repository,
+        },
+      })
+      return data
     })
-    return data
-  })
   : null
 
 const skills = await useSkillStore().$state
@@ -56,7 +56,7 @@ const skills = await useSkillStore().$state
             v-for="skillId in project.skills"
             :key="skillId"
           >
-          <tippy arrow v-if="skills[skillId]" :aria-id="skills[skillId].name">
+            <tippy v-if="skills[skillId]" arrow :aria-id="skills[skillId].name">
               <UiBadge
                 :title="skills[skillId].name"
                 :color="skills[skillId].color"
@@ -65,7 +65,7 @@ const skills = await useSkillStore().$state
               <template #content>
                 <p font="bold" u-text="sm">{{ skills[skillId].name }}</p>
               </template>
-          </tippy>
+            </tippy>
           </template>
         </template>
         <template v-if="project.github && ghData && ghData.error.value === undefined">
