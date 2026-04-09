@@ -14,6 +14,7 @@
 - Migrate from floating-vue to tippy-vue
 - Prepare for nuxt-i18n-micro
 - Make footer prettier and have joke phrases :smiley_cat:
+- Use Elysia for backend
 
 ### 🐛 Bug Fixes
 
@@ -37,6 +38,9 @@
 - Disable features that break dev and builds
 - Edit cors to allow vue-tippy to load
 - Use i18n placeholder corretly
+- Impelement correct fix for #7
+- Add error message for Card fetch
+- Fallback to undefined if bearer token not present
 
 ### 💼 Other
 
@@ -45,6 +49,7 @@
 - Latest deps
 - Latest deps
 - Latest deps and nuxt
+- Latest deps and nuxt 4.4
 
 ### ⚙️ Miscellaneous Tasks
 
@@ -78,6 +83,7 @@
 - Ignore i18n-micro files
 - *(id21753395302)* Update changelog
 - *(i18n)* Add required entries for micro-i18n
+- *(id21969601017)* Update changelog
 ## [08112025] - 2025-11-08
 
 ### 🚀 Features
