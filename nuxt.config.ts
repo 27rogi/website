@@ -18,6 +18,8 @@ export default defineNuxtConfig({
     "@nuxt/devtools",
     "@nuxt/eslint",
     "@pinia/nuxt",
+    // must be loaded before @nuxt/content
+    // https://nuxtseo.com/docs/nuxt-seo/migration-guide/v4-to-v5#ensure-correct-module-order
     "@nuxtjs/seo",
     "nuxt-i18n-micro",
     "@nuxt/image",
@@ -162,6 +164,7 @@ export default defineNuxtConfig({
   },
 
   site: {
+    name: "rogi#su",
     url: "https://rogi.su",
   },
 
