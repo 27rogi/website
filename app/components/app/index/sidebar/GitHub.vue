@@ -1,10 +1,15 @@
 <script setup lang="ts">
-import type { StatsData } from "~~/types/api"
 import { formatDistance } from "date-fns"
 import { enUS, ru } from "date-fns/locale"
 
+const { $api } = useNuxtApp()
 const { getLocale, t, tc } = useI18n()
-const { data: ghData, error, status } = await useLazyFetch<StatsData>("/api/stats", { key: "ghData" })
+const { data: ghData, error, status } = await useLazyAsyncData("ghstats", async () => {
+  const { data, error } = await $api.stats.get()
+
+  if (error) throw new Error("Failed to fetch GitHub stats")
+  return data
+})
 </script>
 
 <template>

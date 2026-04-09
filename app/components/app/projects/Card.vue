@@ -8,14 +8,19 @@ const props = defineProps({
     type: Object as PropType<ProjectLeading | ProjectBasic>,
   },
 })
-
+const { $api } = useNuxtApp()
 const ghData = (props.project?.github)
-  ? await useLazyFetch<{ stargazers_count: number, forks: number }>("/api/repo", {
-      key: props.project.github.organization + props.project.github.repository,
-      query: {
-        organization: props.project.github.organization,
-        repository: props.project.github.repository,
-      },
+  ? await useLazyAsyncData(`${props.project.github!.organization}/${props.project.github!.repository}`, async () => {
+      const { data, error } = await $api.repo.get({
+        query: {
+          organization: props.project.github!.organization,
+          repository: props.project.github!.repository,
+        },
+      })
+      if (error?.value) {
+        throw new Error(`Failed to fetch GitHub data for ${props.project?.github?.organization}/${props.project?.github?.repository}: ${error.value.message}`)
+      }
+      return data
     })
   : null
 
@@ -54,7 +59,7 @@ const skills = await useSkillStore().$state
             v-for="skillId in project.skills"
             :key="skillId"
           >
-          <tippy arrow v-if="skills[skillId]" :aria-id="skills[skillId].name">
+            <tippy v-if="skills[skillId]" arrow :aria-id="skills[skillId].name">
               <UiBadge
                 :title="skills[skillId].name"
                 :color="skills[skillId].color"
@@ -63,15 +68,15 @@ const skills = await useSkillStore().$state
               <template #content>
                 <p font="bold" u-text="sm">{{ skills[skillId].name }}</p>
               </template>
-          </tippy>
+            </tippy>
           </template>
         </template>
-        <template v-if="project.github && ghData && ghData.status.value !== 'error'">
+        <template v-if="project.github && ghData && ghData.error.value === undefined">
           <div
             leading="1.25rem"
             u-text="base brilliantsea-50"
           >
-            <UiLoadingBlock v-if="ghData.status.value === 'pending'" />
+            <UiLoadingBlock v-if="ghData.status.value !== 'success'" />
             <a
               v-else-if="ghData.status.value === 'success' && ghData.data.value"
               :href="`https://github.com/${project.github.organization}/${project.github.repository}`"
@@ -79,10 +84,10 @@ const skills = await useSkillStore().$state
               flex="~ items-center"
             >
               <UiBadge icon="ph:star-duotone" px="2">
-                {{ ghData.data.value?.stargazers_count }}
+                {{ ghData.data.value.stargazers_count ?? 0 }}
               </UiBadge>
               <UiBadge v-if="ghData.data.value!.forks > 0" icon="ph:git-fork-duotone" px="2">
-                {{ ghData.data.value?.forks }}
+                {{ ghData.data.value.forks ?? 0 }}
               </UiBadge>
             </a>
           </div>
