@@ -11,12 +11,15 @@ const props = defineProps({
 const { $api } = useNuxtApp()
 const ghData = (props.project?.github)
   ? await useLazyAsyncData(`${props.project.github!.organization}/${props.project.github!.repository}`, async () => {
-      const { data } = await $api.repo.get({
+      const { data, error } = await $api.repo.get({
         query: {
           organization: props.project.github!.organization,
           repository: props.project.github!.repository,
         },
       })
+      if (error?.value) {
+        throw new Error(`Failed to fetch GitHub data for ${props.project?.github?.organization}/${props.project?.github?.repository}: ${error.value.message}`)
+      }
       return data
     })
   : null
