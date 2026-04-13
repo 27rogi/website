@@ -6,6 +6,8 @@ COPY . .
 RUN bun install
 
 FROM base AS build
+ARG BRANCH
+ENV NUXT_PUBLIC_BRANCH=${BRANCH}
 ENV NODE_ENV=production
 RUN --mount=type=secret,id=gh_token \
     NUXT_GH_API_TOKEN="$(cat /run/secrets/gh_token)" bun run -b build
@@ -17,4 +19,4 @@ ARG BRANCH
 ENV NUXT_PUBLIC_BRANCH=${BRANCH}
 ENV HOST=0.0.0.0
 EXPOSE 3000/tcp
-ENTRYPOINT [ "sh", "-c",  "export NUXT_PUBLIC_BUNVER=$(bun -v) && bun -b run .output/server/index.mjs" ]
+ENTRYPOINT [ "sh", "-c",  "NUXT_PUBLIC_BUNVER=$(bun -v) && bun -b run .output/server/index.mjs" ]
