@@ -69,7 +69,7 @@ export default defineNuxtConfig({
     ghApiBase: "https://api.github.com",
     ghApiToken: "",
     public: {
-      branch: "v3",
+      branch: "v4",
       bunver: "",
     },
   },

@@ -2,7 +2,7 @@
 import { version } from "nuxt/package.json"
 
 const { t } = useI18n()
-const { public: { branch, bunver } } = useRuntimeConfig()
+const config = useRuntimeConfig()
 const isHome = useRoute().path === "/en" || useRoute().path === "/ru"
 
 const variantKey = useState("variantKey", () => {
@@ -26,8 +26,8 @@ const variantIcons = {
     <div>
       <p leading="loose">
         <span u-text="inherit"><span font="head">rogi#su</span> [<a
-          :href="`https://github.com/27rogi/website/commit/${branch}`" target="_blank"
-        ><span class="colorful">{{ branch }}</span>
+          :href="`https://github.com/27rogi/website/commit/${config.public.branch}`" target="_blank"
+        ><span class="colorful">{{ config.public.branch }}</span>
         </a>]
           <Icon name="ph:copyright-bold" relative top="0.1rem" size="1em" /> {{ new Date().getFullYear() }}
         </span>
@@ -42,7 +42,9 @@ const variantIcons = {
           </template>
         </template>
         <template #versions>
-          <span class="colorful"><Icon name="devicon:nuxt" relative top="0.1rem" size="1.2em" /> Nuxt {{ version }} | <Icon name="devicon:bun" relative top="0.1rem" size="1.2em" /> {{ bunver !== "" ? `Bun ${bunver}` : "Bun not detected ⚠️" }}</span>
+          <ClientOnly>
+            <span class="colorful"><Icon name="devicon:nuxt" relative top="0.1rem" size="1.2em" /> Nuxt {{ version }} | <Icon name="devicon:bun" relative top="0.1rem" size="1.2em" /> {{ config.public.bunver !== "" ? `Bun ${config.public.bunver}` : "Bun not detected ⚠️" }}</span>
+          </ClientOnly>
         </template>
       </i18n-t>
     </div>
