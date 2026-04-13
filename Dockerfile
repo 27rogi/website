@@ -19,4 +19,4 @@ ARG BRANCH
 ENV NUXT_PUBLIC_BRANCH=${BRANCH}
 ENV HOST=0.0.0.0
 EXPOSE 3000/tcp
-ENTRYPOINT [ "sh", "-c",  "NUXT_PUBLIC_BUNVER=$(bun -v) && bun -b run .output/server/index.mjs" ]
+ENTRYPOINT [ "sh", "-c",  "NUXT_PUBLIC_BUNVER=$(bun -v) bun -b run .output/server/index.mjs" ]
