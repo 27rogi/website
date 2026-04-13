@@ -6,6 +6,7 @@
 - Add external dep to fix build warning
 - Ignore non-existing i18n routes in prerender
 - Use correct routeRules
+- Display correct env for prerender (#9)
 
 ### 💼 Other
 
@@ -15,6 +16,7 @@
 
 - Changes for @nuxtjs/seo 5.0.0
 - Fix: use correct dev branch name
+- *(id24217657051)* Update changelog
 ## [09042026] - 2026-04-09
 
 ### 🚀 Features
