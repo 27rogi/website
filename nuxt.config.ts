@@ -75,11 +75,13 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    "/": { prerender: true },
-    "/ru": { prerender: true },
+    // do not prerender due to env issues
+    "/": { prerender: false },
+    "/ru": { prerender: false },
     "/reviews": { swr: true },
     "/reviews/**": { swr: 3600 },
-    "/projects": { swr: true },
+    // elysia conflicts with swr?
+    "/projects": { swr: false },
     "/api/*": { cache: isDev ? false : { maxAge: 15 * 60 }, cors: true },
   },
 
