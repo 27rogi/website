@@ -42,7 +42,7 @@ const variantIcons = {
           </template>
         </template>
         <template #versions>
-            <span class="colorful"><Icon name="devicon:nuxt" relative top="0.1rem" size="1.2em" /> Nuxt {{ version }} | <Icon name="devicon:bun" relative top="0.1rem" size="1.2em" /> {{ config.public.bunver !== "" ? `Bun ${config.public.bunver}` : "Bun not detected ⚠️" }}</span>
+          <span class="colorful"><Icon name="devicon:nuxt" relative top="0.1rem" size="1.2em" /> Nuxt {{ version }} | <Icon name="devicon:bun" relative top="0.1rem" size="1.2em" /> <ClientOnly>{{ config.public.bunver !== "" ? `Bun ${config.public.bunver}` : "Bun not detected ⚠️" }}<template #fallback><span>...</span></template></ClientOnly></span>
         </template>
       </i18n-t>
     </div>
