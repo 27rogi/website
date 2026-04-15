@@ -57,7 +57,6 @@ export default defineNuxtConfig({
     ghApiToken: "",
     public: {
       branch: "v4",
-      bunver: "",
     },
   },
 

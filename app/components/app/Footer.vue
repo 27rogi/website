@@ -5,6 +5,11 @@ const { t } = useI18n()
 const config = useRuntimeConfig()
 const isHome = useRoute().path === "/en" || useRoute().path === "/ru"
 
+const { $api } = useNuxtApp()
+const { data, status } = await useAsyncData("bun", async () => {
+  return (await $api.get()).data
+})
+
 const variantKey = useState("variantKey", () => {
   const variants = Object.keys(t("footer.builtwith.variants")!)
   return variants[Math.floor(Math.random() * variants.length)]
@@ -42,7 +47,11 @@ const variantIcons = {
           </template>
         </template>
         <template #versions>
-          <span class="colorful"><Icon name="devicon:nuxt" relative top="0.1rem" size="1.2em" /> Nuxt {{ version }} | <Icon name="devicon:bun" relative top="0.1rem" size="1.2em" /> <ClientOnly>{{ config.public.bunver !== "" ? `Bun ${config.public.bunver}` : "Bun not detected ⚠️" }}<template #fallback><span>...</span></template></ClientOnly></span>
+          <span class="colorful">
+            <Icon name="devicon:nuxt" relative top="0.1rem" size="1.2em" /> Nuxt {{ version }}</span>
+          <span u-text="brilliantsea-50/50"> + </span>
+          <span class="colorful"><Icon name="devicon:bun" relative top="0.1rem" size="1.2em" /> Bun {{ status === 'success' ? data?.runtime.bun ?? 'is not present! ⚠️' : '' }}
+          </span>
         </template>
       </i18n-t>
     </div>
