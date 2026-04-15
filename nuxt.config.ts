@@ -1,6 +1,3 @@
-// import viteUnoCSS from "@unocss/vite"
-// import browserslist from "browserslist"
-// import { browserslistToTargets } from "lightningcss"
 import viteSVGLoader from "vite-svg-loader"
 
 // eslint-disable-next-line node/prefer-global/process
@@ -8,24 +5,18 @@ export const isDev = process.env.NODE_ENV !== "production"
 
 /* eslint-disable sort/object-properties */
 export default defineNuxtConfig({
-
-  features: {
-    // reduces CLS (https://kylev.dev/blog/fixing-cumulative-layout-shift-nuxt-3/)
-    inlineStyles: false,
-  },
+  compatibilityDate: "2026-04-16",
 
   modules: [
     "@nuxt/devtools",
     "@nuxt/eslint",
     "@pinia/nuxt",
-    // must be loaded before @nuxt/content
+    // @nuxtjs/seo must be loaded before @nuxt/content
     // https://nuxtseo.com/docs/nuxt-seo/migration-guide/v4-to-v5#ensure-correct-module-order
     "@nuxtjs/seo",
     "nuxt-i18n-micro",
     "@nuxt/image",
     "@vueuse/nuxt",
-    // TODO: Seems to be buggy when using lightningcss as Vite transformer, using
-    // UnoCSS vite plugin seems to be more stable, but needs further investigation
     "@unocss/nuxt",
     "@nuxt/icon",
     "@nuxtjs/fontaine",
@@ -34,15 +25,12 @@ export default defineNuxtConfig({
     // TODO: implement testing, Bun is able to run Vitest now, but stability is unknown
     // "@nuxt/test-utils/module",
     "@nuxt/content",
-    // TODO: breaks loading of devtools and other modules on latest Nuxt, investigate later
-    // "nuxt-booster",
     "nuxt-vitalizer",
     "nuxt-elysia",
   ],
 
-  // to use devtools with bun on Windows use --no-fork flag
   devtools: {
-    enabled: true,
+    enabled: true, // windows requires --no-fork flag
     timeline: { enabled: true },
   },
 
@@ -62,7 +50,6 @@ export default defineNuxtConfig({
     "@fontsource-variable/unbounded",
     // UnoCSS Wind4 has preflight reset that breaks lightningcss, using old method until fixed
     "@unocss/reset/tailwind.css",
-    // "virtual:uno.css",
   ],
 
   runtimeConfig: {
@@ -75,13 +62,11 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    // do not prerender due to env issues
-    "/": { prerender: false },
-    "/ru": { prerender: false },
+    "/": { prerender: true },
+    "/ru": { prerender: true },
     "/reviews": { swr: true },
     "/reviews/**": { swr: 3600 },
-    // elysia conflicts with swr?
-    "/projects": { swr: false },
+    "/projects": { swr: true },
     "/api/*": { cache: isDev ? false : { maxAge: 15 * 60 }, cors: true },
   },
 
@@ -90,25 +75,22 @@ export default defineNuxtConfig({
     typescriptBundlerResolution: true,
   },
 
+  features: {
+    // enabled for vitalizer workaround (https://nuxt.com/modules/vitalizer#stop-render-blocking-css)
+    inlineStyles: true,
+  },
+
   experimental: {
-    // as of Nuxt 4.3.0 this feature breaks DevTools, vue-tippy and other modules
-    viteEnvironmentApi: false,
+    // as of Nuxt 4.3.0 this feature breaks dev mode (DevTools, vue-tippy and other modules)
+    viteEnvironmentApi: !isDev,
     writeEarlyHints: true,
     crossOriginPrefetch: true,
     typedPages: true,
-    // Investigate: Using parcel watcher gives better speed for large projects
-    // and works better under windows, according to:
-    // https://nuxt.com/docs/guide/going-further/experimental-features#watcher
-    // watcher: "parcel",
     typescriptPlugin: true,
   },
 
-  compatibilityDate: "2025-11-08",
-
   nitro: {
-    compressPublicAssets: true,
     preset: "bun",
-    minify: true,
     esbuild: {
       options: {
         target: "esnext",
@@ -129,7 +111,6 @@ export default defineNuxtConfig({
 
   vite: {
     plugins: [
-      // viteUnoCSS(),
       viteSVGLoader(),
     ],
     optimizeDeps: {
@@ -174,6 +155,10 @@ export default defineNuxtConfig({
     url: "https://rogi.su",
   },
 
+  ogImage: {
+    zeroRuntime: true,
+  },
+
   sitemap: {
     zeroRuntime: true,
   },
@@ -182,7 +167,6 @@ export default defineNuxtConfig({
     provider: "ipx",
     quality: 80,
     format: ["png", "jpeg", "webp"],
-    // nuxt-booster requirements
     domains: ["img.youtube.com", "i.vimeocdn.com"],
     alias: {
       youtube: "https://img.youtube.com",
@@ -224,5 +208,10 @@ export default defineNuxtConfig({
         ],
       },
     },
+  },
+
+  vitalizer: {
+    // disablePreloadLinks: true,
+    disableStylesheets: true,
   },
 })
