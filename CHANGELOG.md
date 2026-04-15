@@ -10,6 +10,7 @@
 - Revert prerender changes due to issues
 - Revert prerender changes due to issues
 - Export env globally
+- Recreate bun.lock, cleanup nuxt config
 
 ### 💼 Other
 
@@ -21,6 +22,8 @@
 - Fix: use correct dev branch name
 - *(id24217657051)* Update changelog
 - *(id24365385180)* Update changelog
+- *(id24374057985)* Update changelog
+- *(ci)* Add docker builds for staging
 ## [09042026] - 2026-04-09
 
 ### 🚀 Features
