@@ -1,5 +1,9 @@
 ## [unreleased]
 
+### 🚀 Features
+
+- Get bun version from api
+
 ### 🐛 Bug Fixes
 
 - Use defineSitemapSchema and fix zod for it to work
@@ -11,6 +15,8 @@
 - Revert prerender changes due to issues
 - Export env globally
 - Recreate bun.lock, cleanup nuxt config
+- *(ci)* Missed one action
+- *(ci)* Revert distroless
 
 ### 💼 Other
 
@@ -24,6 +30,10 @@
 - *(id24365385180)* Update changelog
 - *(id24374057985)* Update changelog
 - *(ci)* Add docker builds for staging
+- *(id24481765735)* Update changelog
+- *(ci)* Use latest actions version
+- *(docker)* Try to build distroless
+- *(docker)* Try distroless again?
 ## [09042026] - 2026-04-09
 
 ### 🚀 Features
