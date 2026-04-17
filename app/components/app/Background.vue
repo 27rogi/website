@@ -3,7 +3,7 @@ const router = useRouter()
 const hasPath = computed(() => {
   if (!router)
     return false
-  return ["/", "/en", "/ru"].includes(router.currentRoute.value.path)
+  return !["", "/", "/en", "/ru"].includes(router.currentRoute.value.path)
 })
 </script>
 
