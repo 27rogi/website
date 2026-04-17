@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   compatibilityDate: "2026-04-16",
 
   modules: [
+    "@nuxt/fonts",
     "@nuxt/devtools",
     "@nuxt/eslint",
     "@pinia/nuxt",
@@ -46,8 +47,6 @@ export default defineNuxtConfig({
   },
 
   css: [
-    "@fontsource-variable/martian-mono",
-    "@fontsource-variable/unbounded",
     // UnoCSS Wind4 has preflight reset that breaks lightningcss, using old method until fixed
     "@unocss/reset/tailwind.css",
   ],
@@ -170,6 +169,17 @@ export default defineNuxtConfig({
     alias: {
       youtube: "https://img.youtube.com",
       vimeo: "https://i.vimeocdn.com",
+    },
+  },
+
+  fonts: {
+    defaults: {
+      weights: [400, 500, 600, 700, 800],
+      subsets: [
+        "latin-ext",
+        "latin",
+        "cyrillic",
+      ],
     },
   },
 
