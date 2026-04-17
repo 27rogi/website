@@ -14,9 +14,8 @@
   },
   "dependencies": {
     "@elysiajs/eden": "^1.4.9",
-    "@fontsource-variable/martian-mono": "^5.2.2",
-    "@fontsource-variable/unbounded": "^5.2.8",
     "@nuxt/content": "3.13.0",
+    "@nuxt/fonts": "^0.14.0",
     "@nuxt/image": "2.0.0",
     "@nuxt/types": "^2.18.1",
     "@unocss/nuxt": "^66.6.8",
