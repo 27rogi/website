@@ -34,6 +34,8 @@
 - *(ci)* Use latest actions version
 - *(docker)* Try to build distroless
 - *(docker)* Try distroless again?
+- *(id24484476712)* Update changelog
+- Use includes() in computed
 ## [09042026] - 2026-04-09
 
 ### 🚀 Features
