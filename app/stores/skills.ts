@@ -3,6 +3,11 @@ import type { Skill } from "~~/types/skill"
 // @unocss-include
 export const useSkillStore = defineStore("skills", {
   state: () => ({
+    astro: {
+      color: "bg-[#ff5d01]/30",
+      icon: "devicon:astro",
+      name: "Astro",
+    },
     bun: {
       color: "bg-[#7d6369]/20",
       icon: "devicon:bun",
@@ -37,6 +42,11 @@ export const useSkillStore = defineStore("skills", {
       color: "bg-[#fc2856]/20",
       icon: "devicon:intellij",
       name: "IDEA",
+    },
+    illustrator: {
+      color: "bg-[#ff9a00]/20",
+      icon: "devicon:illustrator",
+      name: "Illustrator",
     },
     java: {
       color: "bg-[#e82d2e]/20",
@@ -78,6 +88,7 @@ export const useSkillStore = defineStore("skills", {
       icon: "devicon:nodejs",
       name: "Node",
     },
+
     nuxt: {
       color: "bg-[#00da81]/20",
       icon: "vscode-icons:file-type-nuxt",
@@ -88,6 +99,11 @@ export const useSkillStore = defineStore("skills", {
       icon: "vscode-icons:file-type-preact",
       name: "Preact",
     },
+    primevue: {
+      color: "bg-[#40b782]/20",
+      icon: "simple-icons:primevue",
+      name: "PrimeVue",
+    },
     prisma: {
       color: "bg-[#015a6a]/20",
       icon: "vscode-icons:file-type-prisma",
@@ -95,7 +111,7 @@ export const useSkillStore = defineStore("skills", {
     },
     scss: {
       color: "bg-[#b85d86]/20",
-      icon: "vscode-icons:file-type-sass",
+      icon: "vscode-icons:file-type-scss",
       name: "SCSS",
     },
     tailwind: {
@@ -122,6 +138,11 @@ export const useSkillStore = defineStore("skills", {
       color: "bg-[#40b782]/20",
       icon: "vscode-icons:file-type-vue",
       name: "Vue",
+    },
+    wails: {
+      color: "bg-[#6a0202]/30",
+      icon: "simple-icons:wails",
+      name: "Wails",
     },
   } as Record<string, Skill>),
 })

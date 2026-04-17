@@ -6,19 +6,23 @@ const { t } = useI18n()
 const skills: Record<string, Skill> = await useSkillStore().$state
 const categories: Array<SkillCategory> = [
   {
-    items: [skills.js!, skills.ts!, skills.java!, skills.scss!, skills.kotlin!, skills.go!],
+    items: [skills.js, skills.ts, skills.java, skills.kotlin, skills.go],
     key: "languages",
   },
   {
-    items: [skills.tailwind!, skills.nuxt!, skills.vue!, skills.fabric!],
+    items: [skills.nuxt, skills.vue, skills.astro, skills.fabric, skills.wails],
     key: "frameworks",
   },
   {
-    items: [skills.mongodb!, skills.mysql!, skills.prisma!],
+    items: [skills.unocss, skills.tailwind, skills.scss, skills.figma, skills.illustrator, skills.primevue],
+    key: "uiux",
+  },
+  {
+    items: [skills.mongodb, skills.mysql, skills.prisma],
     key: "databaseorms",
   },
   {
-    items: [skills.vscode!, skills.figma!, skills.node!, skills.linux!, skills.bun!, skills.idea!, skills.caddy!, skills.docker!],
+    items: [skills.vscode, skills.node, skills.linux, skills.bun, skills.idea, skills.caddy, skills.docker],
     key: "software",
   },
 ]
@@ -48,18 +52,21 @@ const categories: Array<SkillCategory> = [
         flex="~ row wrap items-center"
         gap="2"
       >
-      <tippy arrow v-for="(skill, index) in items" :key="skill.name + index" :aria-id="skill.name + index">
-        <UiBadge
-            :key="index"
-            :color="skill.color"
-            :icon="skill.icon"
-            icon-size="1.2rem"
-            class="gap-0 relative"
-          />
-          <template #content>
-            <p font="bold" u-text="base">{{ skill.name }}</p>
-          </template>
-      </tippy>
+        <template v-for="(skill, n) in items" :key="n">
+          <tippy v-if="skill" :key="skill.name + n" arrow :aria-id="skill.name + n">
+            <UiBadge
+              :key="i"
+              :color="skill.color"
+              :icon="skill.icon"
+              icon-size="1.2rem"
+              class="gap-0 relative"
+            />
+            <template #content>
+              <p font="content bold" u-text="sm">{{ skill.name }}</p>
+            </template>
+          </tippy>
+          <p v-else>Unknown skill in {{ key }} at index {{ n }}</p>
+        </template>
       </div>
     </div>
     <p
