@@ -12,11 +12,7 @@ export default defineConfig({
     createRemToPxProcessor(),
   ],
   presets: [
-    presetWind({
-      preflights: {
-        reset: false,
-      },
-    }),
+    presetWind(),
     presetAttributify({
       prefix: "u-",
     }),
@@ -65,8 +61,8 @@ export default defineConfig({
       },
     },
     font: {
-      content: "'Martian Mono Variable', monospace",
-      head: "'Unbounded Variable', sans-serif",
+      content: "'Martian Mono', monospace",
+      head: "'Unbounded', sans-serif",
     },
   },
   transformers: [

@@ -47,11 +47,6 @@ export default defineNuxtConfig({
     },
   },
 
-  css: [
-    // UnoCSS Wind4 has preflight reset that breaks lightningcss, using old method until fixed
-    "@unocss/reset/tailwind.css",
-  ],
-
   runtimeConfig: {
     ghApiBase: "https://api.github.com",
     ghApiToken: "",
