@@ -91,7 +91,7 @@ const experiences: { [key: string]: ExperienceType } = {
                 icon-size="1.2rem"
               />
               <template #content>
-                <p font="bold" u-text="sm">{{ skill.name }}</p>
+                <p font="content bold" u-text="sm">{{ skill.name }}</p>
               </template>
             </tippy>
           </template>

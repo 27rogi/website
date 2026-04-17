@@ -66,7 +66,7 @@ const skills = await useSkillStore().$state
                 :icon="skills[skillId].icon"
               />
               <template #content>
-                <p font="bold" u-text="sm">{{ skills[skillId].name }}</p>
+                <p font="content bold" u-text="sm">{{ skills[skillId].name }}</p>
               </template>
             </tippy>
           </template>

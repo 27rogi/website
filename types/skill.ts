@@ -1,11 +1,11 @@
-export type Skill = {
+export interface Skill {
   color: string
   // Iconify requires to use <iconpack>:<icon> syntax
   icon: `${string}:${string}`
   name: string
-};
+}
 
-export type SkillCategory = {
-  items: Array<Skill>
+export interface SkillCategory {
+  items: Array<Skill | undefined>
   key: string
-};
+}

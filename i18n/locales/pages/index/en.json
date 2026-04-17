@@ -27,6 +27,7 @@
             "languages": "Languages",
             "frameworks": "Frameworks",
             "databaseorms": "Databases / ORMs",
+            "uiux": "UI / UX",
             "software": "Software"
           },
           "hint": "Skills are sorted by knowledge and experience: from advanced to beginner."
