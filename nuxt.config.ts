@@ -22,7 +22,8 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxtjs/fontaine",
     "nuxt-payload-analyzer",
-    "nuxt-security",
+    // breaks dev mode, enabled only for production
+    isDev ? undefined : "nuxt-security",
     // TODO: implement testing, Bun is able to run Vitest now, but stability is unknown
     // "@nuxt/test-utils/module",
     "@nuxt/content",
