@@ -3,6 +3,7 @@
 ### 🚀 Features
 
 - Get bun version from api
+- Use @nuxt/fonts instead of manual fonts
 
 ### 🐛 Bug Fixes
 
@@ -17,6 +18,8 @@
 - Recreate bun.lock, cleanup nuxt config
 - *(ci)* Missed one action
 - *(ci)* Revert distroless
+- Disable nuxt-security for dev again
+- Correct bg route exclusion
 
 ### 💼 Other
 
@@ -36,6 +39,9 @@
 - *(docker)* Try distroless again?
 - *(id24484476712)* Update changelog
 - Use includes() in computed
+- *(id24589708839)* Update changelog
+- Use preflight from unocss
+- Actualize skills and improve tooltips
 ## [09042026] - 2026-04-09
 
 ### 🚀 Features
