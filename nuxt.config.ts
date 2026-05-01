@@ -179,12 +179,26 @@ export default defineNuxtConfig({
     },
   },
 
+  icon: {
+    customCollections: [
+      {
+        prefix: "custom",
+        dir: "./app/assets/icons",
+      },
+    ],
+  },
+
   content: {
     experimental: {
       sqliteConnector: "native",
     },
   },
 
+  vitalizer: {
+    disableStylesheets: true,
+  },
+
+  // @ts-expect-error: nuxt-security module is disabled in dev mode which results in missing types
   security: {
     // TODO: check why it causes payload errors if enabled
     ssg: false,
@@ -213,10 +227,5 @@ export default defineNuxtConfig({
         ],
       },
     },
-  },
-
-  vitalizer: {
-    // disablePreloadLinks: true,
-    disableStylesheets: true,
   },
 })
