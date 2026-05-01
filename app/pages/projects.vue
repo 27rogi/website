@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { useProjectStore } from "~/stores/projects"
+import { Projects } from '~/constants/projects';
 
 const { t } = useI18n()
-const categories = await useProjectStore().$state
 
 definePageMeta({
   key: "projects",
@@ -18,16 +17,12 @@ definePageMeta({
     m="x-auto"
     max-w="screen-2xl"
   >
-    <div
-      v-for="(projects, category) in categories"
-      :key="category"
-    >
       <div
         flex="~ wrap"
         gap="4"
       >
         <AppProjectsCard
-          v-for="(project, key) in projects"
+          v-for="(project, key) in Projects"
           :key="key"
           :project="project"
           outline="~ 0 hover:4 greendark-200/30"
@@ -50,6 +45,5 @@ definePageMeta({
           </p>
         </AppProjectsCard>
       </div>
-    </div>
   </div>
 </template>
