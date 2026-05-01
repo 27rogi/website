@@ -21,7 +21,6 @@ export default defineConfig({
   shortcuts: [
     // eslint-disable-next-line regexp/no-super-linear-backtracking
     [/^card-(.*)\/(.*)$/, ([, color, opacity]) => `border border-${color}-200 border-opacity-${opacity} bg-${color}-600 bg-opacity-${Number(opacity) - 10} rounded-md`],
-    [/^card-highlight-(.*)$/, ([, c]) => `hover:border-${c}-200/50`],
   ],
   theme: {
     colors: {

@@ -1,7 +1,7 @@
-export type GitHubData = {
+export interface GitHubData {
   organization: string
   repository: string
-};
+}
 
 export interface Project {
   skills: string[]

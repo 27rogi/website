@@ -1,21 +1,20 @@
 <script setup lang="ts">
 import type { ExperienceType } from "~~/types/experience"
-import { useSkillStore } from "~/stores/skills"
+import { Skills } from "~/constants/skills"
 
 const { t } = useI18n()
-const skills = await useSkillStore().$state
 /* eslint-disable sort/object-properties */
 const experiences: { [key: string]: ExperienceType } = {
   ctm: {
     icon: "mdi:university",
-    skills: [skills.figma, skills.scss, skills.tailwind],
+    skills: [Skills.figma, Skills.scss, Skills.tailwind],
     type: "job",
     year: 2021,
     yearEnd: 2021,
   },
   premid: {
     icon: "mdi:college",
-    skills: [skills.nuxt, skills.figma, skills.scss, skills.tailwind],
+    skills: [Skills.nuxt, Skills.figma, Skills.scss, Skills.tailwind],
     type: "job",
     year: 2019,
     yearEnd: 2020,

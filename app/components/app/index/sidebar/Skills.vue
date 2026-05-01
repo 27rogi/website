@@ -1,28 +1,27 @@
 <script setup lang="ts">
-import type { Skill, SkillCategory } from "~~/types/skill"
-import { useSkillStore } from "~/stores/skills"
+import { Skills } from "~/constants/skills";
+import type { SkillCategory } from "~~/types/skill"
 
 const { t } = useI18n()
-const skills: Record<string, Skill> = await useSkillStore().$state
 const categories: Array<SkillCategory> = [
   {
-    items: [skills.js, skills.ts, skills.java, skills.kotlin, skills.go],
+    items: [Skills.js, Skills.ts, Skills.java, Skills.kotlin, Skills.go],
     key: "languages",
   },
   {
-    items: [skills.nuxt, skills.vue, skills.astro, skills.fabric, skills.wails],
+    items: [Skills.nuxt, Skills.vue, Skills.astro, Skills.fabric, Skills.wails],
     key: "frameworks",
   },
   {
-    items: [skills.unocss, skills.tailwind, skills.scss, skills.figma, skills.illustrator, skills.primevue],
+    items: [Skills.unocss, Skills.tailwind, Skills.scss, Skills.figma, Skills.illustrator, Skills.primevue],
     key: "uiux",
   },
   {
-    items: [skills.mongodb, skills.mysql, skills.prisma],
+    items: [Skills.mongodb, Skills.mysql, Skills.prisma],
     key: "databaseorms",
   },
   {
-    items: [skills.vscode, skills.node, skills.linux, skills.bun, skills.idea, skills.caddy, skills.docker],
+    items: [Skills.vscode, Skills.node, Skills.linux, Skills.bun, Skills.idea, Skills.caddy, Skills.docker],
     key: "software",
   },
 ]

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
+import { Skills } from "~/constants/skills"
 import type { ProjectBasic, ProjectLeading } from "~~/types/project"
-import { useSkillStore } from "~/stores/skills"
 
 const props = defineProps({
   project: {
@@ -23,8 +23,6 @@ const ghData = (props.project?.github)
       return data
     })
   : null
-
-const skills = await useSkillStore().$state
 </script>
 
 <template>
@@ -59,14 +57,14 @@ const skills = await useSkillStore().$state
             v-for="skillId in project.skills"
             :key="skillId"
           >
-            <tippy v-if="skills[skillId]" arrow :aria-id="skills[skillId].name">
+            <tippy v-if="Skills[skillId]" arrow :aria-id="Skills[skillId].name">
               <UiBadge
-                :title="skills[skillId].name"
-                :color="skills[skillId].color"
-                :icon="skills[skillId].icon"
+                :title="Skills[skillId].name"
+                :color="Skills[skillId].color"
+                :icon="Skills[skillId].icon"
               />
               <template #content>
-                <p font="content bold" u-text="sm">{{ skills[skillId].name }}</p>
+                <p font="content bold" u-text="sm">{{ Skills[skillId].name }}</p>
               </template>
             </tippy>
           </template>
