@@ -26,6 +26,7 @@
 
 - Latest deps
 - Nuxt 4.4.4 and latest deps
+- Nuxt 4.4.8, vite 8, latest deps
 
 ### ⚙️ Miscellaneous Tasks
 
@@ -46,6 +47,7 @@
 - Actualize skills and improve tooltips
 - *(id24670287088)* Update changelog
 - Use consts instead of pinia
+- *(id25231339840)* Update changelog
 ## [09042026] - 2026-04-09
 
 ### 🚀 Features
