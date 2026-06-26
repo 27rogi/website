@@ -12,7 +12,7 @@ The latest generation of my website is built with Bun and uses its environment i
 
 ## Used stack
 
-* Nuxt 4 (Nuxt 5 parity where possible)
+* Nuxt 4 (~~Nuxt 5 parity where possible~~ *too much differences right now*)
   * **Modules**: `@nuxtjs/i18n`, `unocss`, `pinia`, `@nuxt/image`, `@nuxt/icon`, `@nuxt/eslint`, `vue-tippy`, `nuxt-security` and more!
 * Vite Rolldown
 * UnoCSS (with Tailwind 4 preset)
@@ -21,7 +21,6 @@ The latest generation of my website is built with Bun and uses its environment i
 
 ## Features
 
-* Nuxt 5 ready (using `compatabilityVersion: 5`)
 * Store management (Pinia)
 * Icons (by Iconify using nuxt-icon)
 * Core Web Vitals optimizations

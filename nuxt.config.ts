@@ -65,7 +65,8 @@ export default defineNuxtConfig({
   },
 
   future: {
-    compatibilityVersion: 5,
+    // nuxt v5 became too different from v4, many issues arise currently
+    compatibilityVersion: 4,
     typescriptBundlerResolution: true,
   },
 
@@ -76,7 +77,7 @@ export default defineNuxtConfig({
 
   experimental: {
     // as of Nuxt 4.3.0 this feature breaks dev mode (DevTools, vue-tippy and other modules)
-    viteEnvironmentApi: !isDev,
+    // viteEnvironmentApi: !isDev,
     writeEarlyHints: true,
     crossOriginPrefetch: true,
     typedPages: true,
