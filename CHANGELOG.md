@@ -1,5 +1,11 @@
 ## [unreleased]
 
+### ⚙️ Miscellaneous Tasks
+
+- Use nuxt compatability 4 instead of 5
+- Redutant option removed
+## [23062026] - 2026-06-23
+
 ### 🚀 Features
 
 - Get bun version from api
@@ -48,6 +54,7 @@
 - *(id24670287088)* Update changelog
 - Use consts instead of pinia
 - *(id25231339840)* Update changelog
+- *(id28033525426)* Update changelog
 ## [09042026] - 2026-04-09
 
 ### 🚀 Features
