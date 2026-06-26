@@ -76,8 +76,6 @@ export default defineNuxtConfig({
   },
 
   experimental: {
-    // as of Nuxt 4.3.0 this feature breaks dev mode (DevTools, vue-tippy and other modules)
-    // viteEnvironmentApi: !isDev,
     writeEarlyHints: true,
     crossOriginPrefetch: true,
     typedPages: true,
