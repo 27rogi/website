@@ -6,7 +6,7 @@ export const isDev = process.env.NODE_ENV !== "production"
 /* eslint-disable sort/object-properties */
 export default defineNuxtConfig({
   compatibilityDate: "2026-04-16",
-
+  
   modules: [
     "@nuxt/fonts",
     "@nuxt/devtools",
@@ -80,6 +80,9 @@ export default defineNuxtConfig({
     crossOriginPrefetch: true,
     typedPages: true,
     typescriptPlugin: true,
+    ssrStreaming: true,
+    prefetchPreloadTags: true,
+    watcher: 'builder',
   },
 
   nitro: {
