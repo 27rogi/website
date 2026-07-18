@@ -1,9 +1,14 @@
 ## [unreleased]
 
+### 💼 Other
+
+- Nuxt 4.5 and latest deps
+
 ### ⚙️ Miscellaneous Tasks
 
 - Use nuxt compatability 4 instead of 5
 - Redutant option removed
+- *(id28266742002)* Update changelog
 ## [23062026] - 2026-06-23
 
 ### 🚀 Features
