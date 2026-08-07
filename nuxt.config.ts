@@ -9,7 +9,6 @@ export default defineNuxtConfig({
   
   modules: [
     "@nuxt/fonts",
-    "@nuxt/devtools",
     "@nuxt/eslint",
     "@pinia/nuxt",
     // @nuxtjs/seo must be loaded before @nuxt/content
@@ -31,10 +30,7 @@ export default defineNuxtConfig({
     "nuxt-elysia",
   ],
 
-  devtools: {
-    enabled: true, // windows requires --no-fork flag
-    timeline: { enabled: true },
-  },
+  devtools: process.env.DEVTOOLS_ENABLED ? { enabled: true } : false,
 
   app: {
     pageTransition: {
