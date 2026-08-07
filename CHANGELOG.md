@@ -3,6 +3,7 @@
 ### 🐛 Bug Fixes
 
 - Disable devtools due to Bun issues, update deps
+- Revert ssrStreaming and other experiments
 
 ### 💼 Other
 
@@ -16,6 +17,7 @@
 - *(id28266742002)* Update changelog
 - *(id29665828578)* Update changelog
 - *(id30314380349)* Update changelog
+- *(id31226727983)* Update changelog
 ## [23062026] - 2026-06-23
 
 ### 🚀 Features
