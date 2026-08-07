@@ -1,5 +1,9 @@
 ## [unreleased]
 
+### 🐛 Bug Fixes
+
+- Disable devtools due to Bun issues, update deps
+
 ### 💼 Other
 
 - Nuxt 4.5 and latest deps
@@ -11,6 +15,7 @@
 - Redutant option removed
 - *(id28266742002)* Update changelog
 - *(id29665828578)* Update changelog
+- *(id30314380349)* Update changelog
 ## [23062026] - 2026-06-23
 
 ### 🚀 Features
