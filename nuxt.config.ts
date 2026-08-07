@@ -72,12 +72,11 @@ export default defineNuxtConfig({
   },
 
   experimental: {
-    writeEarlyHints: true,
     crossOriginPrefetch: true,
     typedPages: true,
     typescriptPlugin: true,
-    ssrStreaming: true,
-    prefetchPreloadTags: true,
+    // streaming seems to break a lot of code for now
+    // ssrStreaming: true,
     watcher: 'builder',
   },
 
