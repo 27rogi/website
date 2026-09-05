@@ -5,11 +5,6 @@
 - Disable devtools due to Bun issues, update deps
 - Revert ssrStreaming and other experiments
 
-### 💼 Other
-
-- Nuxt 4.5 and latest deps
-- Nuxt 4.5.1 and latest deps
-
 ### ⚙️ Miscellaneous Tasks
 
 - Use nuxt compatability 4 instead of 5
@@ -18,6 +13,12 @@
 - *(id29665828578)* Update changelog
 - *(id30314380349)* Update changelog
 - *(id31226727983)* Update changelog
+- *(id31227529616)* Update changelog
+
+### 💼 Other
+
+- Nuxt 4.5 and latest deps
+- Nuxt 4.5.1 and latest deps
 ## [23062026] - 2026-06-23
 
 ### 🚀 Features
@@ -42,12 +43,6 @@
 - Disable nuxt-security for dev again
 - Correct bg route exclusion
 
-### 💼 Other
-
-- Latest deps
-- Nuxt 4.4.4 and latest deps
-- Nuxt 4.4.8, vite 8, latest deps
-
 ### ⚙️ Miscellaneous Tasks
 
 - Changes for @nuxtjs/seo 5.0.0
@@ -69,6 +64,12 @@
 - Use consts instead of pinia
 - *(id25231339840)* Update changelog
 - *(id28033525426)* Update changelog
+
+### 💼 Other
+
+- Latest deps
+- Nuxt 4.4.4 and latest deps
+- Nuxt 4.4.8, vite 8, latest deps
 ## [09042026] - 2026-04-09
 
 ### 🚀 Features
@@ -113,15 +114,6 @@
 - Add error message for Card fetch
 - Fallback to undefined if bearer token not present
 
-### 💼 Other
-
-- Bring back nuxt 4.2, try vue 3.6.0
-- Latest packages
-- Latest deps
-- Latest deps
-- Latest deps and nuxt
-- Latest deps and nuxt 4.4
-
 ### ⚙️ Miscellaneous Tasks
 
 - *(docker)* Explicit bun use and few changes
@@ -156,6 +148,15 @@
 - *(i18n)* Add required entries for micro-i18n
 - *(id21969601017)* Update changelog
 - *(id24212268635)* Update changelog
+
+### 💼 Other
+
+- Bring back nuxt 4.2, try vue 3.6.0
+- Latest packages
+- Latest deps
+- Latest deps
+- Latest deps and nuxt
+- Latest deps and nuxt 4.4
 ## [08112025] - 2025-11-08
 
 ### 🚀 Features
@@ -179,13 +180,6 @@
 - *(docker)* Use correct syntax
 - *(unocss)* Apply body background for app
 
-### 💼 Other
-
-- Latest packages
-- Nuxt 4.1.2
-- Latest deps & @nuxt/content
-- Latest nuxt & deps
-
 ### ⚙️ Miscellaneous Tasks
 
 - Update changelog
@@ -200,17 +194,24 @@
 - Cosmetic changes to match original ui version
 - Migrate from v3 to v4 branch
 - Update changelog
-## [03092025] - 2025-09-02
 
 ### 💼 Other
 
-- Nuxt 3.16.2
-- Nuxt 4.1.0 and many updates to config
+- Latest packages
+- Nuxt 4.1.2
+- Latest deps & @nuxt/content
+- Latest nuxt & deps
+## [03092025] - 2025-09-02
 
 ### ⚙️ Miscellaneous Tasks
 
 - Update changelog
 - Update changelog
+
+### 💼 Other
+
+- Nuxt 3.16.2
+- Nuxt 4.1.0 and many updates to config
 ## [21032025] - 2025-03-20
 
 ### 🐛 Bug Fixes
@@ -220,10 +221,6 @@
 - *(ci)* Print unreleased commits in changelog
 - *(bun)* Remove redutant verbose info
 
-### 💼 Other
-
-- Nuxt 3.16 and unocss v66.1
-
 ### ⚙️ Miscellaneous Tasks
 
 - *(ci)* Better styled changelog messages
@@ -231,6 +228,10 @@
 - Update changelog
 - Update changelog
 - Update changelog
+
+### 💼 Other
+
+- Nuxt 3.16 and unocss v66.1
 ## [05032025] - 2025-03-05
 
 ### 🚀 Features
@@ -241,17 +242,17 @@
 
 - Grammar issues
 
+### ⚙️ Miscellaneous Tasks
+
+- *(ci)* Make gh actions less annoying
+- Remove redutant unhead vite addon
+
 ### 💼 Other
 
 - Deps and nuxt 3.15.2
 - Deps and nuxt 3.15.4
 - Latest unocss and etc.
 - Bump deps
-
-### ⚙️ Miscellaneous Tasks
-
-- *(ci)* Make gh actions less annoying
-- Remove redutant unhead vite addon
 ## [09012025] - 2025-01-09
 
 ### 🚀 Features
@@ -263,14 +264,14 @@
 
 - *(ts)* Use correct path for tsconfig
 
-### 💼 Other
-
-- Deps and nuxt 3.15
-
 ### ⚙️ Miscellaneous Tasks
 
 - Move types to root directory
 - Split large components to children
+
+### 💼 Other
+
+- Deps and nuxt 3.15
 ## [02012025] - 2025-01-02
 
 ### 🚀 Features
@@ -283,17 +284,17 @@
 - *(docker)* Remove legacy env declaration
 - *(ci)* Don't trigger docker builds on changelog updates
 
-### 💼 Other
-
-- *(bun,nuxt)* Switch lock format for bun and update Nuxt
-- Latest deps as of 02.01.2025
-
 ### ⚙️ Miscellaneous Tasks
 
 - *(docker)* Use prebuilt Bun container
 - *(eslint)* Move from .js to experimental .ts file
 - *(nuxt)* Update compatibilityDate to current date
 - *(readme)* Make pretty README
+
+### 💼 Other
+
+- *(bun,nuxt)* Switch lock format for bun and update Nuxt
+- Latest deps as of 02.01.2025
 ## [31122024] - 2024-12-31
 
 ### 🚀 Features
@@ -313,6 +314,11 @@
 - Migrate app head to layout
 - *(seo)* Use better way to define title
 
+### ⚙️ Miscellaneous Tasks
+
+- *(ui,types)* Small tweaks for ui and typings
+- *(ui)* Small padding changes for main elements
+
 ### 💼 Other
 
 - *(v3)* Website 2024 rework
@@ -325,8 +331,3 @@
 - Update deps and fix hydration
 - Latest deps
 - Latest deps
-
-### ⚙️ Miscellaneous Tasks
-
-- *(ui,types)* Small tweaks for ui and typings
-- *(ui)* Small padding changes for main elements
