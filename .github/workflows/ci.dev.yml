@@ -3,6 +3,7 @@ name: Build Dev Docker Image
 on:
   push:
     branches-ignore:
+      - 'v5'
       - 'v4'
       - 'staging'
     paths-ignore:

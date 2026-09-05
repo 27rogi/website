@@ -56,7 +56,7 @@ defineProps({
     >
       <div
         v-if="$props.header || $slots.header"
-        u-text="base"
+        u-text="lg"
         font="head 800"
       >
         <h3 v-if="$props.header">
@@ -67,7 +67,7 @@ defineProps({
           name="header"
         />
       </div>
-      <div u-text="sm greendark-200/70">
+      <div u-text="xs greendark-200/70">
         <slot />
       </div>
     </div>

@@ -16,9 +16,9 @@ defineProps({
     <div
       v-if="$props.line"
       :class="{ 'left-[100%] right-[-100vw]': line === 'right', 'right-[100%] left-[-100vw]': line === 'left' }" absolute
-      top="0" bottom="-1px" border="b dashed greendark-300/20"
+      top="0" bottom="-1px" border="0 lg:b dashed greendark-300/20"
     />
-    <div flex="~ 1 col" gap="2">
+    <div flex="~ 1 col" h="full" gap="2">
       <div v-if="$slots.header || $props.header" font="head 800" u-text="1.5em">
         <h2 v-if="$props.header" leading="normal">
           {{ $props.header }}

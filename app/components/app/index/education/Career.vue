@@ -41,7 +41,7 @@ const experiences: { [key: string]: ExperienceType } = {
 </script>
 
 <template>
-  <UiCard :header="t(`page.index.cards.experience.title`)?.toString()" line="left" border="x-0 b-0 lg:(l-1)">
+  <UiCard :header="t(`page.index.cards.experience.title`)?.toString()" line="left" border="x-1 b-0 lg:x-0 lg:l-1">
     <div
       grid="~ cols-2 items-stretch [&_:last-child]:col-span-full"
       gap="2"

@@ -1,49 +1,21 @@
 <script lang="ts" setup>
-const router = useRouter()
-const hasPath = computed(() => {
-  if (!router)
-    return false
-  return !["", "/", "/en", "/ru"].includes(router.currentRoute.value.path)
-})
+// const router = useRouter()
+// const hasPath = computed(() => {
+//   if (!router)
+//     return false
+//   return !["", "/", "/en", "/ru"].includes(router.currentRoute.value.path)
+// })
 </script>
 
 <template>
   <div
-    inset="0" z="1" max-h="100vh" overflow="hidden" opacity="1" transition-600 transition-all ease-in absolute :class="{
-      '[&_.blob]:(opacity-10! animate-paused!)': hasPath,
-    }" bg="greendark-800" style="mask-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));"
+    inset="0" z="1" h="100vh" overflow="hidden" opacity="1" absolute
   >
-    <svg
-      class="z-1 [&_.blob]:(opacity-30 transition ease-in-out fill-greendark-800/0)" blur="[8rem]" xmlns="http://www.w3.org/2000/svg" viewBox="0 100 1620 1620"
-      fill="none"
-    >
-      <g fill-rule="evenodd" clip-rule="evenodd" filter="url(#a)">
-
-        <path
-          id="blob1"
-          class="blob"
-          d="M1311 457c75 74 32 204-8 302-40 95-103 199-205 209-95 10-147-99-212-168-42-43-71-89-89-147-28-92-116-213-40-272 78-61 165 86 263 100 101 14 218-96 291-24Z"
-        />
-
-        <path
-          id="blob2"
-          class="blob"
-          d="M740 580c2 58-20 120-68 154-44 31-101-1-155 2-58 2-116 39-168 13-70-35-140-92-146-169-5-79 70-134 119-196 60-76 100-214 195-200 100 15 96 164 145 252 28 49 76 87 78 144Z"
-        />
-        <path
-          id="blob3"
-          class="blob"
-          d="M784 379c100-10 154-170 254-155 86 13 105 135 144 214 39 81 125 171 83 251-47 89-201 42-273 111-61 60-16 188-86 236-68 46-168 24-241-13a305 305 0 0 1-139-180c-20-62 28-125 18-189-11-65-80-113-77-179 3-77 19-183 92-205 81-25 140 117 225 108Z"
-        />
-      </g>
-      <defs>
-        <filter id="a" x="0" y="0" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
-          <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <!-- <feGaussianBlur stdDeviation="65" result="a"/> -->
-        </filter>
-      </defs>
-    </svg>
+    <video autoplay loop muted playsinline class="h-full w-full left-0 top-0 absolute z-0 object-cover brightness-30">
+      <source src="/tortoise.webm" type="video/webm">
+      <source src="/tortoise.mp4" type="video/mp4">
+    </video>
+    <div class="from-testudo-gold-800/30 to-greendark-800 to-90% bg-gradient-to-b" absolute inset="0" z="1" />
   </div>
 </template>
 
@@ -66,7 +38,7 @@ const hasPath = computed(() => {
     transform: scale(1) translateY(0%);
   }
   10% {
-    --at-apply: fill-brilliantsea-400/20;
+    --at-apply: fill-testudo-gold-400/20;
     transform: scale(0.9) translateY(-9%);
   }
   50% {
@@ -78,7 +50,7 @@ const hasPath = computed(() => {
     transform: scale(1) translateY(-4%);
   }
   80% {
-    --at-apply: fill-brilliantsea-400/40;
+    --at-apply: fill-testudo-gold-400/40;
     transform: scale(0.9) translateY(-6%);
   }
   100% {

@@ -1,3 +1,11 @@
+<script lang="ts" setup>
+useHead({
+  titleTemplate: (pageTitle) => {
+    return pageTitle ? `${pageTitle} ~ 27rogi` : "27rogi/website"
+  },
+})
+</script>
+
 <template>
   <NuxtLayout>
     <NuxtPage />
@@ -11,20 +19,23 @@ body {
 
 .fadePage-enter-active,
 .fadePage-leave-active {
-  transition: all 0.4s;
+  --at-apply: transition-all ease-out duration-400;
 }
 .fadePage-enter-from,
 .fadePage-leave-to {
-  opacity: 0;
+  --at-apply: opacity-0 translate-y-400;
 }
 
 .fadeLayout-enter-active,
 .fadeLayout-leave-active {
-  transition: all 0.4s;
+  --at-apply: transition-all ease-out duration-400;
 }
 .fadeLayout-enter-from,
 .fadeLayout-leave-to {
-  opacity: 0;
-  filter: blur(1rem);
+  --at-apply: opacity-0 blur-xl;
+}
+
+.tippy-box {
+  --at-apply: bg-greendark-500 border-1 border-greenspring-300/30 shadow-2xl;
 }
 </style>

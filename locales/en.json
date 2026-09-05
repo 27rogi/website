@@ -1,7 +1,22 @@
 {
-  "general": {
-    "title": "{title}rogi#su",
-    "lang_missing": "Article is displayed on another language because there is no version for current locale!"
+  "nuxtSiteConfig": {
+    "name": "Introduction",
+    "description": "Welcome to my portfolio website, I'm a developer who mostly works with frontend, but sometimes I do backend too.",
+    "keywords": [
+      "portfolio",
+      "developer",
+      "frontend",
+      "backend",
+      "web development"
+    ]
+  },
+  "pages": {
+    "index": {
+      "title": "Introduction"
+    },
+    "projects": {
+      "title": "Projects"
+    }
   },
   "navbar": {
     "link": {

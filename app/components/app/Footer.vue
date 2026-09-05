@@ -25,13 +25,13 @@ const variantIcons = {
 
 <template>
   <div
-    flex="~ items-center" class="[&_.colorful]:(text-greenspring-500 font-bold align-top)" m="x-auto"
-    :class="isHome ? 'xl:max-w-screen-xl 2xl:max-w-screen-2xl' : 'max-w-screen-2xl'" p="y-4 x-4" u-text="brilliantsea-50/50 sm" leading="loose"
+    flex="~ items-end" class="[&_.colorful]:(text-greenspring-500 font-bold align-top)" m="x-auto"
+    :class="isHome ? 'xl:max-w-screen-xl 2xl:max-w-screen-2xl' : 'max-w-screen-2xl'" p="y-4 x-8 2xl:x-4" u-text="testudo-gold-50/50 sm" leading="loose"
   >
     <div>
-      <p leading="loose">
-        <span u-text="inherit"><span font="head">rogi#su</span> [<a
-          :href="`https://github.com/27rogi/website/commit/${config.public.branch}`" target="_blank"
+      <p font="head bold" leading="loose">
+        <span u-text="inherit">rogi#su [<a
+          :href="`https://github.com/27rogi/website/commit/${config.public.branch}`" font="content" target="_blank"
         ><span class="colorful">{{ config.public.branch }}</span>
         </a>]
           <Icon name="ph:copyright-bold" relative top="0.1rem" size="1em" /> {{ new Date().getFullYear() }}
@@ -49,7 +49,7 @@ const variantIcons = {
         <template #versions>
           <span class="colorful">
             <Icon name="devicon:nuxt" relative top="0.1rem" size="1.2em" /> Nuxt {{ version }}</span>
-          <span u-text="brilliantsea-50/50"> + </span>
+          <span u-text="testudo-gold-50/50"> + </span>
           <span class="colorful"><Icon name="devicon:bun" relative top="0.1rem" size="1.2em" /> Bun {{ status === 'success' ? data?.runtime.bun ?? 'is not present! ⚠️' : '' }}
           </span>
         </template>

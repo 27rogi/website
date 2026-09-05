@@ -3,7 +3,7 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - 'v4'
+      - 'v5'
     paths-ignore:
       - '.vscode/**'
       - '**/*.md'

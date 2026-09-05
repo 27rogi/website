@@ -9,17 +9,17 @@ const locale = computed(() => getLocale())
     <button
       v-for="{ code } in locales"
       :key="code"
-      font="head 800"
-      u-text="white hover:greenspring-500 xs"
+      font="800"
+      u-text="testudo-gold-50 hover:white xs"
       leading="0"
       p="y-5 x-2"
-      border="~ greendark-200/30 first:r-none"
+      border="~ greenspring-200/30 first:r-none hover:greenspring-300/80 hover:r-solid!"
       rounded="last:r-md first:l-md"
       bg="greendark-500/60"
-      :class="{ 'bg-greendark-400/25! text-greenspring-500!': locale === code }"
+      :class="{ 'bg-greenspring-900! pointer-events-none text-greenspring-500!': locale === code }"
       @click="switchLocale(code)"
     >
-      {{ code }}
+      {{ code.toLocaleUpperCase() }}
     </button>
   </div>
 </template>

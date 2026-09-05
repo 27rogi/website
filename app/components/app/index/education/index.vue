@@ -17,7 +17,7 @@ const education = {
   <UiCard
     :header="t(`page.index.cards.education.title`)?.toString()"
     h="full"
-    border="x-0 b-0 lg:(b-1 l-1)" mb="-1px" rounded="0 bl-md"
+    border="x-1 b-0 lg:(b-1 l-1 r-0)" mb="-1px" rounded="0 lg:bl-md"
   >
     <div
       grid="~ cols-1 lg:cols-2 items-stretch"
@@ -26,7 +26,7 @@ const education = {
       <UiCardDetailed
         v-for="(item, key) in education"
         :key="key"
-        col="span-1"
+        col="2xl:span-2 span-1"
         :icon="item.icon"
         :header="t(`page.index.cards.education.items.${key}.title`)?.toString()"
       >

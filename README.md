@@ -12,22 +12,21 @@ The latest generation of my website is built with Bun and uses its environment i
 
 ## Used stack
 
-* Nuxt 4 (~~Nuxt 5 parity where possible~~ *too much differences right now*)
-  * **Modules**: `@nuxtjs/i18n`, `unocss`, `pinia`, `@nuxt/image`, `@nuxt/icon`, `@nuxt/eslint`, `vue-tippy`, `nuxt-security` and more!
-* Vite Rolldown
+* Nuxt 4 (ready for Nuxt 5)
+* Elysia (for API endpoints)
+* Vite 8
 * UnoCSS (with Tailwind 4 preset)
-* Bun (`bun run --bun` compatible)
+* Bun (using Bun's Node environment implementation)
 * TypeScript
 
 ## Features
 
-* Store management (Pinia)
-* Icons (by Iconify using nuxt-icon)
+* Icons (by Iconify using @nuxt/icon)
 * Core Web Vitals optimizations
-* Sitemap, Meta Tags, Open Graph, Twitter Cards (nuxt-seo)
-* Internationalization (i18n-next)
+* Sitemap, Meta Tags, Open Graph, Twitter Cards (@nuxtjs/seo)
+* Internationalization (nuxt-i18n-micro)
 * Code Linting (ESLint using @antfu config with tweaks)
-* CORS (nuxt-security)
+* Cross Origin Resource Sharing tweaks (nuxt-security)
 * ...and something else, I'm just lazy to write it all down :)
 
 ## Development

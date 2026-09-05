@@ -1,69 +1,40 @@
-import viteSVGLoader from "vite-svg-loader"
-
 // eslint-disable-next-line node/prefer-global/process
 export const isDev = process.env.NODE_ENV !== "production"
 
-/* eslint-disable sort/object-properties */
 export default defineNuxtConfig({
-  compatibilityDate: "2026-04-16",
-  
-  modules: [
-    "@nuxt/fonts",
-    "@nuxt/eslint",
-    "@pinia/nuxt",
-    // @nuxtjs/seo must be loaded before @nuxt/content
-    // https://nuxtseo.com/docs/nuxt-seo/migration-guide/v4-to-v5#ensure-correct-module-order
-    "@nuxtjs/seo",
-    "nuxt-i18n-micro",
-    "@nuxt/image",
-    "@vueuse/nuxt",
-    "@unocss/nuxt",
-    "@nuxt/icon",
-    "@nuxtjs/fontaine",
-    "nuxt-payload-analyzer",
-    // breaks dev mode, enabled only for production
-    isDev ? undefined : "nuxt-security",
-    // TODO: implement testing, Bun is able to run Vitest now, but stability is unknown
-    // "@nuxt/test-utils/module",
-    "@nuxt/content",
-    "nuxt-vitalizer",
-    "nuxt-elysia",
-  ],
-
-  devtools: process.env.DEVTOOLS_ENABLED ? { enabled: true } : false,
-
   app: {
-    pageTransition: {
-      name: "fadePage",
-      mode: "out-in",
-    },
     layoutTransition: {
-      name: "fadeLayout",
       mode: "out-in",
+      name: "fadeLayout",
+    },
+    pageTransition: {
+      mode: "out-in",
+      name: "fadePage",
     },
   },
 
-  runtimeConfig: {
-    ghApiBase: "https://api.github.com",
-    ghApiToken: "",
-    public: {
-      branch: "v4",
+  compatibilityDate: "2026-08-13",
+
+  devtools: {
+    enabled: true,
+
+    timeline: {
+      enabled: true,
     },
   },
 
-  routeRules: {
-    "/": { prerender: true },
-    "/ru": { prerender: true },
-    "/reviews": { swr: true },
-    "/reviews/**": { swr: 3600 },
-    "/projects": { swr: true },
-    "/api/*": { cache: isDev ? false : { maxAge: 15 * 60 }, cors: true },
+  eslint: {
+    config: {
+      nuxt: {
+        sortConfigKeys: false,
+      },
+      standalone: false,
+    },
   },
 
-  future: {
-    // nuxt v5 became too different from v4, many issues arise currently
-    compatibilityVersion: 4,
-    typescriptBundlerResolution: true,
+  experimental: {
+    typescriptPlugin: true,
+    watcher: "builder",
   },
 
   features: {
@@ -71,17 +42,68 @@ export default defineNuxtConfig({
     inlineStyles: true,
   },
 
-  experimental: {
-    crossOriginPrefetch: true,
-    typedPages: true,
-    typescriptPlugin: true,
-    // streaming seems to break a lot of code for now
-    // ssrStreaming: true,
-    watcher: 'builder',
+  fonts: {
+    defaults: {
+      subsets: [
+        "latin-ext",
+        "latin",
+        "cyrillic",
+      ],
+      weights: [400, 500, 600, 700, 800, 900],
+    },
+    providers: {
+      bunny: false,
+      google: false,
+    },
   },
 
+  future: {
+    compatibilityVersion: 5,
+  },
+
+  i18n: {
+    // Required for redirects to work properly
+    autoDetectLanguage: false,
+    defaultLocale: "en",
+    localeCookie: "user-locale",
+    locales: [
+      { code: "en", dir: "ltr", iso: "en-US" },
+      { code: "ru", dir: "ltr", iso: "ru-RU" },
+    ],
+    meta: true,
+  },
+
+  icon: {
+    clientBundle: {
+      scan: { globInclude: ["**\/*.{vue,jsx,tsx,md,mdc,mdx,ts}"] },
+    },
+    customCollections: [
+      {
+        dir: "./app/assets/icons",
+        prefix: "custom",
+      },
+    ],
+    // mode: "svg",
+  },
+
+  modules: [
+    "nuxt-i18n-micro",
+    "nuxt-elysia",
+    "@nuxt/eslint",
+    "@nuxt/icon",
+    "nuxt-security",
+    "@nuxtjs/seo",
+    "@nuxt/fonts",
+    "@unocss/nuxt",
+    "@vueuse/nuxt",
+    // breaks many things, also not needed anymore
+    // "@nuxtjs/fontaine",
+    "nuxt-vitalizer",
+    "@nuxt/a11y",
+    "@nuxt/hints",
+  ],
+
   nitro: {
-    preset: "bun",
     esbuild: {
       options: {
         target: "esnext",
@@ -89,122 +111,45 @@ export default defineNuxtConfig({
     },
     prerender: {
       autoSubfolderIndex: false,
-      failOnError: false,
       crawlLinks: true,
-      routes: ["/sitemap.xml", "/robots.txt"],
+      failOnError: false,
       ignore: [
         // ignore duplicating i18n pathes
         /^\/en$/,
         /^\/ru\/(en|ru)/,
       ],
+      routes: ["/sitemap.xml", "/robots.txt"],
     },
-  },
-
-  vite: {
-    plugins: [
-      viteSVGLoader(),
-    ],
-    optimizeDeps: {
-      include: [
-        "@vue/devtools-core",
-        "@vue/devtools-kit",
-        "vue-tippy",
-        "date-fns",
-        "date-fns/locale",
-        "@elysiajs/eden",
-      ],
-    },
-  },
-
-  // Module Settings
-  eslint: {
-    config: {
-      standalone: false,
-      nuxt: {
-        sortConfigKeys: false,
-      },
-    },
-  },
-
-  i18n: {
-    locales: [
-      { code: "en", iso: "en-US", dir: "ltr" },
-      { code: "ru", iso: "ru-RU", dir: "ltr" },
-    ],
-    defaultLocale: "en",
-    translationDir: "i18n/locales",
-    meta: true,
-    localeCookie: "user-locale", // Required for redirects to work properly
-    autoDetectLanguage: false,
-    experimental: {
-      i18nPreviousPageFallback: true,
-    },
-  },
-
-  site: {
-    name: "rogi#su",
-    url: "https://rogi.su",
+    preset: "bun",
   },
 
   ogImage: {
-    zeroRuntime: true,
+    enabled: false,
   },
 
-  sitemap: {
-    zeroRuntime: true,
+  routeRules: {
+    "/": { prerender: true },
+    "/api/*": { cache: isDev ? false : { maxAge: 15 * 60 }, cors: true },
+    "/projects": { swr: true },
+    "/ru": { prerender: true },
   },
 
-  image: {
-    provider: "ipx",
-    quality: 80,
-    format: ["png", "jpeg", "webp"],
-    domains: ["img.youtube.com", "i.vimeocdn.com"],
-    alias: {
-      youtube: "https://img.youtube.com",
-      vimeo: "https://i.vimeocdn.com",
+  runtimeConfig: {
+    ghApiBase: "https://api.github.com",
+    ghApiToken: "",
+    public: {
+      branch: "v5",
     },
   },
 
-  fonts: {
-    defaults: {
-      weights: [400, 500, 600, 700, 800],
-      subsets: [
-        "latin-ext",
-        "latin",
-        "cyrillic",
-      ],
-    },
-  },
-
-  icon: {
-    customCollections: [
-      {
-        prefix: "custom",
-        dir: "./app/assets/icons",
-      },
-    ],
-  },
-
-  content: {
-    experimental: {
-      sqliteConnector: "native",
-    },
-  },
-
-  vitalizer: {
-    disableStylesheets: true,
-  },
-
-  // @ts-expect-error: nuxt-security module is disabled in dev mode which results in missing types
   security: {
-    // TODO: check why it causes payload errors if enabled
-    ssg: false,
     headers: {
-      crossOriginEmbedderPolicy: false,
-      // firefox fix: https://nuxt-security.vercel.app/advanced/faq#issue-on-firefox-when-using-iframe
-      crossOriginOpenerPolicy: false,
       // fix, because default security headers seem to block external cloudflare scripts
       contentSecurityPolicy: {
+        "connect-src": [
+          "'self'",
+          "https:",
+        ],
         "img-src": ["'self'", "data:"],
         "script-src": [
           "'self'",
@@ -218,11 +163,36 @@ export default defineNuxtConfig({
           "'unsafe-inline'",
           "'unsafe-eval'",
         ],
-        "connect-src": [
-          "'self'",
-          "https:",
-        ],
       },
+      crossOriginEmbedderPolicy: false,
+      // firefox fix: https://nuxt-security.vercel.app/advanced/faq#issue-on-firefox-when-using-iframe
+      crossOriginOpenerPolicy: false,
+    },
+    // TODO: check why it causes payload errors if enabled
+    ssg: false,
+  },
+
+  site: {
+    name: "rogi#su",
+    url: "https://rogi.su",
+  },
+
+  vitalizer: {
+    disableStylesheets: true,
+  },
+
+  vite: {
+    optimizeDeps: {
+      include: [
+        "@vue/devtools-core",
+        "@vue/devtools-kit",
+        "vue-tippy",
+        "date-fns",
+        "date-fns/locale",
+        "@elysiajs/eden",
+        "@unhead/schema-org/vue",
+        "textmode.js",
+      ],
     },
   },
 })

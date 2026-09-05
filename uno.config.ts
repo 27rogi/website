@@ -1,6 +1,5 @@
-// uno.config.ts
 import { presetAttributify } from "@unocss/preset-attributify"
-import { presetTypography } from "@unocss/preset-typography"
+// import { presetTypography } from "@unocss/preset-typography"
 import presetWind from "@unocss/preset-wind4"
 import { createRemToPxProcessor } from "@unocss/preset-wind4/utils"
 import transformerDirectives from "@unocss/transformer-directives"
@@ -16,7 +15,6 @@ export default defineConfig({
     presetAttributify({
       prefix: "u-",
     }),
-    presetTypography(),
   ],
   shortcuts: [
     // eslint-disable-next-line regexp/no-super-linear-backtracking
@@ -24,19 +22,7 @@ export default defineConfig({
   ],
   theme: {
     colors: {
-      brilliantsea: {
-        50: "#f0fdfc",
-        100: "#C8F4F4",
-        200: "#8CE8E8",
-        300: "#55DDDD",
-        400: "#28C6C6",
-        500: "#21A5A5",
-        600: "#1B8484",
-        700: "#146262",
-        800: "#0E4444",
-        900: "#072222",
-      },
-      greendark: {
+      "greendark": {
         100: "#abf3e2",
         200: "#56e8c6",
         300: "#1bc49c",
@@ -47,7 +33,7 @@ export default defineConfig({
         800: "#010b09",
         900: "#010504",
       },
-      greenspring: {
+      "greenspring": {
         100: "#c9fdeb",
         200: "#92fcd7",
         300: "#5cfac3",
@@ -58,10 +44,24 @@ export default defineConfig({
         800: "#03593b",
         900: "#012d1d",
       },
+      "testudo-gold": {
+        50: "rgb(255 246 229)",
+        100: "rgb(255 236 204)",
+        200: "rgb(255 218 153)",
+        300: "rgb(255 199 102)",
+        400: "rgb(255 180 51)",
+        500: "rgb(255 162 0)",
+        600: "rgb(204 129 0)",
+        700: "rgb(153 97 0)",
+        800: "rgb(102 65 0)",
+        900: "rgb(51 32 0)",
+        950: "rgb(36 23 0)",
+      },
+
     },
     font: {
       content: "'Martian Mono', monospace",
-      head: "'Unbounded', sans-serif",
+      head: "'Roboto Serif', sans-serif",
     },
   },
   transformers: [

@@ -15,11 +15,11 @@ const { data: ghData, error, status } = await useLazyAsyncData("ghstats", async 
 <template>
   <UiCard
     header="GitHub"
-    flex="~ col 1"
+    flex="~ col"
     class="[&_span]:(text-greenspring-500)"
-    line="right" border="x-0 lg:x-1 b-0"
+    line="right" border="x-1 b-0"
   >
-    <UiLoadingBlock v-if="status === 'pending'" />
+    <LazyUiLoadingBlock v-if="status === 'pending'" />
     <p v-else-if="error">{{ t("page.index.cards.github.error") }}</p>
     <i18n-t
       v-else

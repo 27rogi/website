@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import TwentySeven from "~/assets/27.svg?component"
-
 const props = defineProps<{
   reviews?: boolean
 }>()
@@ -13,8 +11,6 @@ const links = [
     path: "/projects",
   },
 ]
-
-const isHome = useRoute().path === "/en" || useRoute().path === "/ru"
 </script>
 
 <template>
@@ -22,9 +18,9 @@ const isHome = useRoute().path === "/en" || useRoute().path === "/ru"
     w="full"
     m="x-auto"
     flex="~ items-center"
-    p="y-4 x-4"
+    p="y-4 x-8 2xl:x-4"
     leading="0"
-    :class="isHome ? 'xl:max-w-screen-xl 2xl:max-w-screen-2xl' : 'max-w-screen-2xl'"
+    class="max-w-screen-2xl"
   >
     <nuxt-link
       to="/"
@@ -37,18 +33,17 @@ const isHome = useRoute().path === "/en" || useRoute().path === "/ru"
       items-center
       :class="{ 'pr-10px': props.reviews === true }"
     >
-      <TwentySeven
-        u-text="white"
-        w="10"
-        h="10"
-        p="0.5"
+      <Icon name="custom:27" u-text="white"
+            w="10"
+            h="10"
+            p="0.5" size="1"
       />
       <span v-if="props.reviews">{{ t('navbar.reviews') }}</span>
     </nuxt-link>
     <UiLanguageToggle m="l-2" />
     <div
       m="l-auto"
-      font="head 600"
+      font="600"
     >
       <template
         v-for="(linkKey, index) in links.keys()"
@@ -63,7 +58,7 @@ const isHome = useRoute().path === "/en" || useRoute().path === "/ru"
           leading="1px"
           active-class="text-greenspring-500"
         >
-          {{ t(links[linkKey]!.localePath) }}
+          ./{{ t(links[linkKey]!.localePath) }}
         </nuxt-link>
       </template>
     </div>

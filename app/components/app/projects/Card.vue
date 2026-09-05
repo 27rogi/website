@@ -37,6 +37,7 @@ const ghData = (props.project?.github)
     overflow="hidden"
     relative
     :class="project?.leading ? project.palette : null"
+    backdrop="filter blur-md brightness-80"
   >
     <div
       v-if="project.skills"
@@ -72,9 +73,9 @@ const ghData = (props.project?.github)
         <template v-if="project.github && ghData && ghData.error.value === undefined">
           <div
             leading="1.25rem"
-            u-text="base brilliantsea-50"
+            u-text="base testudo-gold-50"
           >
-            <UiLoadingBlock v-if="ghData.status.value !== 'success'" />
+            <LazyUiLoadingBlock v-if="ghData.status.value !== 'success'" />
             <a
               v-else-if="ghData.status.value === 'success' && ghData.data.value"
               :href="`https://github.com/${project.github.organization}/${project.github.repository}`"
@@ -110,7 +111,7 @@ const ghData = (props.project?.github)
     <div
       relative
       z="3"
-      u-text="brilliantsea-50/50 4"
+      u-text="testudo-gold-50/50 4"
       p="4"
       :class="{ 'mt--6 pt-0': $props.project?.leading }"
       flex="~ col"
@@ -129,7 +130,7 @@ const ghData = (props.project?.github)
         />
         <div
           max-w="60%"
-          u-text="brilliantsea-50 2xl"
+          u-text="testudo-gold-50 2xl"
           font="head 700"
           :class="{ 'text-lg': !project.leading }"
         >

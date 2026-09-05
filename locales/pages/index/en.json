@@ -7,7 +7,7 @@
       },
       "intro": {
         "header": "A wild {username} appeared!",
-        "about_me": "Hi, you are browsing my portfolio page, let me quickly give you some info about me. So I'm a developer who mostly works with frontend, but sometimes I do backend too. {to_projects}",
+        "about_me": "Hi, you are browsing my portfolio page, let me quickly give you some info about me. So I'm a developer who mostly works with frontend, but sometimes I do backend too.",
         "to_projects": "You can view my projects here"
       },
       "cards": {
