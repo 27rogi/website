@@ -47,4 +47,4 @@ jobs:
           set +e
           git add CHANGELOG.md
           git commit -m "ci(id${{ github.run_id }}): update changelog" -m "${{ steps.git-cliff.outputs.content }}"
-          git push https://${{ secrets.GITHUB_TOKEN }}@github.com/27rogi/website.git v4
+          git push https://${{ secrets.GITHUB_TOKEN }}@github.com/27rogi/website.git v5
