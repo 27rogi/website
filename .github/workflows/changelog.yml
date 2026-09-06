@@ -41,7 +41,7 @@ jobs:
 
       - name: Commit
         run: |
-          git checkout v4
+          git checkout v5
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           set +e

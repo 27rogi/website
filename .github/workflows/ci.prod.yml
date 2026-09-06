@@ -28,7 +28,7 @@ jobs:
         uses: docker/build-push-action@v7
         with:
           no-cache: true
-          push: ${{ github.ref_name == 'v4' }}
+          push: ${{ github.ref_name == 'v5' }}
           tags: 27rogi/website:latest
           build-args: |
             "BRANCH=${{ steps.commit.outputs.short }}"
