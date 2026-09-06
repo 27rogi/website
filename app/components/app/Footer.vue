@@ -56,7 +56,7 @@ const variantIcons = {
       </i18n-t>
     </div>
     <div m="l-auto">
-      <a class="colorful" target="_blank" href="https://status.rogi.su">
+      <a class="colorful" target="_blank" href="https://status.rogi.party">
         {{ t("footer.status") }}
       </a>
     </div>

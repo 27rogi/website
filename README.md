@@ -2,7 +2,7 @@
   <img width="600" src=".github/preview.png" />
 </p>
 
-# 🍃 [rogi#su](https://rogi.su)
+# 🍃 [rogi#su](https://rogi.party)
 
 This is a portfolio website that I made to list all of my most notable projects and also give small glimpse into my skills and career. I decided to use Nuxt for fast and painless development. The color palette of this website mostly features [`Green Spring`](https://en.wikipedia.org/wiki/Spring_green) tones with some darker variations. Most of the styles are written using UnoCSS with Tailwind preset and directives.
 

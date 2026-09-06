@@ -174,7 +174,7 @@ export default defineNuxtConfig({
 
   site: {
     name: "rogi#su",
-    url: "https://rogi.su",
+    url: "https://rogi.party",
   },
 
   vitalizer: {

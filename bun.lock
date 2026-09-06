@@ -33,6 +33,7 @@
         "@iconify-json/devicon": "^1.2.62",
         "@iconify-json/material-icon-theme": "^1.2.70",
         "@iconify-json/mdi": "^1.2.3",
+        "@iconify-json/simple-icons": "^1.2.94",
         "@iconify-json/vscode-icons": "^1.2.76",
         "@takumi-rs/core": "^2.13.6",
         "@types/bun": "^1.4.1",
@@ -272,6 +273,8 @@
     "@iconify-json/mdi": ["@iconify-json/mdi@1.2.3", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-O3cLwbDOK7NNDf2ihaQOH5F9JglnulNDFV7WprU2dSoZu3h3cWH//h74uQAB87brHmvFVxIOkuBX2sZSzYhScg=="],
 
     "@iconify-json/ph": ["@iconify-json/ph@1.2.2", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-PgkEZNtqa8hBGjHXQa4pMwZa93hmfu8FUSjs/nv4oUU6yLsgv+gh9nu28Kqi8Fz9CCVu4hj1MZs9/60J57IzFw=="],
+
+    "@iconify-json/simple-icons": ["@iconify-json/simple-icons@1.2.94", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-l8UWzVxKaqZd9ABsE/M/9p6NyGkQnmCnOoZyhQmjlXCtY5PuL2rcWxOFk2l9pk7ux3ERMPkTLE4jl6kQpTkwxA=="],
 
     "@iconify-json/vscode-icons": ["@iconify-json/vscode-icons@1.2.76", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-gSu20bZiegbMFLSPHHtmliUJoOPhovTT77RNkMfr6u9ns5uC2bVZ4K5T7wUlywRAzQk4qgG7t4AULaucSsta4w=="],
 
