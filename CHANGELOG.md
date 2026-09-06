@@ -16,6 +16,8 @@
 - *(id30314380349)* Update changelog
 - *(id31226727983)* Update changelog
 - *(id31227529616)* Update changelog
+- *(id34001636176)* Update changelog
+- Migrate domain, add icons to collection
 
 ### 💼 Other
 
