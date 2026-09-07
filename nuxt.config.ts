@@ -52,8 +52,11 @@ export default defineNuxtConfig({
       weights: [400, 500, 600, 700, 800, 900],
     },
     providers: {
+      adobe: false,
       bunny: false,
+      fontshare: false,
       google: false,
+      googleicons: false,
     },
   },
 
@@ -191,7 +194,6 @@ export default defineNuxtConfig({
         "date-fns/locale",
         "@elysiajs/eden",
         "@unhead/schema-org/vue",
-        "textmode.js",
       ],
     },
   },
