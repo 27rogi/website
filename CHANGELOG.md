@@ -1,5 +1,9 @@
 ## [unreleased]
 
+### 🚀 Features
+
+- Add support for webring
+
 ### 🐛 Bug Fixes
 
 - Optimize font loading, update deps, update styles
@@ -8,6 +12,7 @@
 
 - Design improvements
 - Update locales
+- *(id34142461133)* Update changelog
 ## [06092026] - 2026-09-06
 
 ### 🐛 Bug Fixes
