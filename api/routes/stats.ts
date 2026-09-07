@@ -9,6 +9,9 @@ export const StatsSchema = t.Object({
 
 export default new Elysia({ prefix: "/stats" }).get("", async () => {
   const { ghApiBase, ghApiToken } = useRuntimeConfig()
+
+  if (!ghApiToken)
+    console.warn("No GitHub API token was specified!!!")
   const baseFetchSettings: BunFetchRequestInit = {
     headers: ghApiToken
       ? {
@@ -20,12 +23,14 @@ export default new Elysia({ prefix: "/stats" }).get("", async () => {
 
   const userRes = await fetch(`${ghApiBase}/users/27rogi`, baseFetchSettings)
   if (!userRes.ok) {
+    console.error(userRes.status, userRes.statusText)
     throw new Error(`GitHub API error: ${userRes.status} ${userRes.statusText}`)
   }
   const user = await userRes.json()
 
   const repoRes = await fetch(`${ghApiBase}/users/27rogi/repos?per_page=50&sort=pushed&type=public`, baseFetchSettings)
   if (!repoRes.ok) {
+    console.error(repoRes.status, repoRes.statusText)
     throw new Error(`GitHub API error: ${repoRes.status} ${repoRes.statusText}`)
   }
   const repos = await repoRes.json()

@@ -30,6 +30,7 @@ export default new Elysia({ prefix: "/repo" }).get("", async ({ query }) => {
   )
 
   if (!res.ok) {
+    console.error(res.status, res.statusText)
     throw new Error(`GitHub API error: ${res.status} ${res.statusText}`)
   }
 

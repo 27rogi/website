@@ -22,6 +22,7 @@ export default new Elysia({ prefix: "/webring" }).get("", async () => {
 
   const res = await fetch(`https://webring.otomir23.me/${webringSlug}/data`)
   if (!res.ok) {
+    console.error(res.status, res.statusText)
     throw new Error(`Webring fetch error: ${res.status} ${res.statusText}`)
   }
 

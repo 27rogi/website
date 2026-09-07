@@ -12,7 +12,8 @@ ENV NODE_ENV=production
 RUN --mount=type=secret,id=gh_token \
     NUXT_GH_API_TOKEN="$(cat /run/secrets/gh_token)" bun run -b build
 
-FROM oven/bun:distroless AS runtime
+FROM oven/bun:alpine AS runtime
+RUN apk add --no-cache ca-certificates
 COPY --from=build /app/.output .output
 ARG BRANCH
 ENV NUXT_PUBLIC_BRANCH=${BRANCH}
