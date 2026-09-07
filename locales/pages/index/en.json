@@ -8,7 +8,7 @@
       "intro": {
         "header": "A wild {username} appeared!",
         "about_me": "Hi, you are browsing my portfolio page, let me quickly give you some info about me. So I'm a developer who mostly works with frontend, but sometimes I do backend too.",
-        "to_projects": "You can view my projects here"
+        "to_projects": "View my projects"
       },
       "cards": {
         "socials": {
@@ -61,11 +61,11 @@
               "role": "Frontend Developer"
             },
             "ws_ix": {
-              "title": "Moscow Masters Professional Championship IX",
+              "title": "Moscow WorldSkills Masters Professional Championship IX",
               "competition": "Web Design and Development"
             },
             "ws_viii": {
-              "title": "Moscow Masters Professional Championship VIII",
+              "title": "Moscow WorldSkills Masters Professional Championship VIII",
               "competition": "Web Design and Development"
             },
             "htmlacademynode": {

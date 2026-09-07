@@ -8,7 +8,7 @@
       "intro": {
         "header": "Дикий {username} появляется!",
         "about_me": "Привет, ты смотришь на мое портфолио, давай покажу немного информации о себе. Я по большей части фронтенд разработчик, но иногда занимаюсь бекендом.",
-        "to_projects": "Мои проекты можно увидеть здесь"
+        "to_projects": "Просмотреть мои проекты"
       },
       "cards": {
         "socials": {
@@ -42,7 +42,7 @@
             },
             "mtuci": {
               "title": "Московский Технический Университет Связи и Информатики",
-              "specialty": "Informatics and Computer Science",
+              "specialty": "Информатика и вычислительная техника",
               "status": "получаю образование"
             }
           }
@@ -61,11 +61,11 @@
               "role": "Фронтенд разработчик"
             },
             "ws_ix": {
-              "title": "Moscow Masters Professional Championship IX",
+              "title": "IX Открытый чемпионат профессионального мастерства WorldSkills Москва",
               "competition": "Веб-дизайн и разработка"
             },
             "ws_viii": {
-              "title": "Moscow Masters Professional Championship VIII",
+              "title": "VIII Открытый чемпионат профессионального мастерства WorldSkills Москва",
               "competition": "Веб-дизайн и разработка"
             },
             "htmlacademynode": {
