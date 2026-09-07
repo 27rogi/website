@@ -12,7 +12,10 @@
       },
       "cards": {
         "socials": {
-          "title": "Соц. сети"
+          "title": "Соц. сети",
+          "webring": {
+            "error": "Не удалось получить данные от webring..."
+          }
         },
         "github": {
           "text": "Я публикую свои проекты на {github} уже {time}. Сейчас у меня {followers} и {public_repos} с {stars}.",

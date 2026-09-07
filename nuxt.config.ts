@@ -142,6 +142,7 @@ export default defineNuxtConfig({
     ghApiToken: "",
     public: {
       branch: "v5",
+      webringSlug: "27rogi",
     },
   },
 
@@ -153,7 +154,12 @@ export default defineNuxtConfig({
           "'self'",
           "https:",
         ],
-        "img-src": ["'self'", "data:"],
+        "img-src": [
+          "'self'",
+          "data:",
+          "https://webring.otomir23.me",
+          "https://*.otomir23.me",
+        ],
         "script-src": [
           "'self'",
           "https:",

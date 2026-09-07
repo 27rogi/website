@@ -12,7 +12,10 @@
       },
       "cards": {
         "socials": {
-          "title": "Socials"
+          "title": "Socials",
+          "webring": {
+            "error": "Unable to get webring data..."
+          }
         },
         "github": {
           "text": "I'm publishing my projects on {github} for {time} already. I currently have {followers} and {public_repos} with total of {stars}.",

@@ -1,6 +1,7 @@
 import { Elysia, t } from "elysia";
 import repo from "./routes/repo";
 import stats from "./routes/stats";
+import webring from "./routes/webring";
 
 export const IndexSchema = t.Object({
   runtime: t.Object({
@@ -13,6 +14,7 @@ export const IndexSchema = t.Object({
 export default () => new Elysia() 
   .use(repo)
   .use(stats)
+  .use(webring)
   .get('/', () => {
     const isBun = typeof Bun !== 'undefined';
     if (!isBun) {

@@ -18,7 +18,7 @@ export default defineConfig({
   ],
   shortcuts: [
     // eslint-disable-next-line regexp/no-super-linear-backtracking
-    [/^card-(.*)\/(.*)$/, ([, color, opacity]) => `border border-${color}-200 border-opacity-${opacity} hover:border-opacity-${opacity + 10} bg-${color}-600 bg-opacity-${Number(opacity) - 10} rounded-md`],
+    [/^card-(.*)\/(.*)$/, ([, color, opacity]) => `border border-${color}-200 border-opacity-${opacity} bg-${color}-600 bg-opacity-${Number(opacity) - 10} rounded-md`],
   ],
   theme: {
     colors: {
