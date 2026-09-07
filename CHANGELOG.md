@@ -2,6 +2,16 @@
 
 ### 🐛 Bug Fixes
 
+- Optimize font loading, update deps, update styles
+
+### ⚙️ Miscellaneous Tasks
+
+- Design improvements
+- Update locales
+## [06092026] - 2026-09-06
+
+### 🐛 Bug Fixes
+
 - Disable devtools due to Bun issues, update deps
 - Revert ssrStreaming and other experiments
 - Wrong branch for actions
@@ -18,6 +28,7 @@
 - *(id31227529616)* Update changelog
 - *(id34001636176)* Update changelog
 - Migrate domain, add icons to collection
+- *(id34048882350)* Update changelog
 
 ### 💼 Other
 
