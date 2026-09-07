@@ -7,12 +7,14 @@
 ### 🐛 Bug Fixes
 
 - Optimize font loading, update deps, update styles
+- Log errors on prod, swap to alpine for CA certs
 
 ### ⚙️ Miscellaneous Tasks
 
 - Design improvements
 - Update locales
 - *(id34142461133)* Update changelog
+- *(id34169308670)* Update changelog
 ## [06092026] - 2026-09-06
 
 ### 🐛 Bug Fixes
