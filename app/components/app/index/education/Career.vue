@@ -6,31 +6,31 @@ const { t } = useI18n()
 /* eslint-disable sort/object-properties */
 const experiences: { [key: string]: ExperienceType } = {
   ctm: {
-    icon: "mdi:university",
+    icon: "mdi:briefcase",
     skills: [Skills.figma, Skills.scss, Skills.tailwind],
     type: "job",
     year: 2021,
     yearEnd: 2021,
   },
   premid: {
-    icon: "mdi:college",
+    icon: "mdi:briefcase",
     skills: [Skills.nuxt, Skills.figma, Skills.scss, Skills.tailwind],
     type: "job",
     year: 2019,
     yearEnd: 2020,
   },
   ws_ix: {
-    icon: "mdi:university",
+    icon: "mdi:medal",
     type: "competition",
     year: 2021,
   },
   ws_viii: {
-    icon: "mdi:university",
+    icon: "mdi:medal",
     type: "competition",
     year: 2019,
   },
   htmlacademynode: {
-    icon: "mdi:university",
+    icon: "mdi:diploma",
     issuer: "htmlacademy",
     proof: "https://assets.htmlacademy.ru/certificates/intensive/463/2284645.pdf?1676649687",
     type: "certificate",
@@ -57,10 +57,10 @@ const experiences: { [key: string]: ExperienceType } = {
           <h3>
             {{ t(`page.index.cards.experience.items.${key}.title`) }}
             <template v-if="exp.type === 'job'">
-              (<span>{{ exp.yearEnd ? `${exp.year}-${exp.yearEnd}` : exp.year }}</span>)
+              [<span>{{ exp.yearEnd ? `${exp.year}-${exp.yearEnd}` : exp.year }}</span>]
             </template>
             <template v-else-if="exp.year">
-              (<span>{{ exp.year }}</span>)
+              [<span>{{ exp.year }}</span>]
             </template>
           </h3>
         </template>

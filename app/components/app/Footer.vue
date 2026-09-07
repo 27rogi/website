@@ -25,7 +25,7 @@ const variantIcons = {
 
 <template>
   <div
-    flex="~ items-end" class="[&_.colorful]:(text-greenspring-500 font-bold align-top)" m="x-auto"
+    flex="~ col md:row md:items-end" class="[&_.colorful]:(text-greenspring-500 font-bold align-top)" m="x-auto" gap="4"
     :class="isHome ? 'xl:max-w-screen-xl 2xl:max-w-screen-2xl' : 'max-w-screen-2xl'" p="y-4 x-8 2xl:x-4" u-text="testudo-gold-50/50 sm" leading="loose"
   >
     <div>
@@ -55,8 +55,8 @@ const variantIcons = {
         </template>
       </i18n-t>
     </div>
-    <div m="l-auto">
-      <a class="colorful" target="_blank" href="https://status.rogi.party">
+    <div m="md:l-auto">
+      <a u-text="xs md:sm" class="colorful" target="_blank" href="https://status.rogi.party">
         {{ t("footer.status") }}
       </a>
     </div>

@@ -28,7 +28,7 @@ const ghData = (props.project?.github)
 <template>
   <div
     v-if="project"
-    u-text="1.2em"
+    u-text="sm md:1.2em"
     font="600"
     flex="~ basis-[49%] grow-1 col"
     gap="2"
@@ -73,7 +73,7 @@ const ghData = (props.project?.github)
         <template v-if="project.github && ghData && ghData.error.value === undefined">
           <div
             leading="1.25rem"
-            u-text="base testudo-gold-50"
+            u-text="testudo-gold-50"
           >
             <LazyUiLoadingBlock v-if="ghData.status.value !== 'success'" />
             <a
@@ -96,7 +96,7 @@ const ghData = (props.project?.github)
     <div
       v-if="project?.leading"
       overflow="hidden"
-      h="240px"
+      h="180px md:240px"
       flex="~ col"
       z="2"
       style="mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 10%, transparent 90%);"
@@ -110,8 +110,9 @@ const ghData = (props.project?.github)
     </div>
     <div
       relative
+      m="t-12 sm:t-0"
       z="3"
-      u-text="testudo-gold-50/50 4"
+      u-text="testudo-gold-50/50 sm md:4"
       p="4"
       :class="{ 'mt--6 pt-0': $props.project?.leading }"
       flex="~ col"
@@ -129,7 +130,7 @@ const ghData = (props.project?.github)
           :name="project.icon"
         />
         <div
-          max-w="60%"
+          max-w="sm:60%"
           u-text="testudo-gold-50 2xl"
           font="head 700"
           :class="{ 'text-lg': !project.leading }"

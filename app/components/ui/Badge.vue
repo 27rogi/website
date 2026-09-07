@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { NuxtLink } from '#components';
+import { NuxtLink } from "#components"
 
 defineProps({
   color: {
@@ -22,7 +22,7 @@ defineProps({
     default: null,
     type: String,
   },
-});
+})
 </script>
 
 <template>
@@ -59,6 +59,7 @@ defineProps({
       <p
         v-if="$slots.default"
         leading="1px"
+        font="content 600"
       >
         <slot />
       </p>

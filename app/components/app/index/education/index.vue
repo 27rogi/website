@@ -30,7 +30,7 @@ const education = {
         :icon="item.icon"
         :header="t(`page.index.cards.education.items.${key}.title`)?.toString()"
       >
-        <p>{{ t(`page.index.cards.education.items.${key}.specialty`) }} (<span>{{ t(`page.index.cards.education.items.${key}.status`) }}</span>)</p>
+        <p>{{ t(`page.index.cards.education.items.${key}.specialty`) }} [<span>{{ t(`page.index.cards.education.items.${key}.status`) }}</span>]</p>
       </UiCardDetailed>
     </div>
   </UiCard>
