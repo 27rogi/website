@@ -1,5 +1,10 @@
 ## [unreleased]
 
+### ⚙️ Miscellaneous Tasks
+
+- Comment out webring stuff
+## [08092026] - 2026-09-07
+
 ### 🚀 Features
 
 - Add support for webring
@@ -15,6 +20,7 @@
 - Update locales
 - *(id34142461133)* Update changelog
 - *(id34169308670)* Update changelog
+- *(id34171162292)* Update changelog
 ## [06092026] - 2026-09-06
 
 ### 🐛 Bug Fixes
