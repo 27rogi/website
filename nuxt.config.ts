@@ -142,7 +142,6 @@ export default defineNuxtConfig({
     ghApiToken: "",
     public: {
       branch: "v5",
-      webringSlug: "27rogi",
     },
   },
 
